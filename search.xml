@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>算法设计与分析</title>
+      <link href="2020/12/26/suan-fa-she-ji-yu-fen-xi/"/>
+      <url>2020/12/26/suan-fa-she-ji-yu-fen-xi/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaScript</title>
       <link href="2020/12/26/javascript/"/>
       <url>2020/12/26/javascript/</url>
@@ -11,6 +24,18 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
       
     </entry>
     
@@ -26,7 +51,7 @@
       
       <categories>
           
-          <category> 语言 </category>
+          <category> 文本 </category>
           
       </categories>
       

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-26T09:25:20.806Z</updated>
+  <updated>2020-12-26T10:17:15.552Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JavaScript</title>
-    <link href="http://example.com/2020/12/26/javascript/"/>
-    <id>http://example.com/2020/12/26/javascript/</id>
-    <published>2020-12-26T09:25:20.000Z</published>
-    <updated>2020-12-26T09:25:20.806Z</updated>
+    <title>算法设计与分析</title>
+    <link href="http://example.com/2020/12/26/suan-fa-she-ji-yu-fen-xi/"/>
+    <id>http://example.com/2020/12/26/suan-fa-she-ji-yu-fen-xi/</id>
+    <published>2020-12-26T10:17:15.000Z</published>
+    <updated>2020-12-26T10:17:15.552Z</updated>
     
     
     
@@ -30,11 +30,28 @@
   </entry>
   
   <entry>
+    <title>JavaScript</title>
+    <link href="http://example.com/2020/12/26/javascript/"/>
+    <id>http://example.com/2020/12/26/javascript/</id>
+    <published>2020-12-26T09:25:20.000Z</published>
+    <updated>2020-12-26T10:15:24.882Z</updated>
+    
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MarkDown</title>
     <link href="http://example.com/2020/12/24/markdown/"/>
     <id>http://example.com/2020/12/24/markdown/</id>
     <published>2020-12-24T10:41:52.000Z</published>
-    <updated>2020-12-26T09:35:58.017Z</updated>
+    <updated>2020-12-26T10:14:34.761Z</updated>
     
     
       
@@ -47,7 +64,7 @@
     
     
     
-    <category term="语言" scheme="http://example.com/categories/%E8%AF%AD%E8%A8%80/"/>
+    <category term="文本" scheme="http://example.com/categories/%E6%96%87%E6%9C%AC/"/>
     
     
     <category term="MarkDown" scheme="http://example.com/tags/MarkDown/"/>
