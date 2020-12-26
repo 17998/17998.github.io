@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-26T10:17:15.552Z</updated>
+  <updated>2020-12-26T10:18:19.662Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,11 +21,15 @@
     <link href="http://example.com/2020/12/26/suan-fa-she-ji-yu-fen-xi/"/>
     <id>http://example.com/2020/12/26/suan-fa-she-ji-yu-fen-xi/</id>
     <published>2020-12-26T10:17:15.000Z</published>
-    <updated>2020-12-26T10:17:15.552Z</updated>
+    <updated>2020-12-26T10:18:19.662Z</updated>
     
     
     
     
+    <category term="后端" scheme="http://example.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="算法设计与分析" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
@@ -51,7 +55,7 @@
     <link href="http://example.com/2020/12/24/markdown/"/>
     <id>http://example.com/2020/12/24/markdown/</id>
     <published>2020-12-24T10:41:52.000Z</published>
-    <updated>2020-12-26T10:14:34.761Z</updated>
+    <updated>2020-12-26T10:18:27.946Z</updated>
     
     
       
@@ -64,7 +68,7 @@
     
     
     
-    <category term="文本" scheme="http://example.com/categories/%E6%96%87%E6%9C%AC/"/>
+    <category term="博客" scheme="http://example.com/categories/%E5%8D%9A%E5%AE%A2/"/>
     
     
     <category term="MarkDown" scheme="http://example.com/tags/MarkDown/"/>
