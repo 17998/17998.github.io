@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>JavaScript</title>
-    <url>/2020/12/26/JavaScript/</url>
+    <url>/2020/12/26/javascript/</url>
     <content><![CDATA[<h2 id="1-快速入门"><a href="#1-快速入门" class="headerlink" title="1.快速入门"></a>1.快速入门</h2><h3 id="1-1两种导入方式"><a href="#1-1两种导入方式" class="headerlink" title="1.1两种导入方式"></a>1.1两种导入方式</h3><h4 id="1-1-1内部嵌套"><a href="#1-1-1内部嵌套" class="headerlink" title="1.1.1内部嵌套"></a>1.1.1内部嵌套</h4><pre><code class="html">&lt;html&gt;
     &lt;head&gt;
         &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -66,19 +66,8 @@ alert(&quot;hello world!&quot;)</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>算法设计与分析</title>
-    <url>/2020/12/26/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>算法设计与分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MarkDown</title>
-    <url>/2020/12/24/MarkDown/</url>
+    <url>/2020/12/24/markdown/</url>
     <content><![CDATA[<h1 id="1-什么是MarkDown"><a href="#1-什么是MarkDown" class="headerlink" title="1.什么是MarkDown"></a>1.什么是MarkDown</h1><blockquote>
 <p>Markdown是一种<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=7988600&ss_c=ssc.citiao.link">轻量级</a>标记语言，创始人为<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=140895630&ss_c=ssc.citiao.link">约翰·格鲁伯</a>（英语：John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
 </blockquote>
@@ -350,6 +339,17 @@ alert(&quot;hello world!&quot;)</code></pre>
       </categories>
       <tags>
         <tag>MarkDown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法设计与分析</title>
+    <url>/2020/12/26/suan-fa-she-ji-yu-fen-xi/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>算法设计与分析</tag>
       </tags>
   </entry>
 </search>
