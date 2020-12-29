@@ -29,7 +29,10 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="云末" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -456,7 +459,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="1-什么是MarkDown"><a href="#1-什么是MarkDown" class="headerlink" title="1.什么是MarkDown"></a>1.什么是MarkDown</h1><blockquote>
-<p>Markdown是一种<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=7988600&ss_c=ssc.citiao.link">轻量级</a>标记语言，创始人为<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=140895630&ss_c=ssc.citiao.link">约翰·格鲁伯</a>（英语：John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
+<p>Markdown是一种<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=7988600&amp;ss_c=ssc.citiao.link">轻量级</a>标记语言，创始人为<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=140895630&amp;ss_c=ssc.citiao.link">约翰·格鲁伯</a>（英语：John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
 </blockquote>
 <h1 id="2-MarkDown应用"><a href="#2-MarkDown应用" class="headerlink" title="2.MarkDown应用"></a>2.MarkDown应用</h1><blockquote>
 <p>Markdown 能被使用来撰写电子书，如：Gitbook。当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。</p>
@@ -551,11 +554,11 @@
 <h1 id="7-MarkDown代码"><a href="#7-MarkDown代码" class="headerlink" title="7.MarkDown代码"></a>7.MarkDown代码</h1><p>如果是段落上的<strong>一个函数</strong>或<strong>片段</strong>的代码可以用反引号把它包起来（**`**），例如：</p>
 <p><code>System.out.println()</code></p>
 <p>代码区块用 <strong>```</strong> 包裹一段代码，并指定一种语言（也可以不指定）：</p>
-<pre><code class="Java">public class Person&#123;
-    public static void main(String[] args)&#123;
-        System.out.pringln(&quot;Hello World!&quot;)
-    &#125;
-&#125;</code></pre>
+<pre class=" language-Java"><code class="language-Java">public class Person{
+    public static void main(String[] args){
+        System.out.pringln("Hello World!")
+    }
+}</code></pre>
 <h1 id="8-MarkDown链接"><a href="#8-MarkDown链接" class="headerlink" title="8.MarkDown链接"></a>8.MarkDown链接</h1><h2 id="8-1普通链接"><a href="#8-1普通链接" class="headerlink" title="8.1普通链接"></a>8.1普通链接</h2><p>[链接名称](链接地址) 或 &lt;链接地址&gt;</p>
 <p><a target="_blank" rel="noopener" href="https://www.baidu.com/">百度一下</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.baidu.com/">https://www.baidu.com</a></p>
@@ -570,7 +573,7 @@
 <h1 id="9-MarkDown图片"><a href="#9-MarkDown图片" class="headerlink" title="9.MarkDown图片"></a>9.MarkDown图片</h1><p>方法1:</p>
 <pre><code>![RUNOOB图标](http://static.runoob.com/images/runoob-logo.png)
 
-![RUNOOB图标](http://static.runoob.com/images/runoob-logo.png &quot;RUNOOB&quot;)</code></pre>
+![RUNOOB图标](http://static.runoob.com/images/runoob-logo.png "RUNOOB")</code></pre>
 <p>方法2：</p>
 <pre><code>这个链接用 1 作为网址变量 [RUNOOB][1].
 然后在文档的结尾为变量赋值（网址）
@@ -716,7 +719,7 @@
 <tr>
 <td align="center">表情</td>
 <td align="center"></td>
-<td align="center">:happy::cry::smile:</td>
+<td align="center">:happy:<span class="github-emoji"><span>😢</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
 <td>:happy 或 :cry 或:smile</td>
 </tr>
 </tbody></table>
