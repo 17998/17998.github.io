@@ -392,7 +392,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/12/26/JavaScript/">
+                    <a href="/posts/4656.html">
                         <div class="card-image tag-image">
                             
                             
@@ -733,6 +733,43 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+    <div id="weather-v2-plugin-standard"></div>
+    <script>
+    WIDGET = {
+    CONFIG: {
+        "layout": 2,
+        "width": "230",
+        "height": "270",
+        "background": 5,
+        "dataColor": "4A4A4A",
+        "borderRadius": 5,
+        "key": "Uv4KdoRdVo"
+    }
+    }
+    </script>
+    <script src="https://apip.weatherdt.com/standard/static/js/weather-standard-common.js?v=2.0"></script>
+
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
+        $('a').each(function() {
+          const $this = $(this);
+          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== 'your_domain' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script></body>
 
 </html>
