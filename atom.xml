@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-24T05:08:02.017Z</updated>
+  <updated>2021-01-24T05:08:02.015Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>计算机网络概述</title>
-    <link href="http://example.com/posts/2a8a.html"/>
-    <id>http://example.com/posts/2a8a.html</id>
-    <published>2021-01-09T12:53:16.000Z</published>
-    <updated>2021-01-24T05:08:02.017Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-1计算机网络在信息时代中的作用&quot;&gt;&lt;a href=&quot;#1-1计算机网络在信息时代中的作用&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="专业必修" scheme="http://example.com/categories/%E4%B8%93%E4%B8%9A%E5%BF%85%E4%BF%AE/"/>
-    
-    
-    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
   
   <entry>
     <title>算法设计与分析</title>
