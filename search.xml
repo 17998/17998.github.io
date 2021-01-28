@@ -1,355 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>JavaScript</title>
-    <url>/posts/4656.html</url>
-    <content><![CDATA[<h2 id="1-快速入门"><a href="#1-快速入门" class="headerlink" title="1.快速入门"></a>1.快速入门</h2><h3 id="1-1两种导入方式"><a href="#1-1两种导入方式" class="headerlink" title="1.1两种导入方式"></a>1.1两种导入方式</h3><h4 id="1-1-1内部嵌套"><a href="#1-1-1内部嵌套" class="headerlink" title="1.1.1内部嵌套"></a>1.1.1内部嵌套</h4><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-
-    <span class="token comment" spellcheck="true">&lt;!--可以不用写type属性,默认就是text/javascript--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
-        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"hello world!"</span><span class="token punctuation">)</span>
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
-<h4 id="1-1-2外部引入"><a href="#1-1-2外部引入" class="headerlink" title="1.1.2外部引入"></a>1.1.2外部引入</h4><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-
-    <span class="token comment" spellcheck="true">&lt;!--不能使用自闭和,必须成对存在--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>index.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//index.js</span>
-<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"hello world!"</span><span class="token punctuation">)</span></code></pre>
-<h3 id="1-2基本语法入门"><a href="#1-2基本语法入门" class="headerlink" title="1.2基本语法入门"></a>1.2基本语法入门</h3><blockquote>
-<ol>
-<li>变量类型都是var</li>
-<li>javascript严格区分大小写</li>
-</ol>
-</blockquote>
-<h4 id="1-2-1定义变量"><a href="#1-2-1定义变量" class="headerlink" title="1.2.1定义变量"></a>1.2.1定义变量</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>
-    <span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">18</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"yangqi"</span><span class="token punctuation">;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
-<h4 id="1-2-2条件控制"><a href="#1-2-2条件控制" class="headerlink" title="1.2.2条件控制"></a>1.2.2条件控制</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>
-    <span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token number">75</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">if</span><span class="token punctuation">(</span>score<span class="token operator">>=</span><span class="token number">85</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"优秀"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>score<span class="token operator">>=</span><span class="token number">75</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"良"</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>score<span class="token operator">>=</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"及格"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"不及格"</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
-<blockquote>
-<p>console.log(score) ：在浏览器的控制台打印变量</p>
-</blockquote>
-<h3 id="1-3数据类型"><a href="#1-3数据类型" class="headerlink" title="1.3数据类型"></a>1.3数据类型</h3>]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>递归</title>
+      <link href="posts/95da.html"/>
+      <url>posts/95da.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-递归"><a href="#1-递归" class="headerlink" title="1.递归"></a>1.递归</h2><ol><li><p>三个本质属性</p><ul><li>递归模式</li><li>终止条件</li><li>变化</li></ul></li><li><p>步骤</p><ul><li><p>确定问题的参数</p></li><li><p>使用参数表示解</p></li><li><p>在解简单明了的情况下确定简单情景</p></li><li><p>确定复杂情景与简单情景的关系</p><blockquote><p>双色球问题：</p><p>在一个袋子里有无数个红球(R)和蓝球(B),玩家需要选取n个小球，但是不能连续选取两个红球;而且需要考虑选取顺序:选取红蓝(RB)跟蓝红( BR)是两种不同的情况。问:有多少种不同的选取方法?这个问题可以利用递归解决，采用上述的四个步骤:</p><ol><li><p>确定问题的参数</p><p>在这个问题中参数是小球的数目n</p></li><li><p>使用参数表示解</p><p>假设f(n)为解：表示在不能连续选取两个红球的情况下，选取n个小球的方案数</p></li><li><p>在解简单明了的情况下确定简单情景</p><p>如果只选取1个小球的话，只有两种可能: R或者B。因此，f(n)为2。如果选取<br>2个小球，则有三种可能: RB、BR和B。因此，f(n)为3。</p></li><li><p>确定复杂情景与简单情景的关系</p><p>如果选取n个小球(n&gt; 2)，则第一个小球可以是R，也可以是B。因此，第一个<br>小球有两种可能。<br>(1)如果第一个小球是B，那么剩余的n-1个小球必须遵守同样的规则:不能连续<br>选取两个红球。共有f(n-1)种可能。<br>(2)如果第一个小球是R，那么第二个小球必须是B。第二个小球是蓝球使得第三，个小球既可以是R也可以是B，没有任何限制。因此，剩余的n-2个小球必须遵守同样的规则，共有f(n-2)中可能</p></li></ol><p>由此分析：f(n)便是f(n-1)和f(n-2)的和</p><p> <img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128123822.png" alt="image-20210128123822504"></p><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128132245.png" alt="image-20210128132245351"></p></blockquote><blockquote><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128132919.png" alt="image-20210128132919687"></p><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128132951.png" alt="image-20210128132950957"></p><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128133028.png" alt="image-20210128133028651"></p></blockquote></li></ul></li></ol>]]></content>
+      
+      
       <categories>
-        <category>前端</category>
+          
+          <category> 后端 </category>
+          
       </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法设计与分析</title>
-    <url>/posts/25f0.html</url>
-    <content><![CDATA[]]></content>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript</title>
+      <link href="posts/4656.html"/>
+      <url>posts/4656.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-快速入门"><a href="#1-快速入门" class="headerlink" title="1.快速入门"></a>1.快速入门</h2><h3 id="1-1两种导入方式"><a href="#1-1两种导入方式" class="headerlink" title="1.1两种导入方式"></a>1.1两种导入方式</h3><h4 id="1-1-1内部嵌套"><a href="#1-1-1内部嵌套" class="headerlink" title="1.1.1内部嵌套"></a>1.1.1内部嵌套</h4><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>    <span class="token comment" spellcheck="true">&lt;!--可以不用写type属性,默认就是text/javascript--></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"hello world!"</span><span class="token punctuation">)</span>    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre><h4 id="1-1-2外部引入"><a href="#1-1-2外部引入" class="headerlink" title="1.1.2外部引入"></a>1.1.2外部引入</h4><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>    <span class="token comment" spellcheck="true">&lt;!--不能使用自闭和,必须成对存在--></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>index.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//index.js</span><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"hello world!"</span><span class="token punctuation">)</span></code></pre><h3 id="1-2基本语法入门"><a href="#1-2基本语法入门" class="headerlink" title="1.2基本语法入门"></a>1.2基本语法入门</h3><blockquote><ol><li>变量类型都是var</li><li>javascript严格区分大小写</li></ol></blockquote><h4 id="1-2-1定义变量"><a href="#1-2-1定义变量" class="headerlink" title="1.2.1定义变量"></a>1.2.1定义变量</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>    <span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">18</span><span class="token punctuation">;</span>    <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"yangqi"</span><span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre><h4 id="1-2-2条件控制"><a href="#1-2-2条件控制" class="headerlink" title="1.2.2条件控制"></a>1.2.2条件控制</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>    <span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token number">75</span><span class="token punctuation">;</span>    <span class="token keyword">if</span><span class="token punctuation">(</span>score<span class="token operator">>=</span><span class="token number">85</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"优秀"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>score<span class="token operator">>=</span><span class="token number">75</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"良"</span><span class="token punctuation">)</span>    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>score<span class="token operator">>=</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"及格"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"不及格"</span><span class="token punctuation">)</span>    <span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre><blockquote><p>console.log(score) ：在浏览器的控制台打印变量</p></blockquote><h3 id="1-3数据类型"><a href="#1-3数据类型" class="headerlink" title="1.3数据类型"></a>1.3数据类型</h3>]]></content>
+      
+      
       <categories>
-        <category>后端</category>
+          
+          <category> 前端 </category>
+          
       </categories>
-      <tags>
-        <tag>算法设计与分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MarkDown</title>
-    <url>/posts/8518.html</url>
-    <content><![CDATA[<h1 id="1-什么是MarkDown"><a href="#1-什么是MarkDown" class="headerlink" title="1.什么是MarkDown"></a>1.什么是MarkDown</h1><blockquote>
-<p>Markdown是一种<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=7988600&amp;ss_c=ssc.citiao.link" target="_blank" rel="noopener">轻量级</a>标记语言，创始人为<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=140895630&amp;ss_c=ssc.citiao.link" target="_blank" rel="noopener">约翰·格鲁伯</a>（英语：John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
-</blockquote>
-<h1 id="2-MarkDown应用"><a href="#2-MarkDown应用" class="headerlink" title="2.MarkDown应用"></a>2.MarkDown应用</h1><blockquote>
-<p>Markdown 能被使用来撰写电子书，如：Gitbook。当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。</p>
-</blockquote>
-<h1 id="3-MarkDown-标题"><a href="#3-MarkDown-标题" class="headerlink" title="3.MarkDown 标题"></a>3.MarkDown 标题</h1><p>使用 <strong>#</strong> 号可表示 1-6 级标题，一级标题对应一个 <strong>#</strong> 号，二级标题对应两个 <strong>#</strong> 号，以此类推</p>
-<p># 一级标题</p>
-<p>## 二级标题</p>
-<p>### 三级标题</p>
-<h1 id="4-MarkDown段落"><a href="#4-MarkDown段落" class="headerlink" title="4.MarkDown段落"></a>4.MarkDown段落</h1><p>Markdown 段落没有特殊的格式，直接编写文字就好，<strong>段落的换行是使用两个以上空格加上回车</strong>。</p>
-<h1 id="5-MarkDown列表"><a href="#5-MarkDown列表" class="headerlink" title="5.MarkDown列表"></a>5.MarkDown列表</h1><h2 id="5-1有序列表"><a href="#5-1有序列表" class="headerlink" title="5.1有序列表"></a>5.1有序列表</h2><p>有序列表使用数字并加上 <strong>.</strong> 号来表示，这些标记后面要添加一个空格，然后再填写内容如：</p>
-<ol>
-<li>选项1</li>
-<li>选项2</li>
-<li>选项三</li>
-</ol>
-<h2 id="5-2无序列表"><a href="#5-2无序列表" class="headerlink" title="5.2无序列表"></a>5.2无序列表</h2><p>无序列表使用星号(*)、加号(+)或是减号(-)作为列表标记，这些标记后面要添加一个空格，然后再填写内容如：</p>
-<p>* 选项1</p>
-<p>* 选项2</p>
-<p>* 选项3</p>
-<p>+ 选项1</p>
-<p>+ 选项2</p>
-<p>+ 选项3</p>
-<p>- 选项1</p>
-<p>- 选项2</p>
-<p>- 选项3</p>
-<h2 id="5-3嵌套列表"><a href="#5-3嵌套列表" class="headerlink" title="5.3嵌套列表"></a>5.3嵌套列表</h2><p>列表嵌套只需在子列表中的选项前面添加四个空格即可：</p>
-<ol>
-<li>选项1<ul>
-<li>选项1嵌套的第1个子选项</li>
-<li>选项1嵌套的第2个子选项</li>
-</ul>
-</li>
-<li>选项2<ul>
-<li> 选项2嵌套的第1个子选项</li>
-<li>选项2嵌套的第2个子选项</li>
-</ul>
-</li>
-</ol>
-<h1 id="6-MarkDown区块"><a href="#6-MarkDown区块" class="headerlink" title="6.MarkDown区块"></a>6.MarkDown区块</h1><h2 id="6-1区块引用"><a href="#6-1区块引用" class="headerlink" title="6.1区块引用"></a>6.1区块引用</h2><p>Markdown 区块引用是在段落开头使用 <strong>&gt;</strong> 符号 ，然后后面紧跟一个<strong>空格</strong>符号：</p>
-<blockquote>
-<p>区块</p>
-</blockquote>
-<h2 id="6-2区块嵌套"><a href="#6-2区块嵌套" class="headerlink" title="6.2区块嵌套"></a>6.2区块嵌套</h2><p>另外区块是可以嵌套的，一个 <strong>&gt;</strong> 符号是最外层，两个 <strong>&gt;</strong> 符号是第一层嵌套，以此类推：</p>
-<blockquote>
-<pre><code>&gt; 最外层
-&gt; &gt; 第一层嵌套
-&gt; &gt; &gt; 第二层嵌套</code></pre>
-</blockquote>
-<blockquote>
-<p>第一层</p>
-<blockquote>
-<p>第二层</p>
-<blockquote>
-<p>第三层</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="6-3区块中使用列表"><a href="#6-3区块中使用列表" class="headerlink" title="6.3区块中使用列表"></a>6.3区块中使用列表</h2><p>区块中使用列表实例如下：</p>
-<blockquote>
-<blockquote>
-<ol>
-<li>选项1</li>
-<li>选项2</li>
-</ol>
-</blockquote>
-<blockquote>
-<ul>
-<li>菜单1</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>菜单2</li>
-</ul>
-</blockquote>
-</blockquote>
-<h2 id="6-4列表中使用区块"><a href="#6-4列表中使用区块" class="headerlink" title="6.4列表中使用区块"></a>6.4列表中使用区块</h2><p>如果要在列表项目内放进区块，那么就需要在 <strong>&gt;</strong> 前添加四个空格的缩进。</p>
-<ol>
-<li><p>选项1</p>
-<blockquote>
-<p>区块1</p>
-</blockquote>
-<blockquote>
-<p>区块2</p>
-</blockquote>
-</li>
-<li><p>选项2</p>
-<blockquote>
-</blockquote>
-</li>
-</ol>
-<h1 id="7-MarkDown代码"><a href="#7-MarkDown代码" class="headerlink" title="7.MarkDown代码"></a>7.MarkDown代码</h1><p>如果是段落上的<strong>一个函数</strong>或<strong>片段</strong>的代码可以用反引号把它包起来（**`**），例如：</p>
-<p><code>System.out.println()</code></p>
-<p>代码区块用 <strong>```</strong> 包裹一段代码，并指定一种语言（也可以不指定）：</p>
-<pre class=" language-Java"><code class="language-Java">public class Person{
-    public static void main(String[] args){
-        System.out.pringln("Hello World!")
-    }
-}</code></pre>
-<h1 id="8-MarkDown链接"><a href="#8-MarkDown链接" class="headerlink" title="8.MarkDown链接"></a>8.MarkDown链接</h1><h2 id="8-1普通链接"><a href="#8-1普通链接" class="headerlink" title="8.1普通链接"></a>8.1普通链接</h2><p>[链接名称](链接地址) 或 &lt;链接地址&gt;</p>
-<p><a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a></p>
-<p><a href="https://www.baidu.com/" target="_blank" rel="noopener">https://www.baidu.com</a></p>
-<h2 id="8-2高级链接"><a href="#8-2高级链接" class="headerlink" title="8.2高级链接"></a>8.2高级链接</h2><p>我们可以通过变量来设置一个链接，变量赋值在文档末尾进行：</p>
-<p><a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a></p>
-<pre><code>这个链接用 1 作为网址变量 [Google][1]
-这个链接用 runoob 作为网址变量 [Runoob][runoob]
-然后在文档的结尾为变量赋值（网址）
-
-  [1]: http://www.google.com/
-  [runoob]: http://www.runoob.com/</code></pre>
-<h1 id="9-MarkDown图片"><a href="#9-MarkDown图片" class="headerlink" title="9.MarkDown图片"></a>9.MarkDown图片</h1><p>方法1:</p>
-<pre><code>![RUNOOB图标](http://static.runoob.com/images/runoob-logo.png)
-
-![RUNOOB图标](http://static.runoob.com/images/runoob-logo.png "RUNOOB")</code></pre>
-<p>方法2：</p>
-<pre><code>这个链接用 1 作为网址变量 [RUNOOB][1].
-然后在文档的结尾为变量赋值（网址）
-
-[1]: http://static.runoob.com/images/runoob-logo.png</code></pre>
-<p><strong>设置图片的大小</strong></p>
-<img src="/posts/Icon\QQ图片20201122185340.jpg" width="300" height="150">
-
-<h1 id="9-MarkDown表格"><a href="#9-MarkDown表格" class="headerlink" title="9.MarkDown表格"></a>9.MarkDown表格</h1><p> 制作表格使用 | 来分隔不同的单元格，使用 <strong>-</strong> 来分隔表头和其他行。</p>
-<p>|学号|姓名|年龄| </p>
-<p>|—:|—|—|</p>
-<table>
-<thead>
-<tr>
-<th align="center">学号</th>
-<th align="center">姓名</th>
-<th align="center">年龄</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">10001</td>
-<td align="center">张三</td>
-<td align="center">18</td>
-</tr>
-</tbody></table>
-<h1 id="10-MarDown常用语法"><a href="#10-MarDown常用语法" class="headerlink" title="10.MarDown常用语法"></a>10.MarDown常用语法</h1><table>
-<thead>
-<tr>
-<th align="center">作用</th>
-<th align="center">MarkDown</th>
-<th align="center">效果</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">加粗</td>
-<td align="center">**text** 或者 __text__</td>
-<td align="center"><strong>text</strong></td>
-<td>Ctrl+B</td>
-</tr>
-<tr>
-<td align="center">斜体</td>
-<td align="center">*text*或者_text_</td>
-<td align="center"><em>text</em></td>
-<td>Ctrl+I</td>
-</tr>
-<tr>
-<td align="center">加粗斜体</td>
-<td align="center">***text***或者___text___</td>
-<td align="center"><strong><em>text</em></strong></td>
-<td></td>
-</tr>
-<tr>
-<td align="center">分割线</td>
-<td align="center">可以用***或者---或者___中间可以有空格</td>
-<td align="center"><img src="/posts/20201225192024.png" alt="分割线"></td>
-<td></td>
-</tr>
-<tr>
-<td align="center">删除线</td>
-<td align="center">~~text~~</td>
-<td align="center"><del>text</del></td>
-<td>Alt+Shift+5</td>
-</tr>
-<tr>
-<td align="center">下划线</td>
-<td align="center">&lt;u&gt;text&lt;/u&gt;</td>
-<td align="center"><u>text</u></td>
-<td>Ctrl+U</td>
-</tr>
-<tr>
-<td align="center">高亮</td>
-<td align="center">==text==</td>
-<td align="center">==text==</td>
-<td></td>
-</tr>
-<tr>
-<td align="center">脚注</td>
-<td align="center">[^text]</td>
-<td align="center"><img src="/posts/20201225192152.png" alt="本地图片"></td>
-<td></td>
-</tr>
-<tr>
-<td align="center">下标</td>
-<td align="center">~text~</td>
-<td align="center">H<del>2</del>O</td>
-<td></td>
-</tr>
-<tr>
-<td align="center">上标</td>
-<td align="center">^text^</td>
-<td align="center">y=x^2^</td>
-<td></td>
-</tr>
-<tr>
-<td align="center">选中一行</td>
-<td align="center"></td>
-<td align="center"></td>
-<td>Ctrl+L</td>
-</tr>
-<tr>
-<td align="center">选中一个单词</td>
-<td align="center"></td>
-<td align="center"></td>
-<td>Ctrl+D</td>
-</tr>
-<tr>
-<td align="center">选中相同格式的文字</td>
-<td align="center"></td>
-<td align="center"></td>
-<td>Ctrl+E</td>
-</tr>
-<tr>
-<td align="center">返回顶部</td>
-<td align="center"></td>
-<td align="center"></td>
-<td>Ctrl+home</td>
-</tr>
-<tr>
-<td align="center">返回底部</td>
-<td align="center"></td>
-<td align="center"></td>
-<td>Ctrl+end</td>
-</tr>
-<tr>
-<td align="center">创建表格</td>
-<td align="center"></td>
-<td align="center"></td>
-<td>Ctrl+T</td>
-</tr>
-<tr>
-<td align="center">创建超链接</td>
-<td align="center"></td>
-<td align="center"></td>
-<td>Ctrl+K</td>
-</tr>
-<tr>
-<td align="center">搜索并替换</td>
-<td align="center"></td>
-<td align="center"></td>
-<td>Ctrl+H</td>
-</tr>
-<tr>
-<td align="center">表情</td>
-<td align="center"></td>
-<td align="center">:happy:<span class="github-emoji"><span>😢</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
-<td>:happy 或 :cry 或:smile</td>
-</tr>
-</tbody></table>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MarkDown</title>
+      <link href="posts/8518.html"/>
+      <url>posts/8518.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-什么是MarkDown"><a href="#1-什么是MarkDown" class="headerlink" title="1.什么是MarkDown"></a>1.什么是MarkDown</h1><blockquote><p>Markdown是一种<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=7988600&amp;ss_c=ssc.citiao.link" target="_blank" rel="noopener">轻量级</a>标记语言，创始人为<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=140895630&amp;ss_c=ssc.citiao.link" target="_blank" rel="noopener">约翰·格鲁伯</a>（英语：John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。</p></blockquote><h1 id="2-MarkDown应用"><a href="#2-MarkDown应用" class="headerlink" title="2.MarkDown应用"></a>2.MarkDown应用</h1><blockquote><p>Markdown 能被使用来撰写电子书，如：Gitbook。当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。</p></blockquote><h1 id="3-MarkDown-标题"><a href="#3-MarkDown-标题" class="headerlink" title="3.MarkDown 标题"></a>3.MarkDown 标题</h1><p>使用 <strong>#</strong> 号可表示 1-6 级标题，一级标题对应一个 <strong>#</strong> 号，二级标题对应两个 <strong>#</strong> 号，以此类推</p><p># 一级标题</p><p>## 二级标题</p><p>### 三级标题</p><h1 id="4-MarkDown段落"><a href="#4-MarkDown段落" class="headerlink" title="4.MarkDown段落"></a>4.MarkDown段落</h1><p>Markdown 段落没有特殊的格式，直接编写文字就好，<strong>段落的换行是使用两个以上空格加上回车</strong>。</p><h1 id="5-MarkDown列表"><a href="#5-MarkDown列表" class="headerlink" title="5.MarkDown列表"></a>5.MarkDown列表</h1><h2 id="5-1有序列表"><a href="#5-1有序列表" class="headerlink" title="5.1有序列表"></a>5.1有序列表</h2><p>有序列表使用数字并加上 <strong>.</strong> 号来表示，这些标记后面要添加一个空格，然后再填写内容如：</p><ol><li>选项1</li><li>选项2</li><li>选项三</li></ol><h2 id="5-2无序列表"><a href="#5-2无序列表" class="headerlink" title="5.2无序列表"></a>5.2无序列表</h2><p>无序列表使用星号(*)、加号(+)或是减号(-)作为列表标记，这些标记后面要添加一个空格，然后再填写内容如：</p><p>* 选项1</p><p>* 选项2</p><p>* 选项3</p><p>+ 选项1</p><p>+ 选项2</p><p>+ 选项3</p><p>- 选项1</p><p>- 选项2</p><p>- 选项3</p><h2 id="5-3嵌套列表"><a href="#5-3嵌套列表" class="headerlink" title="5.3嵌套列表"></a>5.3嵌套列表</h2><p>列表嵌套只需在子列表中的选项前面添加四个空格即可：</p><ol><li>选项1<ul><li>选项1嵌套的第1个子选项</li><li>选项1嵌套的第2个子选项</li></ul></li><li>选项2<ul><li> 选项2嵌套的第1个子选项</li><li>选项2嵌套的第2个子选项</li></ul></li></ol><h1 id="6-MarkDown区块"><a href="#6-MarkDown区块" class="headerlink" title="6.MarkDown区块"></a>6.MarkDown区块</h1><h2 id="6-1区块引用"><a href="#6-1区块引用" class="headerlink" title="6.1区块引用"></a>6.1区块引用</h2><p>Markdown 区块引用是在段落开头使用 <strong>&gt;</strong> 符号 ，然后后面紧跟一个<strong>空格</strong>符号：</p><blockquote><p>区块</p></blockquote><h2 id="6-2区块嵌套"><a href="#6-2区块嵌套" class="headerlink" title="6.2区块嵌套"></a>6.2区块嵌套</h2><p>另外区块是可以嵌套的，一个 <strong>&gt;</strong> 符号是最外层，两个 <strong>&gt;</strong> 符号是第一层嵌套，以此类推：</p><blockquote><pre><code>&gt; 最外层&gt; &gt; 第一层嵌套&gt; &gt; &gt; 第二层嵌套</code></pre></blockquote><blockquote><p>第一层</p><blockquote><p>第二层</p><blockquote><p>第三层</p></blockquote></blockquote></blockquote><h2 id="6-3区块中使用列表"><a href="#6-3区块中使用列表" class="headerlink" title="6.3区块中使用列表"></a>6.3区块中使用列表</h2><p>区块中使用列表实例如下：</p><blockquote><blockquote><ol><li>选项1</li><li>选项2</li></ol></blockquote><blockquote><ul><li>菜单1</li></ul></blockquote><blockquote><ul><li>菜单2</li></ul></blockquote></blockquote><h2 id="6-4列表中使用区块"><a href="#6-4列表中使用区块" class="headerlink" title="6.4列表中使用区块"></a>6.4列表中使用区块</h2><p>如果要在列表项目内放进区块，那么就需要在 <strong>&gt;</strong> 前添加四个空格的缩进。</p><ol><li><p>选项1</p><blockquote><p>区块1</p></blockquote><blockquote><p>区块2</p></blockquote></li><li><p>选项2</p><blockquote></blockquote></li></ol><h1 id="7-MarkDown代码"><a href="#7-MarkDown代码" class="headerlink" title="7.MarkDown代码"></a>7.MarkDown代码</h1><p>如果是段落上的<strong>一个函数</strong>或<strong>片段</strong>的代码可以用反引号把它包起来（**`**），例如：</p><p><code>System.out.println()</code></p><p>代码区块用 <strong>```</strong> 包裹一段代码，并指定一种语言（也可以不指定）：</p><pre class=" language-Java"><code class="language-Java">public class Person{    public static void main(String[] args){        System.out.pringln("Hello World!")    }}</code></pre><h1 id="8-MarkDown链接"><a href="#8-MarkDown链接" class="headerlink" title="8.MarkDown链接"></a>8.MarkDown链接</h1><h2 id="8-1普通链接"><a href="#8-1普通链接" class="headerlink" title="8.1普通链接"></a>8.1普通链接</h2><p>[链接名称](链接地址) 或 &lt;链接地址&gt;</p><p><a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a></p><p><a href="https://www.baidu.com/" target="_blank" rel="noopener">https://www.baidu.com</a></p><h2 id="8-2高级链接"><a href="#8-2高级链接" class="headerlink" title="8.2高级链接"></a>8.2高级链接</h2><p>我们可以通过变量来设置一个链接，变量赋值在文档末尾进行：</p><p><a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a></p><pre><code>这个链接用 1 作为网址变量 [Google][1]这个链接用 runoob 作为网址变量 [Runoob][runoob]然后在文档的结尾为变量赋值（网址）  [1]: http://www.google.com/  [runoob]: http://www.runoob.com/</code></pre><h1 id="9-MarkDown图片"><a href="#9-MarkDown图片" class="headerlink" title="9.MarkDown图片"></a>9.MarkDown图片</h1><p>方法1:</p><pre><code>![RUNOOB图标](http://static.runoob.com/images/runoob-logo.png)![RUNOOB图标](http://static.runoob.com/images/runoob-logo.png "RUNOOB")</code></pre><p>方法2：</p><pre><code>这个链接用 1 作为网址变量 [RUNOOB][1].然后在文档的结尾为变量赋值（网址）[1]: http://static.runoob.com/images/runoob-logo.png</code></pre><p><strong>设置图片的大小</strong></p><img src="/posts/Icon\QQ图片20201122185340.jpg" width="300" height="150"><h1 id="9-MarkDown表格"><a href="#9-MarkDown表格" class="headerlink" title="9.MarkDown表格"></a>9.MarkDown表格</h1><p> 制作表格使用 | 来分隔不同的单元格，使用 <strong>-</strong> 来分隔表头和其他行。</p><p>|学号|姓名|年龄| </p><p>|—:|—|—|</p><table><thead><tr><th align="center">学号</th><th align="center">姓名</th><th align="center">年龄</th></tr></thead><tbody><tr><td align="center">10001</td><td align="center">张三</td><td align="center">18</td></tr></tbody></table><h1 id="10-MarDown常用语法"><a href="#10-MarDown常用语法" class="headerlink" title="10.MarDown常用语法"></a>10.MarDown常用语法</h1><table><thead><tr><th align="center">作用</th><th align="center">MarkDown</th><th align="center">效果</th><th>快捷键</th></tr></thead><tbody><tr><td align="center">加粗</td><td align="center">**text** 或者 __text__</td><td align="center"><strong>text</strong></td><td>Ctrl+B</td></tr><tr><td align="center">斜体</td><td align="center">*text*或者_text_</td><td align="center"><em>text</em></td><td>Ctrl+I</td></tr><tr><td align="center">加粗斜体</td><td align="center">***text***或者___text___</td><td align="center"><strong><em>text</em></strong></td><td></td></tr><tr><td align="center">分割线</td><td align="center">可以用***或者---或者___中间可以有空格</td><td align="center"><img src="/posts/20201225192024.png" alt="分割线"></td><td></td></tr><tr><td align="center">删除线</td><td align="center">~~text~~</td><td align="center"><del>text</del></td><td>Alt+Shift+5</td></tr><tr><td align="center">下划线</td><td align="center">&lt;u&gt;text&lt;/u&gt;</td><td align="center"><u>text</u></td><td>Ctrl+U</td></tr><tr><td align="center">高亮</td><td align="center">==text==</td><td align="center">==text==</td><td></td></tr><tr><td align="center">脚注</td><td align="center">[^text]</td><td align="center"><img src="/posts/20201225192152.png" alt="本地图片"></td><td></td></tr><tr><td align="center">下标</td><td align="center">~text~</td><td align="center">H<del>2</del>O</td><td></td></tr><tr><td align="center">上标</td><td align="center">^text^</td><td align="center">y=x^2^</td><td></td></tr><tr><td align="center">选中一行</td><td align="center"></td><td align="center"></td><td>Ctrl+L</td></tr><tr><td align="center">选中一个单词</td><td align="center"></td><td align="center"></td><td>Ctrl+D</td></tr><tr><td align="center">选中相同格式的文字</td><td align="center"></td><td align="center"></td><td>Ctrl+E</td></tr><tr><td align="center">返回顶部</td><td align="center"></td><td align="center"></td><td>Ctrl+home</td></tr><tr><td align="center">返回底部</td><td align="center"></td><td align="center"></td><td>Ctrl+end</td></tr><tr><td align="center">创建表格</td><td align="center"></td><td align="center"></td><td>Ctrl+T</td></tr><tr><td align="center">创建超链接</td><td align="center"></td><td align="center"></td><td>Ctrl+K</td></tr><tr><td align="center">搜索并替换</td><td align="center"></td><td align="center"></td><td>Ctrl+H</td></tr><tr><td align="center">表情</td><td align="center"></td><td align="center">:happy:<span class="github-emoji"><span>😢</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td><td>:happy 或 :cry 或:smile</td></tr></tbody></table>]]></content>
+      
+      
       <categories>
-        <category>博客</category>
+          
+          <category> 博客 </category>
+          
       </categories>
-      <tags>
-        <tag>MarkDown</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> MarkDown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
