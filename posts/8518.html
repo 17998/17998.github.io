@@ -374,7 +374,17 @@
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-01-24
+                </div>
+                
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.1k
+                </div>
                 
 
                 
@@ -386,6 +396,11 @@
 
         
 
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
         
 
         <div class="card-content article-card-content">
@@ -512,7 +527,7 @@
 
 [1]: http://static.runoob.com/images/runoob-logo.png</code></pre>
 <p><strong>设置图片的大小</strong></p>
-<img src="/posts/Icon\QQ图片20201122185340.jpg" width="300" height="150">
+<img src="D:\Icon\QQ图片20201122185340.jpg" width="300" height="150">
 
 <h1 id="9-MarkDown表格"><a href="#9-MarkDown表格" class="headerlink" title="9.MarkDown表格"></a>9.MarkDown表格</h1><p> 制作表格使用 | 来分隔不同的单元格，使用 <strong>-</strong> 来分隔表头和其他行。</p>
 <p>|学号|姓名|年龄| </p>
@@ -561,7 +576,7 @@
 <tr>
 <td align="center">分割线</td>
 <td align="center">可以用***或者---或者___中间可以有空格</td>
-<td align="center"><img src="/posts/20201225192024.png" alt="分割线"></td>
+<td align="center"><img src="MarkDown%E5%AD%A6%E4%B9%A0.assets/20201225192024.png" alt="分割线"></td>
 <td></td>
 </tr>
 <tr>
@@ -585,7 +600,7 @@
 <tr>
 <td align="center">脚注</td>
 <td align="center">[^text]</td>
-<td align="center"><img src="/posts/20201225192152.png" alt="本地图片"></td>
+<td align="center"><img src="MarkDown%E5%AD%A6%E4%B9%A0.assets/20201225192152.png" alt="本地图片"></td>
 <td></td>
 </tr>
 <tr>
@@ -1378,17 +1393,20 @@
 
     <footer class="page-footer bg-color">
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right" style="position: relative; top: 10px">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2021</span>
+                <span id="year">2020-2021</span>
             
-            <span id="year">2019</span>
+            <span id="year">2020</span>
             <a href="/about" target="_blank">杨奇</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">4.5k</span>&nbsp;字
             
             
             
@@ -1408,6 +1426,50 @@
     
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "12";
+                    var startDate = "23";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             
@@ -1587,8 +1649,6 @@ $(function () {
     })();
 </script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
     
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
