@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="云末" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="云末" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
@@ -383,7 +383,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    2.7k
                 </div>
                 
 
@@ -422,26 +422,9 @@
 </ul>
 </li>
 </ol>
-<h3 id="1-1在限制条件下选取小球"><a href="#1-1在限制条件下选取小球" class="headerlink" title="1.1在限制条件下选取小球"></a>1.1在限制条件下选取小球</h3><blockquote>
-<p>双色球问题：</p>
-<p>在一个袋子里有无数个红球(R)和蓝球(B),玩家需要选取n个小球，但是不能连续选取两个红球;而且需要考虑选取顺序:选取红蓝(RB)跟蓝红( BR)是两种不同的情况。问:有多少种不同的选取方法?这个问题可以利用递归解决，采用上述的四个步骤:</p>
-<ol>
-<li><p>确定问题的参数</p>
-<p>在这个问题中参数是小球的数目n</p>
-</li>
-<li><p>使用参数表示解</p>
-<p>假设f(n)为解：表示在不能连续选取两个红球的情况下，选取n个小球的方案数</p>
-</li>
-<li><p>在解简单明了的情况下确定简单情景</p>
-<p>如果只选取1个小球的话，只有两种可能: R或者B。因此，f(n)为2。如果选取<br>2个小球，则有三种可能: RB、BR和B。因此，f(n)为3。</p>
-</li>
-<li><p>确定复杂情景与简单情景的关系</p>
-<p>如果选取n个小球(n&gt; 2)，则第一个小球可以是R，也可以是B。因此，第一个<br>小球有两种可能。<br>(1)如果第一个小球是B，那么剩余的n-1个小球必须遵守同样的规则:不能连续<br>选取两个红球。共有f(n-1)种可能。<br>(2)如果第一个小球是R，那么第二个小球必须是B。第二个小球是蓝球使得第三，个小球既可以是R也可以是B，没有任何限制。因此，剩余的n-2个小球必须遵守同样的规则，共有f(n-2)中可能</p>
-</li>
-</ol>
-<p>由此分析：f(n)便是f(n-1)和f(n-2)的和</p>
-<p> <img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128123822.png" alt="image-20210128123822504"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128132245.png" alt="image-20210128132245351"></p>
+<h3 id="1-1在限制条件下选取小球"><a href="#1-1在限制条件下选取小球" class="headerlink" title="1.1在限制条件下选取小球"></a>1.1在限制条件下选取小球</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131182348.png" alt="image-20210131182348380"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131182553.png" alt="image-20210131182552964"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131182522.png" alt="image-20210131182522385"></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> 双色球问题 <span class="token punctuation">{</span>
    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -459,78 +442,77 @@
        <span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">f</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-</blockquote>
-<blockquote>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128132919.png" alt="image-20210128132919687"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128132951.png" alt="image-20210128132950957"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128133028.png" alt="image-20210128133028651"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131182653.png" alt="image-20210131182653132"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131182719.png" alt="image-20210131182719118"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131182745.png" alt="image-20210131182745650"></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> 三色球问题 <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-    <span class="token comment" spellcheck="true">/*
-    第一个球是蓝球,则第二个球没有要求，则剩下的n-1个球有f(n-1)种
-    第一个球是绿球,则第二个球没有要求，则剩下的n-1个球有f(n-1)种
-    第一个球是红球
-        第二个球是蓝球,第三个球没有要求,则剩下的n-2个球有f(n-2)种
-        第二个球是绿球,第三个球没有要求,则剩下的n-2个球有f(n-2)种
-     */</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">3</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">8</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">f</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">f</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">f</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/*
+第一个球是蓝球,则第二个球没有要求，则剩下的n-1个球有f(n-1)种
+ 第一个球是绿球,则第二个球没有要求，则剩下的n-1个球有f(n-1)种
+ 第一个球是红球
+     第二个球是蓝球,第三个球没有要求,则剩下的n-2个球有f(n-2)种
+  第二个球是绿球,第三个球没有要求,则剩下的n-2个球有f(n-2)种
+  */</span>
+ <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
+         <span class="token keyword">return</span> <span class="token number">3</span><span class="token punctuation">;</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span>
+         <span class="token keyword">return</span> <span class="token number">8</span><span class="token punctuation">;</span>
+     <span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">f</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">f</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">f</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-</blockquote>
-<blockquote>
-<p>三色球附加问题</p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131182915.png" alt="image-20210131182914987"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131182932.png" alt="image-20210131182932266"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183001.png" alt="image-20210131183001365"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183018.png" alt="image-20210131183018662"></p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//在一个袋子里有无数个红球(R)和蓝球(B),绿球(G)玩家需要选取n个小球，但是不能连续选取两个红球或两个绿球;</span>
-<span class="token comment" spellcheck="true">// 而且需要考虑选取顺序:选取红蓝(RB)跟蓝红( BR)是两种不同的情况。问:有多少种不同的选取方法</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> 三色球附加限制条件 <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 而且需要考虑选取顺序:选取红蓝(RB)跟蓝红( BR)是两种不同的情况。问:有多少种不同的选取方法</span>
 
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//表示第一个球是绿球,选取n个小球的解</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token function">b</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">r</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> 三色球附加限制条件 <span class="token punctuation">{</span>
+ <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
 
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">b</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//表示第一个球是蓝球,选取n个小球的解</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">3</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token function">r</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">b</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">g</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//=>f(n-1)</span>
-    <span class="token punctuation">}</span>
+ <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//表示第一个球是绿球,选取n个小球的解</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
+         <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span>
+         <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>
+     <span class="token keyword">return</span> <span class="token function">b</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">r</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
 
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">r</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//表示第一个球是红球,选取n个小球的解</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token function">g</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">b</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+ <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">b</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//表示第一个球是蓝球,选取n个小球的解</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
+         <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span>
+         <span class="token keyword">return</span> <span class="token number">3</span><span class="token punctuation">;</span>
+     <span class="token keyword">return</span> <span class="token function">r</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">b</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">g</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//=>f(n-1)</span>
+ <span class="token punctuation">}</span>
 
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//表示选取n个球的解</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">3</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">7</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token function">b</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">r</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">g</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+ <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">r</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//表示第一个球是红球,选取n个小球的解</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
+         <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span>
+         <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>
+     <span class="token keyword">return</span> <span class="token function">g</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">b</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//表示选取n个球的解</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
+         <span class="token keyword">return</span> <span class="token number">3</span><span class="token punctuation">;</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span>
+         <span class="token keyword">return</span> <span class="token number">7</span><span class="token punctuation">;</span>
+     <span class="token keyword">return</span> <span class="token function">b</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">r</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">g</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-</blockquote>
-<h3 id="1-2单行道"><a href="#1-2单行道" class="headerlink" title="1.2单行道"></a>1.2单行道</h3><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128143151.png" alt="image-20210128143151306"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128143220.png" alt="image-20210128143219996"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128143305.png" alt="image-20210128143305765"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128143344.png" alt="image-20210128143344838"></p>
+<h3 id="1-2单行道"><a href="#1-2单行道" class="headerlink" title="1.2单行道"></a>1.2单行道</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183105.png" alt="image-20210131183105090"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183134.png" alt="image-20210131183133944"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183152.png" alt="image-20210131183152848"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183210.png" alt="image-20210131183210410"></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> 单行道 <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -559,13 +541,13 @@
         <span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">f</span><span class="token punctuation">(</span>x<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h3 id="1-3汉罗塔"><a href="#1-3汉罗塔" class="headerlink" title="1.3汉罗塔"></a>1.3汉罗塔</h3><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128150311.png" alt="image-20210128150311713"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128150337.png" alt="image-20210128150337497"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128150400.png" alt="image-20210128150359962"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128150442.png" alt="image-20210128150442769"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128150501.png" alt="image-20210128150501570"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128150526.png" alt="image-20210128150526572"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210128150602.png" alt="image-20210128150602105"></p>
+<h3 id="1-3汉罗塔"><a href="#1-3汉罗塔" class="headerlink" title="1.3汉罗塔"></a>1.3汉罗塔</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183236.png" alt="image-20210131183236385"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183247.png" alt="image-20210131183247673"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183314.png" alt="image-20210131183314503"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183344.png" alt="image-20210131183344101"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183401.png" alt="image-20210131183401272"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183422.png" alt="image-20210131183422447"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183445.png" alt="image-20210131183445351"></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> 汉诺塔 <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -601,10 +583,11 @@
         <span class="token function">move</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>add<span class="token punctuation">,</span>dest<span class="token punctuation">,</span>src<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h3 id="1-4计算整数分拆"><a href="#1-4计算整数分拆" class="headerlink" title="1.4计算整数分拆"></a>1.4计算整数分拆</h3><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129115334.png" alt="image-20210129115327472"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129115412.png" alt="image-20210129115412739"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129115447.png" alt="image-20210129115447321"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129115516.png" alt="image-20210129115515973"></p>
+<h3 id="1-4计算整数分拆"><a href="#1-4计算整数分拆" class="headerlink" title="1.4计算整数分拆"></a>1.4计算整数分拆</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183505.png" alt="image-20210131183505884"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183528.png" alt="image-20210131183527933"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183548.png" alt="image-20210131183547955"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183709.png" alt="image-20210131183709691"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183625.png" alt="image-20210131183605480"></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> 整数分拆 <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -646,10 +629,10 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h4 id="1-4-1计算“1”的个数"><a href="#1-4-1计算“1”的个数" class="headerlink" title="1.4.1计算“1”的个数"></a>1.4.1计算“1”的个数</h4><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129121200.png" alt="image-20210129121200831"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129121235.png" alt="image-20210129121235871"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129121313.png" alt="image-20210129121313816"></p>
-<h4 id="1-4-2仅使用奇数进行拆分"><a href="#1-4-2仅使用奇数进行拆分" class="headerlink" title="1.4.2仅使用奇数进行拆分"></a>1.4.2仅使用奇数进行拆分</h4><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129121907.png" alt="image-20210129121907489"></p>
+<h4 id="1-4-1计算“1”的个数"><a href="#1-4-1计算“1”的个数" class="headerlink" title="1.4.1计算“1”的个数"></a>1.4.1计算“1”的个数</h4><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183745.png" alt="image-20210131183744909"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183814.png" alt="image-20210131183814650"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183843.png" alt="image-20210131183843048"></p>
+<h4 id="1-4-2仅使用奇数进行拆分"><a href="#1-4-2仅使用奇数进行拆分" class="headerlink" title="1.4.2仅使用奇数进行拆分"></a>1.4.2仅使用奇数进行拆分</h4><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183909.png" alt="image-20210131183908948"></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> 整数拆分<span class="token number">2</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
@@ -701,8 +684,9 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h4 id="1-4-3使用递增数进行拆分"><a href="#1-4-3使用递增数进行拆分" class="headerlink" title="1.4.3使用递增数进行拆分"></a>1.4.3使用递增数进行拆分</h4><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129122928.png" alt="image-20210129122928293"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129123001.png" alt="image-20210129123001428"></p>
+<h4 id="1-4-3使用递增数进行拆分"><a href="#1-4-3使用递增数进行拆分" class="headerlink" title="1.4.3使用递增数进行拆分"></a>1.4.3使用递增数进行拆分</h4><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131183954.png" alt="image-20210131183954672"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184032.png" alt="image-20210131184032759"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184050.png" alt="image-20210131184050163"></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> 整数拆分<span class="token number">3</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
@@ -731,10 +715,11 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h4 id="1-4-4交替使用奇偶数进行拆分"><a href="#1-4-4交替使用奇偶数进行拆分" class="headerlink" title="1.4.4交替使用奇偶数进行拆分"></a>1.4.4交替使用奇偶数进行拆分</h4><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129123125.png" alt="image-20210129123125484"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129123548.png" alt="image-20210129123548320"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129124559.png" alt="image-20210129124559833"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210129125238.png" alt="image-20210129125033543"></p>
+<h4 id="1-4-4交替使用奇偶数进行拆分"><a href="#1-4-4交替使用奇偶数进行拆分" class="headerlink" title="1.4.4交替使用奇偶数进行拆分"></a>1.4.4交替使用奇偶数进行拆分</h4><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184138.png" alt="image-20210131184138791"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184201.png" alt="image-20210131184201251"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184242.png" alt="image-20210131184242306"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184318.png" alt="image-20210131184318097"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184336.png" alt="image-20210131184336141"></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> 整数拆分<span class="token number">4</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
@@ -774,8 +759,8 @@
 <h3 id="1-5二分搜索"><a href="#1-5二分搜索" class="headerlink" title="1.5二分搜索"></a>1.5二分搜索</h3><blockquote>
 <p>二分搜索是在有序数组中搜索某一个目标值的有效方法</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210130130027.png" alt="image-20210130130020150"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210130130235.png" alt="image-20210130130235236"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184444.png" alt="image-20210131184444269"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184550.png" alt="image-20210131184508858"></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> 二分搜索 <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token number">24</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">,</span><span class="token number">35</span><span class="token punctuation">,</span><span class="token number">38</span><span class="token punctuation">,</span><span class="token number">44</span><span class="token punctuation">,</span><span class="token number">56</span><span class="token punctuation">,</span><span class="token number">89</span><span class="token punctuation">,</span><span class="token number">92</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -827,11 +812,12 @@
         <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h3 id="1-6快速排序"><a href="#1-6快速排序" class="headerlink" title="1.6快速排序"></a>1.6快速排序</h3><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210130133539.png" alt="image-20210130133539168"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210130133929.png" alt="image-20210130133929194"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210130134249.png" alt="image-20210130134249357"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210130134315.png" alt="image-20210130134315863"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210130134452.png" alt="image-20210130134452554"></p>
+<h3 id="1-6快速排序"><a href="#1-6快速排序" class="headerlink" title="1.6快速排序"></a>1.6快速排序</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184550.png" alt="image-20210131184550198"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184616.png" alt="image-20210131184616879"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184634.png" alt="image-20210131184634725"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184704.png" alt="image-20210131184704118"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184731.png" alt="image-20210131184731377"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184748.png" alt="image-20210131184748705"></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> 快速排序 <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">51</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -953,15 +939,16 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h3 id="1-8栈排序"><a href="#1-8栈排序" class="headerlink" title="1.8栈排序"></a>1.8栈排序</h3><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210131175614.png" alt="image-20210131175607012"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210131175623.png" alt="image-20210131175622992"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210131175643.png" alt="image-20210131175643464"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210131175658.png" alt="image-20210131175658001"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210131175717.png" alt="image-20210131175717443"></p>
-<h3 id="1-9可栈排序"><a href="#1-9可栈排序" class="headerlink" title="1.9可栈排序"></a>1.9可栈排序</h3><p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210130152636.png" alt="image-20210130152636491"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210130152903.png" alt="image-20210130152903276"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210130153025.png" alt="image-20210130153025029"></p>
-<p><img src="https://raw.githubusercontent.com/17998/BlogImages/master/img/20210130153257.png" alt="image-20210130153257372"></p>
+<h3 id="1-8栈排序"><a href="#1-8栈排序" class="headerlink" title="1.8栈排序"></a>1.8栈排序</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184819.png" alt="image-20210131184819281"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184836.png" alt="image-20210131184836722"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184850.png" alt="image-20210131184850264"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184903.png" alt="image-20210131184902935"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184915.png" alt="image-20210131184915332"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184944.png" alt="image-20210131184927746"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131184944.png" alt="image-20210131184944751"></p>
+<h3 id="1-9可栈排序"><a href="#1-9可栈排序" class="headerlink" title="1.9可栈排序"></a>1.9可栈排序</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131185004.png" alt="image-20210131185004707"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131185041.png" alt="image-20210131185041517"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210131185114.png" alt="image-20210131185114300"></p>
 
                 
             </div>
@@ -1699,7 +1686,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.3k</span>&nbsp;字
+                class="white-color">2.9k</span>&nbsp;字
             
             
             
