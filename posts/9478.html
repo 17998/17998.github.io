@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="aboutme, 云末">
+    <meta name="keywords" content="Maven, 云末">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>aboutme | 云末</title>
+    <title>Maven | 云末</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -223,12 +223,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">aboutme</h1>
+                    <h1 class="description center-align post-title">Maven</h1>
                 </div>
             </div>
         </div>
@@ -342,12 +342,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Maven/">
+                                <span class="chip bg-color">Maven</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" class="post-category">
+                                项目管理工具
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -356,21 +369,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-24
+                    2021-02-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-24
+                    2021-02-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    2.1k
                 </div>
                 
 
@@ -392,7 +405,219 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="1-什么是Maven"><a href="#1-什么是Maven" class="headerlink" title="1.什么是Maven"></a>1.什么是Maven</h2><p>Maven：</p>
+<ol>
+<li>全新的<code>自动化</code>构建工具</li>
+<li>一款开源的<code>项目管理工具</code></li>
+<li>Maven仓库是基于``简单文件系统`存储的，集中化管理Java API资源（构件）的一个服务</li>
+<li>Maven工具是基于<code>POM</code>(Project Object Model,项目对象模型)模式实现的</li>
+<li><code>在Maven中每一个项目都相当于是一个对象</code></li>
+<li><code>仓库中的任何一个构件都有其唯一的坐标，根据这个坐标可以定义其在仓库中的唯一存储路径</code></li>
+</ol>
+<p>目前技术在开发中存在的问题：</p>
+<ol>
+<li>一个项目就是一个工程</li>
+<li>项目中需要的jar包必须手动<code>复制</code>，<code>粘贴</code>到WEB-INF/lib目录下</li>
+<li>jar包需要别人替我们准备好，或去官网下载</li>
+<li>一个jar包依赖的其他jar包需要自己手动添加到项目中</li>
+</ol>
+<h2 id="2-Maven仓库"><a href="#2-Maven仓库" class="headerlink" title="2.Maven仓库"></a>2.Maven仓库</h2><h3 id="2-1远程仓库"><a href="#2-1远程仓库" class="headerlink" title="2.1远程仓库"></a>2.1远程仓库</h3><p><code>不在本机中的一切仓库都是远程仓库</code></p>
+<p><code>默认的远程仓库使用Apache提供的中央仓库</code></p>
+<p>远程仓库分为：</p>
+<ul>
+<li><p>中央仓库</p>
+</li>
+<li><p>本地私服仓库</p>
+</li>
+</ul>
+<p>架设在局域网内的仓库服务，供局域网内的Maven用户使用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224164951.png" alt="image-20210224164944820"></p>
+<h3 id="2-2本地仓库"><a href="#2-2本地仓库" class="headerlink" title="2.2本地仓库"></a>2.2本地仓库</h3><p><code>指本机的一份拷贝,用来缓存远程下载，包含尚未发布的临时构件</code></p>
+<h4 id="2-2-1本地仓库配置"><a href="#2-2-1本地仓库配置" class="headerlink" title="2.2.1本地仓库配置"></a>2.2.1本地仓库配置</h4><ol>
+<li><p>官网下载maven</p>
+<p><a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">下载maven</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224171804.png" alt="image-20210224171804592"></p>
+</li>
+<li><p>配置Idea</p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224172025.png" alt="image-20210224172025692"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224172220.png" alt="image-20210224172220328"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224172111.png" alt="image-20210224172111925"></p>
+</li>
+<li><p>配置settings</p>
+<ol>
+<li><p>打开settings.xml</p>
+</li>
+<li><p>配置本地仓库的地址</p>
+<p>ctrl+f搜索localRepository，添加以下代码</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--本地仓库地址--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>localRepository</span><span class="token punctuation">></span></span>D:\Maven\repository<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>localRepository</span><span class="token punctuation">></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224172448.png" alt="image-20210224172448112"></p>
+</li>
+<li><p>配置阿里云镜像</p>
+<p><code>因为默认远程仓库在国外因此下载资源较慢</code></p>
+<p>ctrl+f搜索mirrors，将以下代码放入此标签内</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirror</span><span class="token punctuation">></span></span>
+      <span class="token comment" spellcheck="true">&lt;!--指定镜像ID--></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>nexus-aliyun<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+      <span class="token comment" spellcheck="true">&lt;!--匹配中央仓库(阿里云的仓库，不可以自己起名)--></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrorOf</span><span class="token punctuation">></span></span>central<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrorOf</span><span class="token punctuation">></span></span>
+      <span class="token comment" spellcheck="true">&lt;!--指定镜像名称(可以自己改名)--></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>Nexus aliyun<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://maven.aliyun.com/nexus/content/groups/public<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirror</span><span class="token punctuation">></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224172753.png" alt="image-20210224172752994"></p>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="2-2-2仓库优先级"><a href="#2-2-2仓库优先级" class="headerlink" title="2.2.2仓库优先级"></a>2.2.2仓库优先级</h4><p><code>由近到远</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224174217.png" alt="image-20210224174217813"></p>
+<h2 id="3Maven工程"><a href="#3Maven工程" class="headerlink" title="3Maven工程"></a>3Maven工程</h2><h3 id="3-1POM工程"><a href="#3-1POM工程" class="headerlink" title="3.1POM工程"></a>3.1POM工程</h3><p><code>pom工程是一个逻辑工程。用在父级工程或聚合工程中。用来做jar包的版本控制</code></p>
+<h3 id="3-2JAR工程"><a href="#3-2JAR工程" class="headerlink" title="3.2JAR工程"></a>3.2JAR工程</h3><p><code>打包成jar,用做jar包来使用。即常用的本地工程---&gt;Java Project</code></p>
+<h3 id="3-3WAR工程"><a href="#3-3WAR工程" class="headerlink" title="3.3WAR工程"></a>3.3WAR工程</h3><p><code>打包成war,发布在服务器上的工程</code></p>
+<h2 id="4Maven目录结构"><a href="#4Maven目录结构" class="headerlink" title="4Maven目录结构"></a>4Maven目录结构</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224210511.png" alt="image-20210224205006214"></p>
+<ul>
+<li><p>src/main/java</p>
+<p>存储java源代码</p>
+</li>
+<li><p>src/main/resources</p>
+<p>存储主要的资源文件。比如xml配置文件或properties属性文件</p>
+</li>
+<li><p>src/test/java</p>
+<p>存储测试用的类，比如JUtil的测试一般就放在这个目录下面</p>
+<p><code>测试类本身是不属于项目的，所以maven专门创建一个测试包放</code></p>
+</li>
+<li><p>src/test/resources</p>
+<p>创建测试环境用的资源文件</p>
+</li>
+<li><p>src</p>
+<p>包含了项目所有的源代码和资源文件，以及其他项目相关的文件</p>
+</li>
+<li><p>target</p>
+<p>编译后内容放置的文件夹</p>
+</li>
+<li><p>pom.xml</p>
+<p>是maven的基础配置文件。配置项目和项目之间关系，包括配置依赖关系等</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224210834.png" alt="image-20210224210834874"></p>
+<h2 id="5Maven工程关系"><a href="#5Maven工程关系" class="headerlink" title="5Maven工程关系"></a>5Maven工程关系</h2><p><code>创建项目后，选择IDEA最右侧的Maven面板lifecycle,双击install后(可以先点击clean)，就会把项目安装到本地仓库，其他项目就可以通过坐标引用此项目</code></p>
+<h3 id="5-1依赖关系"><a href="#5-1依赖关系" class="headerlink" title="5.1依赖关系"></a>5.1依赖关系</h3><p><code>1.即A工程开发或运行过程中需要B工程提供支持，则代表A工程依赖B工程</code></p>
+<p>在这种情况下，需要在A项目的pom.xml文件中增加下属配置定义依赖关系</p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224212139.png" alt="image-20210224212139258"></p>
+<p><code>通俗理解：就是导入jar包</code></p>
+<p>B工程可以是自己的项目打包后的jar包，也可以是中央仓库的jar包</p>
+<p><code>2.如何注入依赖</code></p>
+<p>​    在pom.xml文件中根元素project下的dependencies标签中，配置依赖信息，内可以包含多个dependence元素，以声明多个依赖。每个依赖dependence标签都应包含有以下元素：groupid,artifactid,version，这是依赖的基本坐标，对于任何一个依赖来说，基本坐标是最重要的，Maven根据坐标才能找到需要的依赖</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--通过这个节点来添加依赖--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.5.6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span></code></pre>
+<p><code>3.依赖的好处</code></p>
+<ul>
+<li><p>省去了程序员手动添加jar包的操作，省事</p>
+</li>
+<li><p>可以帮助我们解决jar冲突问题</p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224213607.png" alt="image-20210224213607221"></p>
+</li>
+</ul>
+<h4 id="5-1-1依赖的传递性"><a href="#5-1-1依赖的传递性" class="headerlink" title="5.1.1依赖的传递性"></a>5.1.1依赖的传递性</h4><p><code>假设你的项目依赖一个库，而这个库有依赖于其他库，但你不必去找出所有的这些依赖，你只需要加上你直接依赖的库，Maven会隐式的把这些库间接依赖也加入到你的项目中</code></p>
+<p><code>如果A依赖了B，那么C依赖A是就会自动把A和B都导入进来</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224214921.png" alt="image-20210224214920968"></p>
+<h4 id="5-1-2依赖的原则"><a href="#5-1-2依赖的原则" class="headerlink" title="5.1.2依赖的原则"></a>5.1.2依赖的原则</h4><ul>
+<li><p>第一原则：最短路径优先原则</p>
+<ul>
+<li><p>意味着项目依赖关系树种路径最短的版本会被使用</p>
+</li>
+<li><p>假如A,B,C之间的依赖关系是A-&gt;B-&gt;C-&gt;D(2.0)和A-&gt;E-&gt;D(1.0),那么D(1.0)会被使用,因为A通过E到D的路径更短</p>
+</li>
+</ul>
+</li>
+<li><p>第二原则：最先声明原则</p>
+<p>依赖路径长度一样的时候，第一原则不能解决所有问题，A-&gt;B-&gt;Y(1.0),A-&gt;C-&gt;Y(2.0),Y(1.0)和Y(2.0)的依赖路径长度是一样的，都为2，在依赖路径长度相等的前提下，在POM中依赖声明的顺序决定了谁会被解析使用。使用顺序最靠前的依赖</p>
+</li>
+</ul>
+<h4 id="5-1-3依赖范围"><a href="#5-1-3依赖范围" class="headerlink" title="5.1.3依赖范围"></a>5.1.3依赖范围</h4><p><code>依赖范围决定了你依赖的坐标在什么情况下有效，什么情况下无效</code></p>
+<ul>
+<li><p>compile</p>
+<p>默认范围。表示该依赖在编译和运行时够生效</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.5.6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>compile<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li><p>provided</p>
+<p>已提供依赖范围。使用此依赖范围的Maven依赖。典型例子是<code>servlet-api</code></p>
+</li>
+<li><p>runtime</p>
+<p>编译时不需要生效，而只在运行时生效。典型的例子是<code>JDBC驱动</code></p>
+</li>
+<li><p>system</p>
+<p>与provided类似，不过你必须显示的指定一个本地系统路径的jar,<code>maven也不会去仓库中找</code></p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.5.6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>system<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>systemPath</span><span class="token punctuation">></span></span>本地jar路径<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>systemPath</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li><p>test</p>
+<p>只在<code>编译测试</code>和<code>运行测试</code>时需要。典型的例子就是JUtil</p>
+</li>
+<li><p>import</p>
+<p>只适用于pom中的<dependencymanagement>部分。表名指定的POM必须使用<dependencymanagement>部分的依赖</dependencymanagement></dependencymanagement></p>
+</li>
+</ul>
+<p><code>父工程(版本控制)</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224223423.png" alt="image-20210224223218723"></p>
+<p><code>子工程</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210224223138.png" alt="image-20210224223138743"></p>
+<p><code>如果在父工程中写了&lt;scope&gt;import&lt;/scope&gt;,那么子工程只能用父工程提供的版本</code></p>
+<h3 id="5-2继承关系"><a href="#5-2继承关系" class="headerlink" title="5.2继承关系"></a>5.2继承关系</h3><ul>
+<li><code>如果A工程继承B工程，则代表A工程默认依赖B工程依赖的所有资源，且可以应用B工程中定义的左右资源信息</code></li>
+<li><code>被继承的工程(B工程)只能是POM工程</code></li>
+<li><code>在父项目中放在&lt;dependencyManagement&gt;中的内容不会被子项目继承，不可以直接使用，放在&lt;dependencyManagement&gt;中的内容主要是进行版本管理。里面的内容在子项目中依赖时坐标不需要写&lt;version&gt;，如果子项目不想使用父项目的版本可以自己明确给出version</code></li>
+</ul>
+<p>本质上：POM文件的继承</p>
+<h3 id="5-3聚合关系"><a href="#5-3聚合关系" class="headerlink" title="5.3聚合关系"></a>5.3聚合关系</h3><p><code>当我们开发的工程拥有2个以上模块的时候，每个模块都是一个独立的功能模块，开发的时候每个模块都可以独立编译，测试，运行。这个时候我们就需要一个聚合工程</code></p>
+<ul>
+<li><code>在创建聚合工程的过程中，总的工程必须是一个POM工程（jar项目，war项目是没有办法聚合的），子模块可以是任意类型的模块</code></li>
+<li><code>前提：继承</code></li>
+</ul>
+<p>定义POM项目</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--定义POM项目--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>packaging</span><span class="token punctuation">></span></span>pom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>packaging</span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!--定义版本号--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mybatis</span><span class="token punctuation">></span></span>3.5.6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mybatis</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring</span><span class="token punctuation">></span></span>5.3.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencyManagement</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>${mybatis}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-context<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>${spring}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-core<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>${spring}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencyManagement</span><span class="token punctuation">></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -418,7 +643,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/aboutme/index.html">http://example.com/aboutme/index.html</a>
+                    <a href="http://example.com/posts/9478.html">http://example.com/posts/9478.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -455,7 +680,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Maven/">
+                                    <span class="chip bg-color">Maven</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -765,13 +994,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/aboutme/index.html">
+                <a href="/posts/9478.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="aboutme">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Maven">
                         
-                        <span class="card-title">aboutme</span>
+                        <span class="card-title">Maven</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -782,17 +1011,29 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-23
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            杨奇
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    项目管理工具
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Maven/">
+                        <span class="chip bg-color">Maven</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -800,16 +1041,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/aboutme/index.html">
+                <a href="/posts/f1de.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="aboutme">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="MyBatis">
                         
-                        <span class="card-title">aboutme</span>
+                        <span class="card-title">MyBatis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -820,17 +1061,28 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-23
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            杨奇
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java-EE%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    Java EE框架
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MyBatis/">
+                        <span class="chip bg-color">MyBatis</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
