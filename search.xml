@@ -215,6 +215,113 @@
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencyManagement</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="6-编译器插件"><a href="#6-编译器插件" class="headerlink" title="6.编译器插件"></a>6.编译器插件</h2><p><code>指定项目编译时使用的JDK和编码</code></p>
+<ul>
+<li><p>配置全局编译器插件</p>
+<ul>
+<li>settings.xml文件中配置全局编译器插件</li>
+<li>找到profiles节点，在里面插入profile节点</li>
+</ul>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>profile</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--定义的编译器插件id,全局唯一，名字随便起--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>jdk-1.7<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--插件标记，activeByDefault:true默认编译器--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>activation</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>activeByDefault</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>activeByDefault</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>jdk</span><span class="token punctuation">></span></span>1.7<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>jdk</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>activation</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--配置信息source-源信息，target-字节码信息，compilerVersion-编译过程版本--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.source</span><span class="token punctuation">></span></span>1.7<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.source</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.target</span><span class="token punctuation">></span></span>1.7<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.target</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.compilerVersion</span><span class="token punctuation">></span></span>1.7<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.compilerVersion</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>profile</span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li><p>配置单个项目的编译器插件:pom.xml</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!--JDK编译插件--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">></span></span>
+            <span class="token comment" spellcheck="true">&lt;!--插件坐标--></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupid</span><span class="token punctuation">></span></span>org.apache.maven.plugins<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupid</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>actifactid</span><span class="token punctuation">></span></span>maven-compiler.plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>actifactid</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+                <span class="token comment" spellcheck="true">&lt;!--源代码使用jdk版本--></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">></span></span>1.7<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">></span></span>
+                <span class="token comment" spellcheck="true">&lt;!--源代码编译为class文件的版本，要跟上面保持一致--></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>target</span><span class="token punctuation">></span></span>1.7<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>target</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>encoding</span><span class="token punctuation">></span></span>UTF-8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>encoding</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span></code></pre>
+</li>
+</ul>
+<h2 id="7-资源拷贝插件"><a href="#7-资源拷贝插件" class="headerlink" title="7.资源拷贝插件"></a>7.资源拷贝插件</h2><p><code>只有放在src/main/resources下咋配置文件才会被打包放入classes文件夹下面</code></p>
+<p>我们现在向把非resources下面的文件也打包到classes下面</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resources</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resource</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>directory</span><span class="token punctuation">></span></span>src/main/java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>directory</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>includes</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span><span class="token punctuation">></span></span>**/*.xml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>include</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>includes</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resource</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resource</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>directory</span><span class="token punctuation">></span></span>src/main/resources<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>directory</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>includes</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span><span class="token punctuation">></span></span>**/*.xml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>include</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span><span class="token punctuation">></span></span>**/*.properties<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>include</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>includes</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resource</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resources</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="8-Tomcat插件"><a href="#8-Tomcat插件" class="headerlink" title="8.Tomcat插件"></a>8.Tomcat插件</h2><p><code>过去</code></p>
+<ul>
+<li>war项目必须部署在服务器上</li>
+<li>将Idea与外部Tomcat产生关联，然后部署到外部Tomcat上</li>
+</ul>
+<p><code>现在</code></p>
+<ul>
+<li>不需要依赖外部的Tomcat，我们可以使用maven提供的Tomcat插件</li>
+<li>使用Tomcat插件发布部署并执行war工程，需要使用启动命令</li>
+<li>启动命令：<code>tomcat7:run</code>。tomcat7是插件命名</li>
+</ul>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--配置tomcat插件--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupid</span><span class="token punctuation">></span></span>org.apache.tomcat.maven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupid</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactid</span><span class="token punctuation">></span></span>tomcat7-maven-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactid</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!--配置tomcat监听窗口--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span><span class="token punctuation">></span></span>8080<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>port</span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!--配置项目的访问路径--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span><span class="token punctuation">></span></span>/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>path</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="9-Maven常见命令"><a href="#9-Maven常见命令" class="headerlink" title="9.Maven常见命令"></a>9.Maven常见命令</h2><ul>
+<li><p>install</p>
+<p><code>本地安装，包含编译，打包，安装到本地仓库</code></p>
+<ul>
+<li>编译：javac</li>
+<li>打包：jar</li>
+<li>安装到本地仓库：将jar文件保存到本地仓库</li>
+</ul>
+</li>
+<li><p>clean</p>
+<p><code>清除已编译信息，删除工程中的target目录</code></p>
+</li>
+<li><p>compile</p>
+<p><code>只编译，javac命令</code></p>
+</li>
+<li><p>package</p>
+<p><code>打包。包含编译，打包两个功能</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210225112147.png" alt="image-20210225112140065"></p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>项目管理工具</category>
@@ -1403,47 +1510,6 @@ mouse：<span class="token tag"><span class="token tag"><span class="token punct
       </tags>
   </entry>
   <entry>
-    <title>MyBatis</title>
-    <url>/posts/f1de.html</url>
-    <content><![CDATA[<h2 id="1-初始MyBatis"><a href="#1-初始MyBatis" class="headerlink" title="1.初始MyBatis"></a>1.初始MyBatis</h2><h3 id="1-1什么是MyBatis"><a href="#1-1什么是MyBatis" class="headerlink" title="1.1什么是MyBatis"></a>1.1什么是MyBatis</h3><ul>
-<li><p>mybatis是支持普通SQL查询、存储过程和高级映射的优秀<code>持久层</code>框架。</p>
-</li>
-<li><p>它消除了几乎所有的JDBC代码和参数的手工设置以及结果集的检索</p>
-</li>
-<li><p>使用简单的XML或注解用于配置和原始映射，将接口和Java的POJO（Plain Ordinary Java Objects，普通的Java对象）映射成数据库中的记录。</p>
-</li>
-</ul>
-<h3 id="1-2什么是持久化"><a href="#1-2什么是持久化" class="headerlink" title="1.2什么是持久化"></a>1.2什么是持久化</h3><p>数据持久化</p>
-<ul>
-<li>持久化就是将程序的数据在瞬时状态向持久状态转化的过程</li>
-<li>内存：断电即失</li>
-<li>持久化：数据库，io文件</li>
-</ul>
-<h2 id="2-第一个MyBatis程序"><a href="#2-第一个MyBatis程序" class="headerlink" title="2.第一个MyBatis程序"></a>2.第一个MyBatis程序</h2><ol>
-<li><p>搭建数据库</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span>  <span class="token punctuation">(</span>
-  <span class="token punctuation">`</span>id<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token punctuation">`</span>name<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token punctuation">`</span>pwd<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-   <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span> <span class="token keyword">CHARACTER SET</span> <span class="token operator">=</span> utf8
-
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token string">'666666'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'王五'</span><span class="token punctuation">,</span> <span class="token string">'888888'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-</li>
-<li><p>创建项目</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Java EE框架</category>
-      </categories>
-      <tags>
-        <tag>MyBatis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySql</title>
     <url>/posts/3ee1.html</url>
     <content><![CDATA[<h2 id="1-初识MySql"><a href="#1-初识MySql" class="headerlink" title="1.初识MySql"></a>1.初识MySql</h2><h3 id="1-1数据库分类"><a href="#1-1数据库分类" class="headerlink" title="1.1数据库分类"></a>1.1数据库分类</h3><ul>
@@ -1986,6 +2052,47 @@ pageSize:页面大小
       </categories>
       <tags>
         <tag>MySql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MyBatis</title>
+    <url>/posts/f1de.html</url>
+    <content><![CDATA[<h2 id="1-初始MyBatis"><a href="#1-初始MyBatis" class="headerlink" title="1.初始MyBatis"></a>1.初始MyBatis</h2><h3 id="1-1什么是MyBatis"><a href="#1-1什么是MyBatis" class="headerlink" title="1.1什么是MyBatis"></a>1.1什么是MyBatis</h3><ul>
+<li><p>mybatis是支持普通SQL查询、存储过程和高级映射的优秀<code>持久层</code>框架。</p>
+</li>
+<li><p>它消除了几乎所有的JDBC代码和参数的手工设置以及结果集的检索</p>
+</li>
+<li><p>使用简单的XML或注解用于配置和原始映射，将接口和Java的POJO（Plain Ordinary Java Objects，普通的Java对象）映射成数据库中的记录。</p>
+</li>
+</ul>
+<h3 id="1-2什么是持久化"><a href="#1-2什么是持久化" class="headerlink" title="1.2什么是持久化"></a>1.2什么是持久化</h3><p>数据持久化</p>
+<ul>
+<li>持久化就是将程序的数据在瞬时状态向持久状态转化的过程</li>
+<li>内存：断电即失</li>
+<li>持久化：数据库，io文件</li>
+</ul>
+<h2 id="2-第一个MyBatis程序"><a href="#2-第一个MyBatis程序" class="headerlink" title="2.第一个MyBatis程序"></a>2.第一个MyBatis程序</h2><ol>
+<li><p>搭建数据库</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span>  <span class="token punctuation">(</span>
+  <span class="token punctuation">`</span>id<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>name<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>pwd<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+   <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span> <span class="token keyword">CHARACTER SET</span> <span class="token operator">=</span> utf8
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token string">'666666'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'王五'</span><span class="token punctuation">,</span> <span class="token string">'888888'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>创建项目</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java EE框架</category>
+      </categories>
+      <tags>
+        <tag>MyBatis</tag>
       </tags>
   </entry>
   <entry>
