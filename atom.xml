@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-02T17:12:24.531Z</updated>
+  <updated>2021-03-03T16:34:36.341Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringMVC</title>
+    <link href="http://example.com/posts/12ac.html"/>
+    <id>http://example.com/posts/12ac.html</id>
+    <published>2021-03-03T02:53:30.000Z</published>
+    <updated>2021-03-03T16:34:36.341Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-什么是MVC&quot;&gt;&lt;a href=&quot;#1-什么是MVC&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE框架" scheme="http://example.com/categories/JavaEE%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="SpringMVC" scheme="http://example.com/tags/SpringMVC/"/>
+    
+  </entry>
   
   <entry>
     <title>Spring</title>
