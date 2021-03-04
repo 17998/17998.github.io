@@ -383,7 +383,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    2.8k
                 </div>
                 
 
@@ -769,7 +769,185 @@ ${msg}
 <p><code>被@Controller注解的类，会被Spring接管，这个类中的方法返回值如果是String，并且有具体的页面可以跳转，那么就会被视图解析器解析</code></p>
 </li>
 </ol>
-<h2 id="7-RequestMapping"><a href="#7-RequestMapping" class="headerlink" title="7.RequestMapping"></a>7.RequestMapping</h2>
+<h2 id="7-RequestMapping"><a href="#7-RequestMapping" class="headerlink" title="7.RequestMapping"></a>7.RequestMapping</h2><p><strong>用于映射url到控制器类或一个特定的处理程序方法。可用于类或方法上</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ControllerTest3</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"test1"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">test</span><span class="token punctuation">(</span>Model model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"ControllerTest3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"test"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
+<p>url：localhost:8080/test/test1</p>
+<h2 id="8-RestFul风格"><a href="#8-RestFul风格" class="headerlink" title="8.RestFul风格"></a>8.RestFul风格</h2><p><strong>就是一个资源定位及资源操作的风格。不是标准也不是协议，只是一种风格。基于这个风格设计的软件可以更简洁，更有层次，更易于实现缓存等机制</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages//img/20210304103225.png" alt="image-20210304103217636"></p>
+<p><strong>学习测试</strong></p>
+<p><code>原来的方式：</code></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RestFulController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/add"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">test</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> Model model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> a<span class="token operator">+</span>b<span class="token punctuation">;</span>
+        model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"结果为:"</span><span class="token operator">+</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"test"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>url：localhost:8080/add?a=1&amp;b=2</p>
+<p><code>RestFul风格：</code></p>
+<p>在SpringMVC中我们可以使用<code>@PathVariable</code>注解，让方法参数的值绑定到一个URL模板变量上</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RestFulController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/add/{a}/{b}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">test</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> <span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token annotation punctuation">@PathVariable</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> Model model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> a<span class="token operator">+</span>b<span class="token punctuation">;</span>
+        model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"结果为:"</span><span class="token operator">+</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"test"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>url：localhost:8080/add/1/2</p>
+<p><strong>可以使用method属性指定请求类型</strong></p>
+<p>用于约束请求的类型，可以收窄请求范围。指定请求谓词的类型如：GET,POST,HEAD,OPTIONS,PUT,PATCH,DELETE,TRACE</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RestFulController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"/add/{a}/{b}"</span><span class="token punctuation">,</span>metho<span class="token operator">=</span>RequestMapping<span class="token punctuation">.</span>GET<span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">test</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> <span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token annotation punctuation">@PathVariable</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> Model model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> a<span class="token operator">+</span>b<span class="token punctuation">;</span>
+        model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"结果为:"</span><span class="token operator">+</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"test"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><code>所有的地址请求默认都是GET类型</code></p>
+<p><strong><em>组合注解</em></strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"/add/{a}/{b}"</span><span class="token punctuation">,</span>metho<span class="token operator">=</span>RequestMapping<span class="token punctuation">.</span>GET<span class="token punctuation">)</span><span class="token operator">=</span><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/add/{a}/{b}"</span><span class="token punctuation">)</span>
+
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"/add/{a}/{b}"</span><span class="token punctuation">,</span>metho<span class="token operator">=</span>RequestMapping<span class="token punctuation">.</span>POST<span class="token punctuation">)</span><span class="token operator">=</span><span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/add/{a}/{b}"</span><span class="token punctuation">)</span>
+
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"/add/{a}/{b}"</span><span class="token punctuation">,</span>metho<span class="token operator">=</span>RequestMapping<span class="token punctuation">.</span>PUTT<span class="token punctuation">)</span><span class="token operator">=</span><span class="token annotation punctuation">@PutMapping</span><span class="token punctuation">(</span><span class="token string">"/add/{a}/{b}"</span><span class="token punctuation">)</span>
+
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"/add/{a}/{b}"</span><span class="token punctuation">,</span>metho<span class="token operator">=</span>RequestMapping<span class="token punctuation">.</span>DELETE<span class="token punctuation">)</span><span class="token operator">=</span><span class="token annotation punctuation">@DeleteMapping</span><span class="token punctuation">(</span><span class="token string">"/add/{a}/{b}"</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RestFulController</span> <span class="token punctuation">{</span>
+   <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/and/{a}/{b}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">test</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> <span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token annotation punctuation">@PathVariable</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> Model model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> a<span class="token operator">+</span>b<span class="token punctuation">;</span>
+        model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"结果为:"</span><span class="token operator">+</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"test"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="9-重定向与转发"><a href="#9-重定向与转发" class="headerlink" title="9.重定向与转发"></a>9.重定向与转发</h2><p><strong>通过SpringMVC来实现转发和重定向-无需视图解析器</strong></p>
+<p><code>测试前注释掉视图解析器</code></p>
+<ol>
+<li><p>转发一</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ModelTest1</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/m1/t1"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">test</span><span class="token punctuation">(</span>Model model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"/WEB-INF/jsp/test.jsp"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+<li><p>转发二</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ModelTest1</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/m1/t1"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">test</span><span class="token punctuation">(</span>Model model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"forward:/WEB-INF/jsp/test.jsp"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+<li><p>重定向</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ModelTest1</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/m1/t1"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">test</span><span class="token punctuation">(</span>Model model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"redirect:/index.jsp"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+</ol>
+<p><strong>通过SpringMVC来实现转发和重定向-有视图解析器</strong></p>
+<p>重定向，不需要视图解析器，本质就是重新请求一个新地方</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ModelTest</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/m1/t1"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">test</span><span class="token punctuation">(</span>Model model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//转发</span>
+        <span class="token keyword">return</span> <span class="token string">"forward:test"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/m1/t2"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true">//重定向</span>
+        <span class="token keyword">return</span> <span class="token string">"redirect:index.jsp"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="10-数据处理"><a href="#10-数据处理" class="headerlink" title="10.数据处理"></a>10.数据处理</h2><h3 id="10-1数据传递到后端"><a href="#10-1数据传递到后端" class="headerlink" title="10.1数据传递到后端"></a>10.1数据传递到后端</h3><ol>
+<li><p>提交的域名称和处理方法的参数名一致</p>
+<p>提交数据：</p>
+<p><a href="http://localhost:8080/hello?name=zhangsan" target="_blank" rel="noopener">http://localhost:8080/hello?name=zhangsan</a></p>
+<p>处理方法：</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> String <span class="token function">hello</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>后台输出：zhangsan</p>
+</li>
+<li><p>提交的域名称和处理方法的参数名不一致</p>
+<p>提交数据：</p>
+<p><a href="http://localhost:8080/hello?username=zhangsan" target="_blank" rel="noopener">http://localhost:8080/hello?username=zhangsan</a></p>
+<p>处理方法：</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> String <span class="token function">hello</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span> String name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>后台输出：zhangsan</p>
+</li>
+<li><p>提交的是一个对象</p>
+<p><strong>要求提交的表单域和对象的属性名一致，参数使用对象即可</strong></p>
+<p>提交数据：</p>
+<p><a href="http://localhost:8080/hello?id=1&amp;name=zhangsan&amp;age=18" target="_blank" rel="noopener">http://localhost:8080/hello?id=1&amp;name=zhangsan&amp;age=18</a></p>
+<ul>
+<li><p>实体类</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+<li><p>处理方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//前端传递的是一个对象：id,name,age</span>
+    <span class="token comment" spellcheck="true">/*
+    1.接受前端用户传递的参数，判断参数的名字，假设名字直接在方法上，可以直接使用
+    2.假设传递的是一个对象User,匹配User对象中的字段名，如果名字一致可以匹配
+     */</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/t2"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">t2</span><span class="token punctuation">(</span>User user<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"test"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+<p>后台输出：User{id=1,name=zhangsan,age=18}</p>
+<p><code>说明：</code></p>
+<p><strong>如果使用对象的话，前端传递的参数名和对象名必须一致，否则就是null</strong></p>
+<p><strong>前端用户传递的参数，判断参数的名字，假设名字直接在方法上，可以直接使用</strong></p>
+<p><strong>假设传递的是一个对象User,匹配User对象中的字段名，如果名字一致可以匹配</strong></p>
+</li>
+</ol>
+<h3 id="10-2数据显示到前端"><a href="#10-2数据显示到前端" class="headerlink" title="10.2数据显示到前端"></a>10.2数据显示到前端</h3><p><strong>第一种：通过ModelAndView</strong></p>
+<p>前面使用过这种方式，这里不再赘述</p>
+<p><strong>第二种：通过ModeMap</strong></p>
+<p><strong>第三种：Model</strong></p>
+<p>前面也使用过这种方式，故这里不再赘述</p>
+<p><code>对比：</code></p>
+<pre class=" language-txt"><code class="language-txt">Model 只有寥寥几个方法，只适合用于存储数据，简化了新手对于Model对象的操作和理解
+
+ModelMap 继承了LinkedHashMap,除了实现自身的一些方法，同样的继承了LinkedHashMap的方法和特性
+
+ModelAndView 可以在存储数据的同时，可以进行设置返回的逻辑视图，进行控制展示层的跳转</code></pre>
+
                 
             </div>
             <hr/>
@@ -1380,7 +1558,7 @@ ${msg}
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">28.3k</span>&nbsp;字
+                class="white-color">29.4k</span>&nbsp;字
             
             
             
