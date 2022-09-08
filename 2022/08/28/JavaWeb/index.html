@@ -349,21 +349,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-03
+                    2022-09-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    609
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -631,7 +631,208 @@ response<span class="token punctuation">.</span><span class="token function">add
 <h3 id="5-3-2-原理"><a href="#5-3-2-原理" class="headerlink" title="5.3.2 原理"></a>5.3.2 原理</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209031843683.png" alt="image-20220903184321612"></p>
 <h3 id="5-3-3-使用细节"><a href="#5-3-3-使用细节" class="headerlink" title="5.3.3 使用细节"></a>5.3.3 使用细节</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209031856800.png" alt="image-20220903185511246"></p>
 <h2 id="5-4-小结"><a href="#5-4-小结" class="headerlink" title="5.4 小结"></a>5.4 小结</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209031937265.png" alt="image-20220903193742189"></p>
+<h1 id="第六章-Filter与Listener"><a href="#第六章-Filter与Listener" class="headerlink" title="第六章 Filter与Listener"></a>第六章 Filter与Listener</h1><h2 id="6-1-Filter"><a href="#6-1-Filter" class="headerlink" title="6.1 Filter"></a>6.1 Filter</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209041322635.png" alt="image-20220904132212021"></p>
+<h3 id="6-1-1-快速入门"><a href="#6-1-1-快速入门" class="headerlink" title="6.1.1 快速入门"></a>6.1.1 快速入门</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209041326939.png" alt="image-20220904132623854"></p>
+<h3 id="6-1-2-执行流程"><a href="#6-1-2-执行流程" class="headerlink" title="6.1.2 执行流程"></a>6.1.2 执行流程</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209041348873.png" alt="image-20220904134830689"></p>
+<ul>
+<li>放行前，一般对request数据进行处理，response中没有数据</li>
+<li>放行后，一般对response数据进行处理</li>
+</ul>
+<h3 id="6-1-3-使用细节"><a href="#6-1-3-使用细节" class="headerlink" title="6.1.3 使用细节"></a>6.1.3 使用细节</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209041605344.png" alt="image-20220904160540167"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209041615866.png" alt="image-20220904161204419"></p>
+<ul>
+<li><p>XML配置过滤器(谁先配置谁先执行)</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-name</span><span class="token punctuation">></span></span>A<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-class</span><span class="token punctuation">></span></span>com.yunmo.filter.MyFilter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-class</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-mapping</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-name</span><span class="token punctuation">></span></span>A<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-mapping</span><span class="token punctuation">></span></span>
+</code></pre>
+</li>
+</ul>
+<h2 id="6-2-Listener"><a href="#6-2-Listener" class="headerlink" title="6.2 Listener"></a>6.2 Listener</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209041649609.png" alt="image-20220904164957515"></p>
+<h3 id="6-2-1-基本使用"><a href="#6-2-1-基本使用" class="headerlink" title="6.2.1 基本使用"></a>6.2.1 基本使用</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209041651654.png" alt="image-20220904165113597"></p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@WebListener</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyListener</span> <span class="token keyword">implements</span> <span class="token class-name">ServletContextListener</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">contextInitialized</span><span class="token punctuation">(</span>ServletContextEvent servletContextEvent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//加载资源</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"MyListener~~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">contextDestroyed</span><span class="token punctuation">(</span>ServletContextEvent servletContextEvent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//释放资源</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h1 id="第七章-AJAX"><a href="#第七章-AJAX" class="headerlink" title="第七章 AJAX"></a>第七章 AJAX</h1><h2 id="7-1-概念"><a href="#7-1-概念" class="headerlink" title="7.1 概念"></a>7.1 概念</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209041709675.png" alt="image-20220904170919503"></p>
+<h2 id="7-2-同步与异步"><a href="#7-2-同步与异步" class="headerlink" title="7.2 同步与异步"></a>7.2 同步与异步</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209051952310.png" alt="image-20220904171445759"></p>
+<h2 id="7-3-作用"><a href="#7-3-作用" class="headerlink" title="7.3 作用"></a>7.3 作用</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209041709522.png" alt="image-20220904170950453"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209041711490.png" alt="image-20220904171111430"></p>
+<h2 id="7-4-快速入门"><a href="#7-4-快速入门" class="headerlink" title="7.4 快速入门"></a>7.4 快速入门</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209041724727.png" alt="image-20220904172447645"></p>
+<h2 id="7-5-Axios异步框架"><a href="#7-5-Axios异步框架" class="headerlink" title="7.5 Axios异步框架"></a>7.5 Axios异步框架</h2><ul>
+<li>Axios是对原生的Ajax进行封装，简化书写</li>
+</ul>
+<h3 id="7-5-1-快速入门"><a href="#7-5-1-快速入门" class="headerlink" title="7.5.1 快速入门"></a>7.5.1 快速入门</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209051840376.png" alt="image-20220905145943713"></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//get请求</span>
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        method<span class="token punctuation">:</span><span class="token string">"get"</span><span class="token punctuation">,</span>
+        url<span class="token punctuation">:</span><span class="token string">"http://localhost:8080/Ajax/axiosServlet?username=zhangsan"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//post请求</span>
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        method<span class="token punctuation">:</span><span class="token string">"post"</span><span class="token punctuation">,</span>
+        url<span class="token punctuation">:</span><span class="token string">"http://localhost:8080/Ajax/axiosServlet"</span><span class="token punctuation">,</span>
+        data<span class="token punctuation">:</span><span class="token string">"username=zhangsan"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="7-5-2-请求方式别名"><a href="#7-5-2-请求方式别名" class="headerlink" title="7.5.2 请求方式别名"></a>7.5.2 请求方式别名</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209051952428.png" alt="image-20220905151549947"></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//get请求</span>
+axios<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">"http://localhost:8080/Ajax/axiosServlet?username=zhangsan"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//post请求</span>
+axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"http://localhost:8080/Ajax/axiosServlet"</span><span class="token punctuation">,</span><span class="token string">"username=zhangsan"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="7-6-JSON"><a href="#7-6-JSON" class="headerlink" title="7.6 JSON"></a>7.6 JSON</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209051952265.png" alt="image-20220905164351722"></p>
+<h2 id="7-6-1-基础语法"><a href="#7-6-1-基础语法" class="headerlink" title="7.6.1 基础语法"></a>7.6.1 基础语法</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209051952753.png" alt="image-20220905164248470"></p>
+<h3 id="7-6-2-JSON数据和Java对象转换"><a href="#7-6-2-JSON数据和Java对象转换" class="headerlink" title="7.6.2 JSON数据和Java对象转换"></a>7.6.2 JSON数据和Java对象转换</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209051840402.png" alt="image-20220905164836539"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209051953147.png" alt="image-20220905165200823"></p>
+<h1 id="第八章-Vue"><a href="#第八章-Vue" class="headerlink" title="第八章 Vue"></a>第八章 Vue</h1><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209051952622.png" alt="image-20220905195207491"></p>
+<h2 id="8-1-快速入门"><a href="#8-1-快速入门" class="headerlink" title="8.1 快速入门"></a>8.1 快速入门</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209052032138.png" alt="image-20220905203240051"></p>
+<h2 id="8-2-常用指令"><a href="#8-2-常用指令" class="headerlink" title="8.2 常用指令"></a>8.2 常用指令</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209061253578.png" alt="image-20220905211019108"></p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>url<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">v-bind:</span>href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>url<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>百度一下<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>js/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        el<span class="token punctuation">:</span><span class="token string">"#app"</span><span class="token punctuation">,</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                url<span class="token punctuation">:</span><span class="token string">"http://www.baidu.com"</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209061253975.png" alt="image-20220905213735073"></p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">v-on:</span>click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>show()<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>我是一个按钮<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>js/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        el<span class="token punctuation">:</span><span class="token string">"#app"</span><span class="token punctuation">,</span>
+        methods<span class="token punctuation">:</span><span class="token punctuation">{</span>
+            <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"我被点了"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209061253400.png" alt="image-20220905215004892"></p>
+<ul>
+<li>v-if：条件成立，展示该标签，否则直接不渲染此标签</li>
+<li>v-show：与v-if作用一样，原理不一样，当条件不成立，标签的display属性为none</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209061252513.png" alt="image-20220905215949923"></p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addr in addrs<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        {{addr}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>js/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        el<span class="token punctuation">:</span><span class="token string">"#app"</span><span class="token punctuation">,</span>
+        data<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                count<span class="token punctuation">:</span><span class="token string">""</span><span class="token punctuation">,</span>
+                addrs<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"北京"</span><span class="token punctuation">,</span><span class="token string">"上海"</span><span class="token punctuation">,</span><span class="token string">"成都"</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token punctuation">:</span><span class="token punctuation">{</span>
+            <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"我被点了"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>
+<h2 id="8-3-生命周期"><a href="#8-3-生命周期" class="headerlink" title="8.3 生命周期"></a>8.3 生命周期</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209061252533.png" alt="image-20220905220444960"></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//每触发一个生命周期事件，自动执行生命周期方法</span>
+beforeCreate<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//创建前</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+created<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">//创建后</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+beforeMount<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">//载入前</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+mounted<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">//挂载完成</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+beforeUpdate<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">//更新前</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+updated<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">//更新后</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+beforeDestroy<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">//销毁前</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+destroyed<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">//销毁后</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//简写</span>
+<span class="token function">beforeCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">beforeMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token function">beforeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">updated</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">beforeDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">destroyed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<h1 id="第九章-Element"><a href="#第九章-Element" class="headerlink" title="第九章 Element"></a>第九章 Element</h1><h2 id="9-1-快速入门"><a href="#9-1-快速入门" class="headerlink" title="9.1 快速入门"></a>9.1 快速入门</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209061253676.png" alt="image-20220905224857231"></p>
+<h2 id="9-2-布局"><a href="#9-2-布局" class="headerlink" title="9.2 布局"></a>9.2 布局</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209061254603.png" alt="image-20220906125237131"></p>
+<h2 id="9-3-组件"><a href="#9-3-组件" class="headerlink" title="9.3 组件"></a>9.3 组件</h2>
                 
             </div>
             <hr/>
@@ -1020,7 +1221,7 @@ response<span class="token punctuation">.</span><span class="token function">add
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.2k</span>&nbsp;字
+                class="white-color">1.7k</span>&nbsp;字
             
             
             
