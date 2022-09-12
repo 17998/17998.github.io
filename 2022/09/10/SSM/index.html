@@ -1,0 +1,1345 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="SSM, 云末">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>SSM | 云末</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">云末</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">云末</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">SSM</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/SSM/">
+                                <span class="chip bg-color">SSM</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF-%E6%A1%86%E6%9E%B6/" class="post-category">
+                                前端 框架
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-09-10
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-09-11
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    7 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="第一部分-Spring"><a href="#第一部分-Spring" class="headerlink" title="第一部分 Spring"></a>第一部分 Spring</h1><h2 id="1-1-Spring-Framework-系统架构"><a href="#1-1-Spring-Framework-系统架构" class="headerlink" title="1.1 Spring Framework 系统架构"></a>1.1 Spring Framework 系统架构</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101424472.png" alt="image-20220910142442287"></p>
+<h2 id="1-2-Spring-Framework-学习路线"><a href="#1-2-Spring-Framework-学习路线" class="headerlink" title="1.2 Spring Framework 学习路线"></a>1.2 Spring Framework 学习路线</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101427532.png" alt="image-20220910142723448"></p>
+<h2 id="1-3-核心概念"><a href="#1-3-核心概念" class="headerlink" title="1.3 核心概念"></a>1.3 核心概念</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101437352.png" alt="image-20220910143712257"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101439553.png" alt="image-20220910143924517"></p>
+<h3 id="1-3-1-IoC入门案例"><a href="#1-3-1-IoC入门案例" class="headerlink" title="1.3.1 IoC入门案例"></a>1.3.1 IoC入门案例</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101515739.png" alt="image-20220910151549692"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101517615.png" alt="image-20220910151702452"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101518203.png" alt="image-20220910151829139"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101519170.png" alt="image-20220910151939109"></p>
+<h3 id="1-3-2-DI入门案例"><a href="#1-3-2-DI入门案例" class="headerlink" title="1.3.2 DI入门案例"></a>1.3.2 DI入门案例</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101644979.png" alt="image-20220910164404934"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101644233.png" alt="image-20220910164435185"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101646027.png" alt="image-20220910164645948"></p>
+<h2 id="1-4-Bean配置"><a href="#1-4-Bean配置" class="headerlink" title="1.4 Bean配置"></a>1.4 Bean配置</h2><h3 id="1-4-1-bean基础配置"><a href="#1-4-1-bean基础配置" class="headerlink" title="1.4.1 bean基础配置"></a>1.4.1 bean基础配置</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101650298.png" alt="image-20220910165014221"></p>
+<h3 id="1-4-2-bean别名配置"><a href="#1-4-2-bean别名配置" class="headerlink" title="1.4.2 bean别名配置"></a>1.4.2 bean别名配置</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101654871.png" alt="image-20220910165428794"></p>
+<h3 id="1-4-3-bean作用范围配置"><a href="#1-4-3-bean作用范围配置" class="headerlink" title="1.4.3 bean作用范围配置"></a>1.4.3 bean作用范围配置</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101658288.png" alt="image-20220910165820229"></p>
+<h2 id="1-5-Bean实例化"><a href="#1-5-Bean实例化" class="headerlink" title="1.5 Bean实例化"></a>1.5 Bean实例化</h2><h3 id="1-5-1-构造方法-常用"><a href="#1-5-1-构造方法-常用" class="headerlink" title="1.5.1 构造方法(常用)"></a>1.5.1 构造方法(常用)</h3><ul>
+<li>调用类中的无参构造函数来实例化bean</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101710907.png" alt="image-20220910170700460"></p>
+<h3 id="1-5-2-静态工厂-了解"><a href="#1-5-2-静态工厂-了解" class="headerlink" title="1.5.2 静态工厂(了解)"></a>1.5.2 静态工厂(了解)</h3><ul>
+<li>静态工厂可以直接用类名来调用静态方法，不需要先创建工厂的bean</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101720953.png" alt="image-20220910171512339"></p>
+<h3 id="1-5-3-实例工厂-了解"><a href="#1-5-3-实例工厂-了解" class="headerlink" title="1.5.3 实例工厂(了解)"></a>1.5.3 实例工厂(了解)</h3><ul>
+<li>实例工厂方法不是静态方法，需要先将工厂的bean创建出来，再用来创建需要的bean</li>
+<li>创建出来的工厂bean只是为了创建我们想要的bean，实际并没有多大意义，而且工厂方法名也不统一，所以产生了第四种实例化bean的方法</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101748027.png" alt="image-20220910174626910"></p>
+<h3 id="1-5-4-FactoryBean-实用"><a href="#1-5-4-FactoryBean-实用" class="headerlink" title="1.5.4 FactoryBean(实用)"></a>1.5.4 FactoryBean(实用)</h3><ul>
+<li>FactoryBean接口是一个泛型接口，在使用时可以直接使用自己要创建的bean类型</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101745285.png" alt="image-20220910174441201"></p>
+<h2 id="1-6-Bean生命周期"><a href="#1-6-Bean生命周期" class="headerlink" title="1.6 Bean生命周期"></a>1.6 Bean生命周期</h2><ul>
+<li>bean生命周期：bean从创建到销毁的整体过程</li>
+<li>bean生命周期控制：在bean创建后到销毁前做一些事情</li>
+</ul>
+<h3 id="1-6-1-生命周期控制方法"><a href="#1-6-1-生命周期控制方法" class="headerlink" title="1.6.1 生命周期控制方法"></a>1.6.1 生命周期控制方法</h3><ul>
+<li>通过配置文件</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209102049218.png" alt="image-20220910202728439"></p>
+<ul>
+<li>通过接口(了解)</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209102050643.png" alt="image-20220910203047580"></p>
+<ul>
+<li><p>afterPropertiesSet()方法在类中属性注入后再调用，也就是set方法调用后</p>
+</li>
+<li><p>不用再配置init-method和destroy-method</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bookService<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima.service.impl.BookServiceImpl<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+</code></pre>
+</li>
+</ul>
+<h3 id="1-6-2-生命周期过程"><a href="#1-6-2-生命周期过程" class="headerlink" title="1.6.2 生命周期过程"></a>1.6.2 生命周期过程</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209102050950.png" alt="image-20220910203206293"></p>
+<h3 id="1-6-3-bean销毁时机"><a href="#1-6-3-bean销毁时机" class="headerlink" title="1.6.3 bean销毁时机"></a>1.6.3 bean销毁时机</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209102050210.png" alt="image-20220910203400624"></p>
+<pre class=" language-java"><code class="language-java">ctx<span class="token punctuation">.</span><span class="token function">registerShutdownHook</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="1-7-依赖注入方式"><a href="#1-7-依赖注入方式" class="headerlink" title="1.7 依赖注入方式"></a>1.7 依赖注入方式</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209102106695.png" alt="image-20220910210615626"></p>
+<ul>
+<li><strong>自己开发的模块推荐使用setter注入</strong></li>
+</ul>
+<h3 id="1-7-1-setter注入"><a href="#1-7-1-setter注入" class="headerlink" title="1.7.1 setter注入"></a>1.7.1 setter注入</h3><ul>
+<li>引用类型</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209102111910.png" alt="image-20220910211144840"></p>
+<ul>
+<li><p>简单类型</p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209102117265.png" alt="image-20220910211711191"></p>
+</li>
+</ul>
+<h3 id="1-7-2-构造器注入"><a href="#1-7-2-构造器注入" class="headerlink" title="1.7.2 构造器注入"></a>1.7.2 构造器注入</h3><ul>
+<li>在bean中定义引用类型属性并提供可访问的构造方法</li>
+<li>引用类型</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209102132230.png" alt="image-20220910213245151"></p>
+<ul>
+<li>简单类型</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209102134227.png" alt="image-20220910213451161"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserDao</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">UserDao</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"user dao method..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"name:"</span><span class="token operator">+</span>name<span class="token operator">+</span><span class="token string">",age:"</span><span class="token operator">+</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> UserDao userDao<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">UserService</span><span class="token punctuation">(</span>UserDao userDao<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>userDao <span class="token operator">=</span> userDao<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"user service method... "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        userDao<span class="token punctuation">.</span><span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><strong>name的值是构造方法中形参的名字</strong></li>
+</ul>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userDao<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.yunmo.dao.UserDao<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>zhangsan<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>age<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>24<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userService<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.yunmo.service.UserService<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userDao<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userDao<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+</code></pre>
+<h3 id="1-7-3-参数适配"><a href="#1-7-3-参数适配" class="headerlink" title="1.7.3 参数适配"></a>1.7.3 参数适配</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209102148501.png" alt="image-20220910214824430"></p>
+<h2 id="1-8-依赖自动装配"><a href="#1-8-依赖自动装配" class="headerlink" title="1.8 依赖自动装配"></a>1.8 依赖自动装配</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111246371.png" alt="image-20220911124628414"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111246760.png" alt="image-20220911124650704"></p>
+<h3 id="1-8-1-依赖自动装配特征"><a href="#1-8-1-依赖自动装配特征" class="headerlink" title="1.8.1 依赖自动装配特征"></a>1.8.1 依赖自动装配特征</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111250241.png" alt="image-20220911125003050"></p>
+<h2 id="1-9-集合注入"><a href="#1-9-集合注入" class="headerlink" title="1.9 集合注入"></a>1.9 集合注入</h2><h3 id="1-9-1-数组"><a href="#1-9-1-数组" class="headerlink" title="1.9.1 数组"></a>1.9.1 数组</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>array<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>array</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>100<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>200<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>300<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>array</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+</code></pre>
+<h3 id="1-9-2-List"><a href="#1-9-2-List" class="headerlink" title="1.9.2 List"></a>1.9.2 List</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>北京<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>上海<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>成都<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>list</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+</code></pre>
+<h3 id="1-9-3-Set"><a href="#1-9-3-Set" class="headerlink" title="1.9.3 Set"></a>1.9.3 Set</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>set<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>Java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>Python<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+</code></pre>
+<h3 id="1-9-4-Map"><a href="#1-9-4-Map" class="headerlink" title="1.9.4 Map"></a>1.9.4 Map</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>map<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>map</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>entry</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>country<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>中国<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>entry</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>province<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>四川<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>entry</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>city<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>巴中<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>map</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+</code></pre>
+<h3 id="1-9-5-Properties"><a href="#1-9-5-Properties" class="headerlink" title="1.9.5 Properties"></a>1.9.5 Properties</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>properties<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>props</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>prop</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>country<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>中国<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>prop</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>prop</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>province<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>四川<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>prop</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>prop</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>city<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>成都<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>prop</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>props</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+</code></pre>
+<h2 id="1-10-数据源对象管理"><a href="#1-10-数据源对象管理" class="headerlink" title="1.10 数据源对象管理"></a>1.10 数据源对象管理</h2><ul>
+<li><p>druid数据源</p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111401862.png" alt="image-20220911140149524"></p>
+</li>
+<li><p>C3P0数据源</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--导入C3P0数据源--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>c3p0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>c3p0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>0.9.1.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dataSource<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.mchange.v2.c3p0.ComboPooledDataSource<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>driverClass<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.mysql.cj.jdbc.Driver<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jdbcUrl<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jdbc:mysql://localhost:3306/ssm?useSSL<span class="token punctuation">=</span>false&amp;amp;serverTimezone<span class="token punctuation">=</span>Asia/Shanghai<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>root<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>123456<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+</code></pre>
+</li>
+</ul>
+<h2 id="1-11-加载Properties文件"><a href="#1-11-加载Properties文件" class="headerlink" title="1.11 加载Properties文件"></a>1.11 加载Properties文件</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111456282.png" alt="image-20220911145620170"></p>
+<ol>
+<li><p>开启context命名空间</p>
+<pre class=" language-xml"><code class="language-xml">&lt;beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       <span class="token comment" spellcheck="true">&lt;!--context命名空间--></span>
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                            <span class="token comment" spellcheck="true">&lt;!--context命名空间--></span>
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+</code></pre>
+</li>
+<li><p>使用context命名空间加载属性文件</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>property-placeholder</span> <span class="token attr-name">location</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jdbc.properties<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+</code></pre>
+</li>
+<li><p>使用属性占位符读取属性文件中的属性</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dataSource<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.mchange.v2.c3p0.ComboPooledDataSource<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>driverClass<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${jdbc.driver}<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jdbcUrl<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${jdbc.url}<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${jdbc.username}<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${jdbc.password}<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+</code></pre>
+</li>
+</ol>
+<ul>
+<li><p>不加载系统属性(属性文件中定义的key与系统中定义的key相同时，系统中定义的key优先级要更高)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111502801.png" alt="image-20220911150249754"></p>
+</li>
+<li><p>加载多个Properties文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111503254.png" alt="image-20220911150357101"></p>
+</li>
+<li><p>加载所有Properties文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111504907.png" alt="image-20220911150435771"></p>
+</li>
+<li><p>加载Properties文件<strong>标准格式</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111505926.png" alt="image-20220911150539885"></p>
+</li>
+<li><p>从类路径或jar包中搜索并加载Properties文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111507680.png" alt="image-20220911150702639"></p>
+</li>
+</ul>
+<h2 id="1-12-容器"><a href="#1-12-容器" class="headerlink" title="1.12 容器"></a>1.12 容器</h2><h3 id="1-12-1-创建容器"><a href="#1-12-1-创建容器" class="headerlink" title="1.12.1 创建容器"></a>1.12.1 创建容器</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111647393.png" alt="image-20220911164714313"></p>
+<h3 id="1-12-2-获取Bean"><a href="#1-12-2-获取Bean" class="headerlink" title="1.12.2 获取Bean"></a>1.12.2 获取Bean</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111651437.png" alt="image-20220911165112288"></p>
+<h3 id="1-12-3-容器类层次结构图"><a href="#1-12-3-容器类层次结构图" class="headerlink" title="1.12.3 容器类层次结构图"></a>1.12.3 容器类层次结构图</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111704548.png" alt="image-20220911170417442"></p>
+<h3 id="1-12-4-BeanFactory"><a href="#1-12-4-BeanFactory" class="headerlink" title="1.12.4 BeanFactory"></a>1.12.4 BeanFactory</h3><ul>
+<li>BeanFactory是容器的顶层接口，也是早期用来加载容器的接口</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111659052.png" alt="image-20220911165939998"></p>
+<ul>
+<li><p>BeanFactory容器加载完成不会调用构造方法来实例化bean，而是在使用bean的时候再调用</p>
+</li>
+<li><p>ApplicationContext在容器加载完成就会调用构造方法来初始化容器中的bean，但可以在bean标签中使用<strong>lazy-init</strong>属性设置ApplicationContext接口也是懒加载</p>
+</li>
+</ul>
+<h2 id="1-13-核心容器总结"><a href="#1-13-核心容器总结" class="headerlink" title="1.13 核心容器总结"></a>1.13 核心容器总结</h2><h3 id="1-13-1-容器相关"><a href="#1-13-1-容器相关" class="headerlink" title="1.13.1 容器相关"></a>1.13.1 容器相关</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111716726.png" alt="image-20220911171639662"></p>
+<h3 id="1-13-2-Bean相关"><a href="#1-13-2-Bean相关" class="headerlink" title="1.13.2 Bean相关"></a>1.13.2 Bean相关</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111720638.png" alt="image-20220911172032548"></p>
+<h3 id="1-13-3-依赖注入相关"><a href="#1-13-3-依赖注入相关" class="headerlink" title="1.13.3 依赖注入相关"></a>1.13.3 依赖注入相关</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111721068.png" alt="image-20220911172138961"></p>
+<h2 id="1-14-注解开发定义Bean"><a href="#1-14-注解开发定义Bean" class="headerlink" title="1.14 注解开发定义Bean"></a>1.14 注解开发定义Bean</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111748669.png" alt="image-20220911174859601"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111755674.png" alt="image-20220911175519631"></p>
+<ul>
+<li><p>作用与@component一样，只是字面意思更清晰</p>
+</li>
+<li><p>使用注解相当于在配置文件中起到了如下作用</p>
+<pre class=" language-xml"><code class="language-xml">@component()可以理解为在配置文件中定义了：
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+@component("idName")可以理解为在配置文件中定义了：
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>idName<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+</code></pre>
+</li>
+</ul>
+<h2 id="1-15-纯注解开发模式"><a href="#1-15-纯注解开发模式" class="headerlink" title="1.15 纯注解开发模式"></a>1.15 纯注解开发模式</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111933245.png" alt="image-20220911180739905"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111933592.png" alt="image-20220911181213311"></p>
+<ul>
+<li><p>@Configuration标志此类是一个配置类，代替了如下内容</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+ 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">></span></span>
+</code></pre>
+</li>
+<li><p>@ComponentScan(“com.yunmo”)开启组件扫描，代替了配置文件中如下内容</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>component-scan</span> <span class="token attr-name">base-package</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.yunmo<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+</code></pre>
+</li>
+<li><p>从此可以不再使用xml文件作为Spring的核心配置文件了</p>
+</li>
+</ul>
+<h2 id="1-16-注解开发Bean作用范围与生命周期"><a href="#1-16-注解开发Bean作用范围与生命周期" class="headerlink" title="1.16 注解开发Bean作用范围与生命周期"></a>1.16 注解开发Bean作用范围与生命周期</h2><h3 id="1-16-1-作用范围"><a href="#1-16-1-作用范围" class="headerlink" title="1.16.1 作用范围"></a>1.16.1 作用范围</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111933287.png" alt="image-20220911193224726"></p>
+<h3 id="1-16-2-生命周期"><a href="#1-16-2-生命周期" class="headerlink" title="1.16.2 生命周期"></a>1.16.2 生命周期</h3><ul>
+<li>PostConstruct在bean构造之后执行</li>
+<li>PreDestroy在bean彻底销毁之前执行</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111935424.png" alt="image-20220911193531355"></p>
+<h3 id="1-16-3-小结"><a href="#1-16-3-小结" class="headerlink" title="1.16.3 小结"></a>1.16.3 小结</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111940508.png" alt="image-20220911194015450"></p>
+<h2 id="1-17-注解开发依赖注入"><a href="#1-17-注解开发依赖注入" class="headerlink" title="1.17 注解开发依赖注入"></a>1.17 注解开发依赖注入</h2><h3 id="1-17-1-引用型依赖注入"><a href="#1-17-1-引用型依赖注入" class="headerlink" title="1.17.1 引用型依赖注入"></a>1.17.1 引用型依赖注入</h3><ul>
+<li>可以不用提供setter方法</li>
+<li>要提供无参构造函数来创建bean</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111959247.png" alt="image-20220911195811629"></p>
+<ul>
+<li>@Qualifier不能单独使用，必须同@Autowired一起使用</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209111959131.png" alt="image-20220911195954070"></p>
+<h3 id="1-17-2-简单型依赖注入"><a href="#1-17-2-简单型依赖注入" class="headerlink" title="1.17.2 简单型依赖注入"></a>1.17.2 简单型依赖注入</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209112004286.png" alt="image-20220911200408236"></p>
+<h3 id="1-17-3-加载Properties文件"><a href="#1-17-3-加载Properties文件" class="headerlink" title="1.17.3 加载Properties文件"></a>1.17.3 加载Properties文件</h3><ul>
+<li>不允许使用<em>通配符</em><ul>
+<li>*.properties</li>
+<li>classpath*:</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209112023372.png" alt="image-20220911202218151"></p>
+<h3 id="1-17-4-小结"><a href="#1-17-4-小结" class="headerlink" title="1.17.4 小结"></a>1.17.4 小结</h3><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209112025214.png" alt="image-20220911202512154"></p>
+<h2 id="1-18-注解开发管理第三方Bean"><a href="#1-18-注解开发管理第三方Bean" class="headerlink" title="1.18 注解开发管理第三方Bean"></a>1.18 注解开发管理第三方Bean</h2>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">杨奇</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2022/09/10/SSM/">http://example.com/2022/09/10/SSM/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">杨奇</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/SSM/">
+                                    <span class="chip bg-color">SSM</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/09/10/SSM/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="SSM">
+                        
+                        <span class="card-title">SSM</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF-%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    前端 框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SSM/">
+                        <span class="chip bg-color">SSM</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/09/10/Git/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Git">
+                        
+                        <span class="card-title">Git</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" class="post-category">
+                                    版本控制
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="toplist"
+                   id="3778678"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">杨奇</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">3.7k</span>&nbsp;字
+            
+            
+            
+            <!-- 
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+             -->
+            <!-- 
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+             -->
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2022";
+                    var startMonth = "8";
+                    var startDate = "27";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/17998" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=329731730" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 329731730" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+<!--  -->
+
+<!--  -->
+
+<!-- 
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+ -->
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- 天气接口 -->
+    
+        <script type="text/javascript">
+WIDGET = {FID: '1tFpFZ5Mtj'}
+</script>
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"><\/script>');
+    }
+</script>
+
+    
+
+</body>
+
+</html>
