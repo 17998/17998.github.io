@@ -29,31 +29,6 @@
     
     
     <entry>
-      <title>Git</title>
-      <link href="/2022/09/10/Git/"/>
-      <url>/2022/09/10/Git/</url>
-      
-        <content type="html"><![CDATA[<h1 id="第一章-概述"><a href="#第一章-概述" class="headerlink" title="第一章 概述"></a>第一章 概述</h1><h2 id="1-1-Git"><a href="#1-1-Git" class="headerlink" title="1.1 Git"></a>1.1 Git</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202209101243455.png" alt="image-20220910124324283"></p><h2 id="1-2-Git工作流程"><a href="#1-2-Git工作流程" class="headerlink" title="1.2 Git工作流程"></a>1.2 Git工作流程</h2><p><img src="C:\Users\杨奇\AppData\Roaming\Typora\typora-user-images\image-20220910124245148.png" alt="image-20220910124245148"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 版本控制 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Git </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Maven</title>
       <link href="/2022/09/05/Maven/"/>
       <url>/2022/09/05/Maven/</url>
