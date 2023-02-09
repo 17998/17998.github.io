@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Linux</title>
+      <link href="/2023/01/17/Linux/"/>
+      <url>/2023/01/17/Linux/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301171159625.png" alt="image-20230117114306187"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301171200265.png" alt="image-20230117114425798"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301171159957.png" alt="image-20230117114520127"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301171200276.png" alt="image-20230117114658787"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301171200210.png" alt="image-20230117114805597"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301171200107.png" alt="image-20230117115242143"></p><h1 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h1><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301171200348.png" alt="image-20230117115828627"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301171343401.png" alt="image-20230117133849790"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301171442136.png" alt="image-20230117144204869"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301171446191.png" alt="image-20230117144648084"></p><h1 id="三、常用命令"><a href="#三、常用命令" class="headerlink" title="三、常用命令"></a>三、常用命令</h1><h2 id="3-1-Linux命令初体验"><a href="#3-1-Linux命令初体验" class="headerlink" title="3.1 Linux命令初体验"></a>3.1 Linux命令初体验</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181341679.png" alt="image-20230118131756285"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181341886.png" alt="image-20230118131904486"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181341064.png" alt="image-20230118133335734"></p><h2 id="3-2-文件目录操作命令"><a href="#3-2-文件目录操作命令" class="headerlink" title="3.2 文件目录操作命令"></a>3.2 文件目录操作命令</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181415392.png" alt="image-20230118141501335"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181416845.png" alt="image-20230118141643798"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181421586.png" alt="image-20230118142140547"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181424524.png" alt="image-20230118142459476"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181429199.png" alt="image-20230118142950150"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181440183.png" alt="image-20230118144045126"></p><ul><li>p  —&gt;  parent</li></ul><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181451381.png" alt="image-20230118145156345"></p><h2 id="3-3-移动拷贝命令"><a href="#3-3-移动拷贝命令" class="headerlink" title="3.3 移动拷贝命令"></a>3.3 移动拷贝命令</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181503907.png" alt="image-20230118150325857"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181520429.png" alt="image-20230118152008380"></p><h2 id="3-4-打包压缩命令"><a href="#3-4-打包压缩命令" class="headerlink" title="3.4 打包压缩命令"></a>3.4 打包压缩命令</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301181559882.png" alt="image-20230118155937830"></p><ul><li>fileName：指定文件名</li><li>files：指定那些文件参与打包或压缩，解包或解压时不需要该参数</li><li>-zcvf：打包的同时进行压缩</li><li>-cvf：只打包</li></ul><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301201219394.png" alt="image-20230120121946315"></p><ul><li>-C：解压到指定目录</li></ul><h2 id="3-5-文本编辑命令"><a href="#3-5-文本编辑命令" class="headerlink" title="3.5 文本编辑命令"></a>3.5 文本编辑命令</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301201228108.png" alt="image-20230120122831029"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301201229712.png" alt="image-20230120122956658"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301201232029.png" alt="image-20230120123229988"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301201233578.png" alt="image-20230120123329541"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202301201233474.png" alt="image-20230120123353432"></p><h2 id="3-6-查找命令"><a href="#3-6-查找命令" class="headerlink" title="3.6 查找命令"></a>3.6 查找命令</h2><h1 id="四、软件安装"><a href="#四、软件安装" class="headerlink" title="四、软件安装"></a>四、软件安装</h1><h1 id="五、项目部署"><a href="#五、项目部署" class="headerlink" title="五、项目部署"></a>五、项目部署</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git</title>
       <link href="/2023/01/06/Git/"/>
       <url>/2023/01/06/Git/</url>
