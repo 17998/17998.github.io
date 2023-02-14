@@ -345,14 +345,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -415,8 +415,8 @@
 </ol>
 <h3 id="1-4-JDK，JRE，JVM之间的关系-笔试题，简答题，重点"><a href="#1-4-JDK，JRE，JVM之间的关系-笔试题，简答题，重点" class="headerlink" title="1.4 JDK，JRE，JVM之间的关系(笔试题，简答题，重点)"></a>1.4 JDK，JRE，JVM之间的关系(笔试题，简答题，重点)</h3><ul>
 <li>JDK: Java开发工具包 Java Development Kit 是写Java代码之前必须安装的工具</li>
-<li>JRE: Java运行时环境 Java Runtime Environment 是Java运行时必须依赖环境</li>
-<li>JVM: Java虚拟机 Java Virtual Machine</li>
+<li>JRE: Java运行时环境 Java Runtime Environment 是Java运行时必须依赖环境，为Java代码的运行提供了核心类库的支持</li>
+<li>JVM: Java虚拟机 Java Virtual Machine，JVM就是一个软件，JVM针对不同的操作系统提供了不同版本的JVM</li>
 <li>关系：JDK包含JRE，JRE包含JVM</li>
 </ul>
 <h3 id="1-5-为什么配置环境变量"><a href="#1-5-为什么配置环境变量" class="headerlink" title="1.5 为什么配置环境变量"></a>1.5 为什么配置环境变量</h3><ul>
@@ -442,12 +442,12 @@
 </li>
 </ul>
 <h3 id="2-2-成员变量与局部变量的区别"><a href="#2-2-成员变量与局部变量的区别" class="headerlink" title="2.2 成员变量与局部变量的区别"></a>2.2 成员变量与局部变量的区别</h3><ul>
-<li>成员变量：定义在方法外，类里面的变量，不需要赋值，有默认值</li>
-<li>局部变量：定义在方法体或代码块中的变量，需要赋值，否则无法使用</li>
+<li>成员变量：定义在方法外，类里面的变量，不需要赋值，<strong>有默认值</strong></li>
+<li>局部变量：定义在方法体或代码块中的变量，<strong>需要赋值</strong>，否则无法使用</li>
 </ul>
-<h3 id="2-3-数据类型"><a href="#2-3-数据类型" class="headerlink" title="2.3 数据类型"></a>2.3 数据类型</h3><ul>
-<li>基本数据类型<ol>
-<li>整型<ul>
+<h3 id="2-3-数据类型-重点-取值范围-占用字节"><a href="#2-3-数据类型-重点-取值范围-占用字节" class="headerlink" title="2.3 数据类型(重点 取值范围 占用字节)"></a>2.3 数据类型(重点 取值范围 占用字节)</h3><ul>
+<li>基本数据类型（4类8种–都是关键字）<ol>
+<li>整型（占用字节数不受操作系统的影响）<ul>
 <li>byte<ul>
 <li>取值范围：-128<del>127（-2^7</del>2^7-1)</li>
 <li>内存：1字节</li>
@@ -470,6 +470,12 @@
 </ul>
 </li>
 <li>默认值：0</li>
+<li><strong>整型常量</strong>表示形式<ol>
+<li>十进制</li>
+<li>八进制</li>
+<li>十六进制</li>
+</ol>
+</li>
 </ul>
 </li>
 <li>浮点型<ul>
@@ -488,8 +494,10 @@
 </li>
 <li>字符型<ul>
 <li>char</li>
+<li>取值范围：0<del>65535(0</del>2^16-1)</li>
 <li>内存：2个字节</li>
 <li>默认值：空格</li>
+<li>必须有内容</li>
 </ul>
 </li>
 <li>bool型<ul>
@@ -502,7 +510,47 @@
 </li>
 <li>引用类型</li>
 </ul>
-<h3 id="2-4-基本数据类型转换"><a href="#2-4-基本数据类型转换" class="headerlink" title="2.4 基本数据类型转换"></a>2.4 基本数据类型转换</h3>
+<h3 id="2-4-基本数据类型转换"><a href="#2-4-基本数据类型转换" class="headerlink" title="2.4 基本数据类型转换"></a>2.4 基本数据类型转换</h3><p><strong>布尔类型不参与转换</strong></p>
+<p><strong>规则：</strong></p>
+<p><strong>byte&lt;short(char)&lt;int&lt;long&lt;float&lt;double</strong></p>
+<ul>
+<li><p>自动类型转换</p>
+<p>小容量向大容量转换</p>
+</li>
+<li><p>强制类型转换</p>
+<ul>
+<li>大容量向小容量转换</li>
+<li>加强制类型转换符</li>
+<li>弊端<ul>
+<li>损失精度</li>
+<li>数据溢出</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="笔试题"><a href="#笔试题" class="headerlink" title="笔试题"></a>笔试题</h2><h3 id="1-1-JDK-和-JRE和JVM-的关系"><a href="#1-1-JDK-和-JRE和JVM-的关系" class="headerlink" title="1.1 JDK 和 JRE和JVM 的关系:"></a>1.1 JDK 和 JRE和JVM 的关系:</h3><blockquote>
+<p>JDK——Java开发工具包 Java Development Kit<br>JRE——Java运行时环境 Java Runtime Enviroment<br>JVM——Java虚拟机 Java Virtual Machine<br>关系:JDK包含JRE,JRE包含JVM</p>
+</blockquote>
+<h3 id="1-2-一个Java的源文件（以-java结尾的文件）中是否可以包含多个类？有什么限制？"><a href="#1-2-一个Java的源文件（以-java结尾的文件）中是否可以包含多个类？有什么限制？" class="headerlink" title="1.2 一个Java的源文件（以.java结尾的文件）中是否可以包含多个类？有什么限制？"></a>1.2 一个Java的源文件（以.java结尾的文件）中是否可以包含多个类？有什么限制？</h3><ul>
+<li>可以</li>
+<li>与源文件名同名的类名才可以用public关键字修饰并且只有一个，其他类名不能用public修饰，可以有多个，各个类并列存在</li>
+</ul>
+<h3 id="1-3-byte，short，int取值范围"><a href="#1-3-byte，short，int取值范围" class="headerlink" title="1.3 byte，short，int取值范围"></a>1.3 byte，short，int取值范围</h3><h3 id="1-4-ASCII编码特值"><a href="#1-4-ASCII编码特值" class="headerlink" title="1.4 ASCII编码特值"></a>1.4 ASCII编码特值</h3><ul>
+<li>‘0’—48</li>
+<li>‘A’—65</li>
+<li>‘a’—97</li>
+</ul>
+<h3 id="1-5-int向byte，short，char转换"><a href="#1-5-int向byte，short，char转换" class="headerlink" title="1.5 int向byte，short，char转换"></a>1.5 int向byte，short，char转换</h3><p>int类型的数值直接赋值给byte,short,char类型的变量，并且没有超出byte,short,char类型的取值范围，是可以直接赋值的，不用强转</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">byte</span> a <span class="token operator">=</span> <span class="token number">127</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//-128~127</span>
+
+    <span class="token keyword">short</span> b <span class="token operator">=</span> <span class="token number">32767</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//-32768~32767</span>
+
+    <span class="token keyword">char</span> c <span class="token operator">=</span> <span class="token number">65535</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//0~65535</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -831,7 +879,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.5k</span>&nbsp;字
+                class="white-color">10.9k</span>&nbsp;字
             
             
             
