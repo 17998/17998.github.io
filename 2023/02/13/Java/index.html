@@ -358,14 +358,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    12.1k
+                    14k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    49 分
+                    56 分
                 </div>
                 
 
@@ -1148,6 +1148,8 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <h3 id="6-8-面试题"><a href="#6-8-面试题" class="headerlink" title="6.8 面试题"></a>6.8 面试题</h3><h4 id="6-8-1-说出你遇到的常见的一些异常？"><a href="#6-8-1-说出你遇到的常见的一些异常？" class="headerlink" title="6.8.1 说出你遇到的常见的一些异常？"></a>6.8.1 说出你遇到的常见的一些异常？</h4><ul>
 <li>ArrayIndexOutOfBoundsException</li>
 <li>NullPointerException</li>
+<li>ClassFormatException</li>
+<li>NumberFormatException</li>
 <li>ClassNotFoundException</li>
 </ul>
 <h4 id="6-8-2-代码实现冒泡排序或者选择排序或者插入排序？"><a href="#6-8-2-代码实现冒泡排序或者选择排序或者插入排序？" class="headerlink" title="6.8.2 代码实现冒泡排序或者选择排序或者插入排序？"></a>6.8.2 代码实现冒泡排序或者选择排序或者插入排序？</h4><h4 id="6-8-3-代码实现杨辉三角形？"><a href="#6-8-3-代码实现杨辉三角形？" class="headerlink" title="6.8.3 代码实现杨辉三角形？"></a>6.8.3 代码实现杨辉三角形？</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -2509,6 +2511,19 @@ Cat c <span class="token operator">=</span> <span class="token punctuation">(</s
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
+<h4 id="11-4-2-深拷贝与浅拷贝"><a href="#11-4-2-深拷贝与浅拷贝" class="headerlink" title="11.4.2 深拷贝与浅拷贝"></a>11.4.2 深拷贝与浅拷贝</h4><ul>
+<li>浅拷贝<ul>
+<li>浅拷贝对于基本数据类型就是直接进行值传递，在内存的另一个空间内存放，修改这个值不会影响到拷贝源的值</li>
+<li>浅拷贝对于引用数据类型就是进行的是地址传递，并没有对该对象重新开辟一个内存空间进行存放，所以对于引用数据类型的浅拷贝就相当于两个引用指向了同一个内存地址</li>
+<li>那么就显而易见了修改拷贝后的值就会影响到拷贝源的值</li>
+</ul>
+</li>
+<li>深拷贝<ul>
+<li>新建一个对象，将原对象的属性拷贝到新对象，原对象与新对象不共享同一块内存空间</li>
+<li>修改新对象或者原对象的属性不会影响另一个对象的属性</li>
+</ul>
+</li>
+</ul>
 <h2 id="day12"><a href="#day12" class="headerlink" title="day12"></a>day12</h2><h3 id="12-1-StringBuffer"><a href="#12-1-StringBuffer" class="headerlink" title="12.1 StringBuffer"></a>12.1 StringBuffer</h3><ul>
 <li><p><strong>StringBuffer可变的,是一个没有被final修饰的字符数组</strong></p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202302271907641.png" alt="image-20230227190410676"></p>
@@ -2521,11 +2536,297 @@ Cat c <span class="token operator">=</span> <span class="token punctuation">(</s
 </li>
 </ul>
 <h3 id="12-2-StringBuilder"><a href="#12-2-StringBuilder" class="headerlink" title="12.2 StringBuilder"></a>12.2 StringBuilder</h3><h3 id="12-3-String，StringBuffer和StringBuilder的区别-重点"><a href="#12-3-String，StringBuffer和StringBuilder的区别-重点" class="headerlink" title="12.3 String，StringBuffer和StringBuilder的区别(重点)"></a>12.3 String，StringBuffer和StringBuilder的区别(重点)</h3><ul>
+<li><p>三者共同之处：<font color="red">都是final类,不允许被继承</font></p>
+</li>
+<li><p>StringBuffer与StringBuilder两者共同之处：可以通过append进行字符串的操作。</p>
+</li>
+<li><p>String实现了三个接口:Serializable、Comparable<string>、CarSequence，StringBuilder只实现了两个接口Serializable、CharSequence，<font color="red">相比之下String的实例可以通过compareTo方法进行比较，其他两个不可以。</font></string></p>
+</li>
 <li><p><font color="red">String是一个被final修饰的字符数组，一旦被赋值就不能改变</font></p>
 </li>
 <li><p><font color="red">StringBuffer和StringBuilder是没有被final修饰的字符数组,适合拼接</font></p>
 </li>
 <li><p><font color="red">StringBuffer是线程安全的，效率低。 StringBuilder线程不安全的，效率高</font></p>
+</li>
+</ul>
+<pre><code>这三个类之间的区别主要是在两个方面，即运行速度和线程安全这两方面。
+1、首先说运行速度，在这方面运行速度快慢为：StringBuilder &gt; StringBuffer &gt; String
+　　String最慢的原因：String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，即String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的。
+2. 再来说线程安全
+　　在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的
+　　如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有synchronized关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。所以如果要进行的操作是多线程的，那么就要使用StringBuffer，但是在单线程的情况下，还是建议使用速度比较快的StringBuilder。
+
+3. 总结一下　
+　　　String：适用于少量的字符串操作的情况
+
+　　　StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况
+
+　　　StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况
+</code></pre>
+<h3 id="12-4-Date"><a href="#12-4-Date" class="headerlink" title="12.4 Date"></a>12.4 Date</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//构造方法</span>
+<span class="token keyword">public</span> <span class="token function">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token function">Date</span><span class="token punctuation">(</span><span class="token keyword">long</span> date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//返回毫秒数</span>
+<span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+</code></pre>
+<h3 id="12-5-Calendar"><a href="#12-5-Calendar" class="headerlink" title="12.5 Calendar"></a>12.5 Calendar</h3><ul>
+<li><p>抽象类，不能直接通过new方式创建对象，但可以调用getInstance()创建对象</p>
+</li>
+<li><p>成员方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">int</span> field<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//取出给定日历字段的值</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">set</span><span class="token punctuation">(</span><span class="token keyword">int</span> field<span class="token punctuation">,</span><span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//设置日历字段的值</span>
+<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> field<span class="token punctuation">,</span><span class="token keyword">int</span> amount<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//将指定的时间量添加或减去给定的日历字段</span>
+<span class="token keyword">public</span> <span class="token keyword">final</span> Date <span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//转成Date类型</span>
+</code></pre>
+</li>
+<li><p>注意</p>
+<ul>
+<li>在Calendar中0<del>11表示中国的1</del>12月</li>
+<li>在Calendar中周日是周一</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-6-BigDecimal"><a href="#12-6-BigDecimal" class="headerlink" title="12.6 BigDecimal"></a>12.6 BigDecimal</h3><ul>
+<li><p>可以处理精度极高的数据，经常用在财务类软件中</p>
+</li>
+<li><p>常用构造方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token function">BigDecimal</span><span class="token punctuation">(</span><span class="token keyword">double</span> val<span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="12-7-包装类"><a href="#12-7-包装类" class="headerlink" title="12.7 包装类"></a>12.7 包装类</h3><h4 id="12-7-1-八种包装数据类型"><a href="#12-7-1-八种包装数据类型" class="headerlink" title="12.7.1 八种包装数据类型"></a>12.7.1 八种包装数据类型</h4><pre><code>byte---Byte
+short---Short
+int---Integer
+long---Long
+float---Float
+double---Double
+char---Character
+boolean---Boolean
+</code></pre>
+<h4 id="12-7-2-Integer"><a href="#12-7-2-Integer" class="headerlink" title="12.7.2 Integer"></a>12.7.2 Integer</h4><ul>
+<li>构造器</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token function">Integer</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span> 
+ 
+<span class="token comment" spellcheck="true">//s必须是由数字组成的字符串</span>
+<span class="token keyword">public</span> <span class="token function">Integer</span><span class="token punctuation">(</span>String s<span class="token punctuation">)</span> <span class="token keyword">throws</span> NumberFormatException
+</code></pre>
+<ul>
+<li><p>属性</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//int能表示的最大值</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> MAX_VALUE
+    
+<span class="token comment" spellcheck="true">//int能表示的最小值</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> MIN_VALUE
+</code></pre>
+</li>
+<li><p><font color="red">成员方法</font></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> Integer <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span>
+    
+<span class="token keyword">public</span> <span class="token keyword">static</span> Integer <span class="token function">valueOf</span><span class="token punctuation">(</span>String s<span class="token punctuation">)</span>
+    
+<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>String s<span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="12-7-3-int和String的相互转换"><a href="#12-7-3-int和String的相互转换" class="headerlink" title="12.7.3 int和String的相互转换"></a>12.7.3 int和String的相互转换</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//int-String</span>
+
+        <span class="token comment" spellcheck="true">//方式一</span>
+        <span class="token keyword">int</span> number<span class="token operator">=</span><span class="token number">99</span><span class="token punctuation">;</span>
+        String s1<span class="token operator">=</span><span class="token string">""</span><span class="token operator">+</span>number<span class="token punctuation">;</span>
+        
+        <span class="token comment" spellcheck="true">//方式2</span>
+        <span class="token comment" spellcheck="true">//static String valueOf(int i) </span>
+        <span class="token comment" spellcheck="true">//返回 int 参数的字符串表示形式。 </span>
+        String s2<span class="token operator">=</span>String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment" spellcheck="true">//方式3</span>
+        Integer i<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String s3<span class="token operator">=</span>i<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment" spellcheck="true">//方式4</span>
+        <span class="token comment" spellcheck="true">//static String toString(int i) </span>
+        <span class="token comment" spellcheck="true">//返回一个表示指定整数的 String 对象。 </span>
+        String s4<span class="token operator">=</span>Integer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment" spellcheck="true">//String --- int</span>
+        String s5<span class="token operator">=</span><span class="token string">"100"</span><span class="token punctuation">;</span>
+        
+        Integer i1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span>s5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment" spellcheck="true">//int intValue() </span>
+        <span class="token comment" spellcheck="true">//以 int 类型返回该 Integer 的值。 </span>
+        <span class="token keyword">int</span> i3<span class="token operator">=</span>i1<span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment" spellcheck="true">//方式2</span>
+        <span class="token comment" spellcheck="true">//static int parseInt(String s)  </span>
+        <span class="token keyword">int</span> i2 <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>s5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="12-7-4-自动装箱与自动拆箱"><a href="#12-7-4-自动装箱与自动拆箱" class="headerlink" title="12.7.4 自动装箱与自动拆箱"></a>12.7.4 自动装箱与自动拆箱</h4><ul>
+<li>自动装箱：自动将一个基本数据类型转成对应的包装数据类型</li>
+<li>自动拆箱：自动将一个包装数据类型转为对应的基本数据类型</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//static Integer valueOf(int i) </span>
+        <span class="token comment" spellcheck="true">//返回一个表示指定的 int 值的 Integer 实例 </span>
+        <span class="token comment" spellcheck="true">//Integer i = Integer.valueOf(99);</span>
+        
+        <span class="token comment" spellcheck="true">//自动装箱:通过Integer.valueOf()自动把一个基本数据类型转换成包装数据类型 </span>
+        Integer i<span class="token operator">=</span><span class="token number">99</span><span class="token punctuation">;</span>
+        
+        
+        <span class="token comment" spellcheck="true">//自动拆箱:把一个包装数据类型通过intValue()变成一个基本数据类型</span>
+        <span class="token comment" spellcheck="true">//先拆箱进行计算，然后把结果在进行装箱</span>
+        <span class="token comment" spellcheck="true">//i = Integer.valueOf(i.intValue() + 200);</span>
+        i<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">200</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="12-7-5-Integer缓冲池"><a href="#12-7-5-Integer缓冲池" class="headerlink" title="12.7.5 Integer缓冲池"></a>12.7.5 Integer缓冲池</h4><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202302281822331.png" alt="image-20230228182233742"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Integer i1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">127</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Integer i2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">127</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i1<span class="token operator">==</span>i2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//false</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>i2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+        
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        Integer i3<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Integer i4<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i3<span class="token operator">==</span>i4<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//false</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i3<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>i4<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+        
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+        Integer  i5<span class="token operator">=</span><span class="token number">128</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//自动装箱</span>
+        Integer  i6<span class="token operator">=</span><span class="token number">128</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//自动装箱</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i5<span class="token operator">==</span>i6<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//false</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i5<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>i6<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+        
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        Integer i7<span class="token operator">=</span><span class="token number">127</span><span class="token punctuation">;</span>
+        Integer i8<span class="token operator">=</span><span class="token number">127</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i7<span class="token operator">==</span>i8<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i7<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>i8<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="12-8-日期与数字格式化"><a href="#12-8-日期与数字格式化" class="headerlink" title="12.8 日期与数字格式化"></a>12.8 日期与数字格式化</h3><h4 id="12-8-1-日期格式化"><a href="#12-8-1-日期格式化" class="headerlink" title="12.8.1 日期格式化"></a>12.8.1 日期格式化</h4><pre><code>java.text.Format 格式化的抽象类
+    java.text.DateFormat 日期格式化的抽象类
+        java.text.SimpleDateFormat 日期格式化的类
+</code></pre>
+<ul>
+<li><p>日期格式化元素</p>
+<pre><code>y 年  yyyy
+M 月  MM
+d 日  dd
+H 时  HH
+m 分  mm
+s 秒  ss
+S 毫秒  SSS
+</code></pre>
+</li>
+<li><p>构造方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token function">SimpleDateFormat</span><span class="token punctuation">(</span>String pattern<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>成员方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">final</span> String <span class="token function">format</span><span class="token punctuation">(</span>Date d<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">//Date——>String</span>
+    
+<span class="token keyword">public</span> Date <span class="token function">parse</span><span class="token punctuation">(</span>String source<span class="token punctuation">)</span><span class="token keyword">throws</span> ParseException   <span class="token comment" spellcheck="true">//String——>Date</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="12-8-2-数字格式化"><a href="#12-8-2-数字格式化" class="headerlink" title="12.8.2 数字格式化"></a>12.8.2 数字格式化</h4><pre><code>java.text.Format  格式化的抽象类
+    java.text.NumberFormat  数字格式化的抽象类
+        java.text.DecimalFormat  数字格式化的类
+</code></pre>
+<ul>
+<li><p>数字格式化元素</p>
+<pre><code># 任意数字(0~9)
+. 小数点
+, 千分位
+0 不够的补零
+</code></pre>
+</li>
+<li><p>构造方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token function">DecimalFormat</span><span class="token punctuation">(</span>String pattern<span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li><p>成员方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">final</span> String <span class="token function">format</span><span class="token punctuation">(</span>Object obj<span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="12-9-面试题"><a href="#12-9-面试题" class="headerlink" title="12.9 面试题"></a>12.9 面试题</h3><h4 id="12-9-1-String-StringBuilder-StringBuffer"><a href="#12-9-1-String-StringBuilder-StringBuffer" class="headerlink" title="12.9.1 String StringBuilder StringBuffer"></a>12.9.1 String StringBuilder StringBuffer</h4><ul>
+<li><p>StringBuffer和StringBuilder这两个类用来解决String字符串拼接浪费空间的问题</p>
+</li>
+<li><p>相同：</p>
+<ul>
+<li>表示字符串，可以做字符串拼接使用</li>
+</ul>
+</li>
+<li><p>不同</p>
+<ul>
+<li>String不可变的char[]数组,字符串拼接时很浪费内存空间</li>
+<li>tringBuilder/StringBuffer 可扩容的字符序列,字符串拼接时不浪费内存空间</li>
+</ul>
+</li>
+<li><p>StringBuilder的比较StringBuffer</p>
+<ul>
+<li><p>相同：</p>
+<ul>
+<li>使用时构造方法还是拼接字符串方法用法是相同，</li>
+</ul>
+<ul>
+<li>初始容量都为16</li>
+</ul>
+</li>
+<li><p>不同：</p>
+<ul>
+<li>StringBuffer 多线程安全的(synchronized)，效率低</li>
+<li>StringBuilder 多线程不安全的，效率高</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-9-2-自动装箱和自动拆箱"><a href="#12-9-2-自动装箱和自动拆箱" class="headerlink" title="12.9.2 自动装箱和自动拆箱"></a>12.9.2 自动装箱和自动拆箱</h4><ul>
+<li><p>如果数据值在-128~127范围之间，Java引入整型常量池(类似String str = “abc”)</p>
+<pre class=" language-java"><code class="language-java">Integer i1 <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span>
+Integer i2 <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i1<span class="token operator">==</span>i2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//false</span>
+
+Integer i3 <span class="token operator">=</span> <span class="token number">127</span><span class="token punctuation">;</span>
+Integer i4 <span class="token operator">=</span> <span class="token number">127</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i3<span class="token operator">==</span>i4<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="day13"><a href="#day13" class="headerlink" title="day13"></a>day13</h2><h3 id="13-1-File"><a href="#13-1-File" class="headerlink" title="13.1 File"></a>13.1 File</h3><ul>
+<li><p>属性</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//路径分隔符 windows系统中是 ; Linux系统是 :</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String pathSeparator
+    
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">char</span> pathSeparatorChar
+    
+<span class="token comment" spellcheck="true">//文件名称分隔符  windows系统中 \  Linux系统是 /    </span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String separator
+    
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">char</span> separatorChar
+</code></pre>
 </li>
 </ul>
 
@@ -2873,7 +3174,7 @@ Cat c <span class="token operator">=</span> <span class="token punctuation">(</s
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">21.6k</span>&nbsp;字
+                class="white-color">23.4k</span>&nbsp;字
             
             
             
