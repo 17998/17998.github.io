@@ -679,7 +679,7 @@ b <span class="token operator">=</span> b<span class="token operator">+</span><s
 </ol>
 </li>
 </ul>
-<h3 id="3-3-运算符补充"><a href="#3-3-运算符补充" class="headerlink" title="3.3 运算符补充"></a>3.3 运算符补充</h3><pre><code>位运算是直接对二进制补码进行运算。(了解)
+<h3 id="3-3-运算符补充"><a href="#3-3-运算符补充" class="headerlink" title="3.3 运算符补充"></a>3.3 运算符补充</h3><pre class=" language-xml"><code class="language-xml">位运算是直接对二进制补码进行运算。(了解)
 结论：
             &amp;:有0则0
             |:有1则1
@@ -687,12 +687,12 @@ b <span class="token operator">=</span> b<span class="token operator">+</span><s
             ~:按位取反
             
             
-            &lt;&lt;:左移			空位补0，被移除的高位丢弃。
-                注：当左移的运算数是byte 和 short类型时，将自动把这些类型扩大为 int 型。
+            &lt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>:左移</span>			<span class="token attr-name">空位补0，被移除的高位丢弃。</span>
+                <span class="token attr-name">注：当左移的运算数是byte</span> <span class="token attr-name">和</span> <span class="token attr-name">short类型时，将自动把这些类型扩大为</span> <span class="token attr-name">int</span> <span class="token attr-name">型。</span>
                 
-            &gt;&gt;:右移			被移位的二进制最高位是0，右移后，空缺位补0；最高位是1，高位补1空位1
+            <span class="token punctuation">></span></span>>:右移			被移位的二进制最高位是0，右移后，空缺位补0；最高位是1，高位补1空位1
             
-            &gt;&gt;&gt;:无符号右移	  被移位二进制最高位无论是0或者是1，空缺位都用0补。
+            >>>:无符号右移	  被移位二进制最高位无论是0或者是1，空缺位都用0补。
 </code></pre>
 <h3 id="3-4-常量和变量的运算"><a href="#3-4-常量和变量的运算" class="headerlink" title="3.4 常量和变量的运算"></a>3.4 常量和变量的运算</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">byte</span> b1<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
@@ -703,7 +703,7 @@ b <span class="token operator">=</span> b<span class="token operator">+</span><s
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b4<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<pre><code>分析： b3 = 1 + 2 ， 1 和 2 是常量，为固定不变的数据，在编译的时候（编译器javac），已经确定了 1+2 的结果并没有超过byte类型的取值范围，可以赋值给变量 b3 ，因此 b3=1 + 2 是正确的。
+<pre class=" language-xml"><code class="language-xml">分析： b3 = 1 + 2 ， 1 和 2 是常量，为固定不变的数据，在编译的时候（编译器javac），已经确定了 1+2 的结果并没有超过byte类型的取值范围，可以赋值给变量 b3 ，因此 b3=1 + 2 是正确的。
 反之， b4 = b2 + b3 ， b2 和 b3 是变量，变量的值是可能变化的，在编译的时候，编译器javac不确定b2+b3的结果是什么，因此会将结果以int类型进行处理，所以int类型不能赋值给byte类型，因此编译失败。
 </code></pre>
 <h3 id="3-5-笔试题"><a href="#3-5-笔试题" class="headerlink" title="3.5 笔试题"></a>3.5 笔试题</h3><h4 id="3-5-1-i和i-的区别"><a href="#3-5-1-i和i-的区别" class="headerlink" title="3.5.1 ++i和i++的区别"></a>3.5.1 ++i和i++的区别</h4><ul>
@@ -1705,7 +1705,7 @@ String s3 <span class="token operator">=</span> <span class="token keyword">new<
 <li><p><font color="red">子类与父类定义了相同的静态方法，父类的静态方法会被隐藏</font></p>
 </li>
 </ul>
-<h3 id="10-3-抽象类"><a href="#10-3-抽象类" class="headerlink" title="10.3 抽象类"></a>10.3 抽象类</h3><pre><code>1.抽象类不能创建对象，如果创建，编译无法通过而报错。只能创建其非抽象子类的对象。
+<h3 id="10-3-抽象类"><a href="#10-3-抽象类" class="headerlink" title="10.3 抽象类"></a>10.3 抽象类</h3><pre class=" language-xml"><code class="language-xml">1.抽象类不能创建对象，如果创建，编译无法通过而报错。只能创建其非抽象子类的对象。
     理解：假设创建了抽象类的对象，调用抽象的方法，而抽象方法没有具体的方法体，没有意义。
 2.抽象类中，可以有构造方法，是供子类创建对象时，初始化父类成员使用的。
     理解：子类的构造方法中，有默认的super()，需要访问父类构造方法。
@@ -1898,7 +1898,7 @@ String s3 <span class="token operator">=</span> <span class="token keyword">new<
 </ul>
 </li>
 </ul>
-<h4 id="10-4-4-抽象类和接口的区别"><a href="#10-4-4-抽象类和接口的区别" class="headerlink" title="10.4.4 抽象类和接口的区别"></a>10.4.4 抽象类和接口的区别</h4><pre><code>抽象类:
+<h4 id="10-4-4-抽象类和接口的区别"><a href="#10-4-4-抽象类和接口的区别" class="headerlink" title="10.4.4 抽象类和接口的区别"></a>10.4.4 抽象类和接口的区别</h4><pre class=" language-xml"><code class="language-xml">抽象类:
        成员变量:  可以是常量，也可以是变量
        构造方法:  有
        成员方法:  可以是抽象的，也可以是非抽象的
@@ -2455,11 +2455,11 @@ Cat c <span class="token operator">=</span> <span class="token punctuation">(</s
 <li><p>equals()</p>
 <ul>
 <li><p>==</p>
-<pre><code>如果==是基本数据类型比较的是值
+<pre class=" language-xml"><code class="language-xml">如果==是基本数据类型比较的是值
 如果==是引用数据类型比较的是地址
 </code></pre>
 </li>
-<li><p>equals:<br>   <code>   默认比较的是地址    我们可以重写让它比较成员变量的值   </code></p>
+<li><p>equals:<br>   <code>xml    默认比较的是地址    我们可以重写让它比较成员变量的值    </code></p>
 </li>
 </ul>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
@@ -2551,8 +2551,8 @@ Cat c <span class="token operator">=</span> <span class="token punctuation">(</s
 <li><p><font color="red">StringBuffer是线程安全的，效率低。 StringBuilder线程不安全的，效率高</font></p>
 </li>
 </ul>
-<pre><code>这三个类之间的区别主要是在两个方面，即运行速度和线程安全这两方面。
-1、首先说运行速度，在这方面运行速度快慢为：StringBuilder &gt; StringBuffer &gt; String
+<pre class=" language-xml"><code class="language-xml">这三个类之间的区别主要是在两个方面，即运行速度和线程安全这两方面。
+1、首先说运行速度，在这方面运行速度快慢为：StringBuilder > StringBuffer > String
 　　String最慢的原因：String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，即String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的。
 2. 再来说线程安全
 　　在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的
@@ -2598,7 +2598,7 @@ Cat c <span class="token operator">=</span> <span class="token punctuation">(</s
 </code></pre>
 </li>
 </ul>
-<h3 id="12-7-包装类"><a href="#12-7-包装类" class="headerlink" title="12.7 包装类"></a>12.7 包装类</h3><h4 id="12-7-1-八种包装数据类型"><a href="#12-7-1-八种包装数据类型" class="headerlink" title="12.7.1 八种包装数据类型"></a>12.7.1 八种包装数据类型</h4><pre><code>byte---Byte
+<h3 id="12-7-包装类"><a href="#12-7-包装类" class="headerlink" title="12.7 包装类"></a>12.7 包装类</h3><h4 id="12-7-1-八种包装数据类型"><a href="#12-7-1-八种包装数据类型" class="headerlink" title="12.7.1 八种包装数据类型"></a>12.7.1 八种包装数据类型</h4><pre class=" language-xml"><code class="language-xml">byte---Byte
 short---Short
 int---Integer
 long---Long
@@ -2725,13 +2725,13 @@ boolean---Boolean
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="12-8-日期与数字格式化"><a href="#12-8-日期与数字格式化" class="headerlink" title="12.8 日期与数字格式化"></a>12.8 日期与数字格式化</h3><h4 id="12-8-1-日期格式化"><a href="#12-8-1-日期格式化" class="headerlink" title="12.8.1 日期格式化"></a>12.8.1 日期格式化</h4><pre><code>java.text.Format 格式化的抽象类
+<h3 id="12-8-日期与数字格式化"><a href="#12-8-日期与数字格式化" class="headerlink" title="12.8 日期与数字格式化"></a>12.8 日期与数字格式化</h3><h4 id="12-8-1-日期格式化"><a href="#12-8-1-日期格式化" class="headerlink" title="12.8.1 日期格式化"></a>12.8.1 日期格式化</h4><pre class=" language-xml"><code class="language-xml">java.text.Format 格式化的抽象类
     java.text.DateFormat 日期格式化的抽象类
         java.text.SimpleDateFormat 日期格式化的类
 </code></pre>
 <ul>
 <li><p>日期格式化元素</p>
-<pre><code>y 年  yyyy
+<pre class=" language-xml"><code class="language-xml">y 年  yyyy
 M 月  MM
 d 日  dd
 H 时  HH
@@ -2751,13 +2751,13 @@ S 毫秒  SSS
 </code></pre>
 </li>
 </ul>
-<h4 id="12-8-2-数字格式化"><a href="#12-8-2-数字格式化" class="headerlink" title="12.8.2 数字格式化"></a>12.8.2 数字格式化</h4><pre><code>java.text.Format  格式化的抽象类
+<h4 id="12-8-2-数字格式化"><a href="#12-8-2-数字格式化" class="headerlink" title="12.8.2 数字格式化"></a>12.8.2 数字格式化</h4><pre class=" language-xml"><code class="language-xml">java.text.Format  格式化的抽象类
     java.text.NumberFormat  数字格式化的抽象类
         java.text.DecimalFormat  数字格式化的类
 </code></pre>
 <ul>
 <li><p>数字格式化元素</p>
-<pre><code># 任意数字(0~9)
+<pre class=" language-xml"><code class="language-xml"># 任意数字(0~9)
 . 小数点
 , 千分位
 0 不够的补零
@@ -3197,7 +3197,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 </code></pre>
 </li>
 </ol>
-<h3 id="13-4-面试题"><a href="#13-4-面试题" class="headerlink" title="13.4 面试题"></a>13.4 面试题</h3><h4 id="13-4-1-如何处理异常？自定义异常是怎么做的？"><a href="#13-4-1-如何处理异常？自定义异常是怎么做的？" class="headerlink" title="13.4.1 如何处理异常？自定义异常是怎么做的？"></a>13.4.1 如何处理异常？自定义异常是怎么做的？</h4><pre><code>1.java中异常均继承自Throwable,其有两个重要的直接子类error与exception.
+<h3 id="13-4-面试题"><a href="#13-4-面试题" class="headerlink" title="13.4 面试题"></a>13.4 面试题</h3><h4 id="13-4-1-如何处理异常？自定义异常是怎么做的？"><a href="#13-4-1-如何处理异常？自定义异常是怎么做的？" class="headerlink" title="13.4.1 如何处理异常？自定义异常是怎么做的？"></a>13.4.1 如何处理异常？自定义异常是怎么做的？</h4><pre class=" language-xml"><code class="language-xml">1.java中异常均继承自Throwable,其有两个重要的直接子类error与exception.
 2.java错误error，大部分是由虚拟机爆出来的错误，是程序无法处理的错误,如OutOfMemoryError,当JVM需要更多内存空间而得不到满足时,就会爆出OutOfMemoryError。
 3.Exception,异常，其下分类很多，如可查异常与不可查异常，运行时异常与非运行时异常，基本概念一样，只是说法不同罢了。其有个重要的子类即RuntimeException运行时异常，其它直接子类都归为非RuntimeException，如IOException,SQLException等。
        a.非RuntimeException是在代码书写时，编译器给你检查提示你要进行try catch或throws处理。
@@ -3209,7 +3209,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
   自定义异常好处：
   工作的时候，项目是分模块或者分功能开发的 ,基本不会个人开发一整个项目，使用自定义异常类就统一了对外异常展示的方式。
 </code></pre>
-<h4 id="13-4-2-错误与异常的区别"><a href="#13-4-2-错误与异常的区别" class="headerlink" title="13.4.2 错误与异常的区别"></a>13.4.2 错误与异常的区别</h4><pre><code>Error和Exception都继承自Throwable；
+<h4 id="13-4-2-错误与异常的区别"><a href="#13-4-2-错误与异常的区别" class="headerlink" title="13.4.2 错误与异常的区别"></a>13.4.2 错误与异常的区别</h4><pre class=" language-xml"><code class="language-xml">Error和Exception都继承自Throwable；
 二者不同之处：
 Exception：
 1.可以是可被控制（checked）或者不可控制（unchecked）；
@@ -3434,7 +3434,7 @@ public class GenericTest {
 }
 ```
 
-<h2 id="day15"><a href="#day15" class="headerlink" title="day15"></a>day15</h2><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303031658706.png" alt="image-20230303165814591"></p>
+<h2 id="day15"><a href="#day15" class="headerlink" title="day15"></a>day15</h2><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303061317269.png" alt="image-20230303165814591"></p>
 <ul>
 <li>TreeSet不能方null，在集合中会排序，会调用compare方法，为null时会报空指针异常</li>
 <li>ArrayList，LinkedList，Vector可以存多个null，HashSet只能存一个null</li>
@@ -3485,7 +3485,7 @@ public class GenericTest {
 <li><code>public void push(E e)</code>:将元素推入此列表所表示的堆栈。</li>
 <li><code>public boolean isEmpty()</code>：如果列表不包含元素，则返回true。</li>
 </ul>
-<h4 id="15-1-6-List子类的特点"><a href="#15-1-6-List子类的特点" class="headerlink" title="15.1.6 List子类的特点"></a>15.1.6 List子类的特点</h4><pre><code>ArrayList
+<h4 id="15-1-6-List子类的特点"><a href="#15-1-6-List子类的特点" class="headerlink" title="15.1.6 List子类的特点"></a>15.1.6 List子类的特点</h4><pre class=" language-xml"><code class="language-xml">ArrayList
     底层数据结构是数组，查询快，增删慢
     线程不安全，效率高
     
@@ -3497,7 +3497,7 @@ LinkedList
      底层数据结构是链表，查询慢，增删快 
      线程不安全
 </code></pre>
-<h4 id="15-1-7-ArryList初始化长度和自动扩容"><a href="#15-1-7-ArryList初始化长度和自动扩容" class="headerlink" title="15.1.7 ArryList初始化长度和自动扩容"></a>15.1.7 ArryList初始化长度和自动扩容</h4><pre><code>ArrayList() 
+<h4 id="15-1-7-ArryList初始化长度和自动扩容"><a href="#15-1-7-ArryList初始化长度和自动扩容" class="headerlink" title="15.1.7 ArryList初始化长度和自动扩容"></a>15.1.7 ArryList初始化长度和自动扩容</h4><pre class=" language-xml"><code class="language-xml">ArrayList() 
           构造一个初始容量为 10 的空列表。
           
 ArrayList(int initialCapacity) 
@@ -3613,7 +3613,7 @@ ArrayList(int initialCapacity)
 <p>在<strong>JDK1.8</strong>之前，哈希表底层采用<strong>数组</strong>+<strong>链表</strong>实现，即使用链表处理冲突，同一hash值的链表都存储在一个链表里。但是当位于一个桶中的元素较多，即hash值相等的元素较多时，通过key值依次查找的效率较低。而<strong>JDK1.8中</strong>，哈希表存储采用<strong>数组</strong>+<strong>链表</strong>+<strong>红黑树</strong>实现，<strong>当链表长度超过阈值（8）时，将链表转换为红黑树</strong>，这样大大减少了查找时间。</p>
 <p><font color="red">简单的来说，哈希表是由数组+链表+红黑树（JDK1.8增加了红黑树部分）实现的</font></p>
 <p>总而言之，<strong>JDK1.8</strong>引入红黑树大程度优化了HashMap的性能，那么对于我们来讲保证HashSet集合元素的唯一，其实就是根据对象的hashCode和equals方法来决定的。如果我们往集合中存放自定义的对象，那么保证其唯一，就必须复写hashCode和equals方法建立属于当前对象的比较方式。</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303041030336.png" alt="哈希表"></p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303061326679.png" alt="哈希表"></p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303041103398.png" alt="树"></p>
 <h4 id="15-2-4-LinkedHashSet"><a href="#15-2-4-LinkedHashSet" class="headerlink" title="15.2.4 LinkedHashSet"></a>15.2.4 LinkedHashSet</h4><p>我们知道HashSet保证元素唯一，可是元素存放进去是没有顺序的，那么我们要保证有序，怎么办呢？</p>
 <p>在HashSet下面有一个子类<code>java.util.LinkedHashSet</code>，它是<strong>链表和哈希表组合</strong>的一个数据存储结构。</p>
