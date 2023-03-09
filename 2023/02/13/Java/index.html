@@ -351,21 +351,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-08
+                    2023-03-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    31.4k
+                    32.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    124 分
+                    129 分
                 </div>
                 
 
@@ -4497,49 +4497,11 @@ ArrayList(int initialCapacity)
 <li><strong>提高响应速度</strong>。当任务到达时，任务可以不需要等到线程创建就能立即执行。</li>
 <li><strong>提高线程的可管理性</strong>。可以根据系统的承受能力，调整线程池中工作线程的数目，防止因为消耗过多的内存，而把服务器累趴下(每个线程需要大约1MB内存，线程开的越多，消耗的内存也就越大，最后死机)。</li>
 </ol>
-<h3 id="18-6-Lambda表达式"><a href="#18-6-Lambda表达式" class="headerlink" title="18.6 Lambda表达式"></a>18.6 Lambda表达式</h3><h4 id="18-6-1-函数式编程思想概述"><a href="#18-6-1-函数式编程思想概述" class="headerlink" title="18.6.1 函数式编程思想概述"></a>18.6.1 函数式编程思想概述</h4><ul>
-<li>只要能获取到结果,谁去做的,怎么做的都不重要,重视的是结果,不重视过程</li>
-</ul>
-<h4 id="18-6-2-Lambda标准格式"><a href="#18-6-2-Lambda标准格式" class="headerlink" title="18.6.2 Lambda标准格式"></a>18.6.2 Lambda标准格式</h4><ul>
-<li>一个括号(一些参数)</li>
-<li>一个箭头</li>
-<li>一段代码</li>
-<li>Lambda标准格式</li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token punctuation">(</span>参数类型 参数名称<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span> 代码语句 <span class="token punctuation">}</span>
-</code></pre>
-<ul>
-<li>格式说明<ul>
-<li>小括号内的语法与传统方法参数列表一致：无参数则留空；多个参数则用逗号分隔。</li>
-<li><code>-&gt;</code>是新引入的语法格式，代表指向动作,把前面的参数传递给后面大括号的代码中。</li>
-<li>大括号内的语法与传统方法体要求基本一致。</li>
-</ul>
-</li>
-</ul>
-<h4 id="18-6-3-Lambda省略格式"><a href="#18-6-3-Lambda省略格式" class="headerlink" title="18.6.3 Lambda省略格式"></a>18.6.3 Lambda省略格式</h4><ul>
-<li><p>可推导即可省略</p>
-<ul>
-<li>Lambda强调的是”做什么”而不是”怎么做”，所以<strong>凡是可以根据上下文推导得知的信息，都可以省略</strong></li>
-</ul>
-</li>
-<li><p>省略规则</p>
-<p>在Lambda标准格式的基础上，使用省略写法的规则为：</p>
-<ul>
-<li>小括号内参数的类型可以省略；</li>
-<li>如果小括号内<strong>有且仅有一个参</strong>，则小括号可以省略；</li>
-<li>如果大括号内<strong>有且仅有一个语句</strong>，则无论是否有返回值，都可以省略<strong>大括号</strong>、<strong>return关键字</strong>及语句<strong>分号</strong>。</li>
-</ul>
-</li>
-</ul>
-<h4 id="18-6-4-Lambda的使用前提"><a href="#18-6-4-Lambda的使用前提" class="headerlink" title="18.6.4 Lambda的使用前提"></a>18.6.4 Lambda的使用前提</h4><ol>
-<li>使用Lambda必须具有接口，且要求<strong>接口中有且仅有一个抽象方法(函数式接口)<strong>。无论是JDK内置的<code>Runnable</code>、<code>Comparator</code>接口还是自定义的接口，只有当接口中的抽象方法</strong>存在且唯一</strong>时，才可以使用Lambda。</li>
-<li>使用Lambda必须具有<strong>上下文推断</strong>。也就是方法的参数或局部变量类型必须为Lambda对应的接口类型，才能使用Lambda作为该接口的实例。</li>
-</ol>
-<h3 id="18-7-面试题"><a href="#18-7-面试题" class="headerlink" title="18.7 面试题"></a>18.7 面试题</h3><h4 id="18-7-1-并行和并发有什么区别"><a href="#18-7-1-并行和并发有什么区别" class="headerlink" title="18.7.1 并行和并发有什么区别"></a>18.7.1 并行和并发有什么区别</h4><ul>
+<h3 id="18-6-面试题"><a href="#18-6-面试题" class="headerlink" title="18.6 面试题"></a>18.6 面试题</h3><h4 id="18-6-1-并行和并发有什么区别"><a href="#18-6-1-并行和并发有什么区别" class="headerlink" title="18.6.1 并行和并发有什么区别"></a>18.6.1 并行和并发有什么区别</h4><ul>
 <li>并行是指两个或者多个事件在<font color="gree">同一时刻</font>发生，是在不同实体上的多个事件</li>
 <li>并发是指两个或多个事件在<font color="gree">同一时间间隔</font>发生，是在同一实体上的多个事件</li>
 </ul>
-<h4 id="18-7-2-线程和进程有什么区别"><a href="#18-7-2-线程和进程有什么区别" class="headerlink" title="18.7.2 线程和进程有什么区别"></a>18.7.2 线程和进程有什么区别</h4><ul>
+<h4 id="18-6-2-线程和进程有什么区别"><a href="#18-6-2-线程和进程有什么区别" class="headerlink" title="18.6.2 线程和进程有什么区别"></a>18.6.2 线程和进程有什么区别</h4><ul>
 <li><p>进程是程序运行和资源分配的基本单位，一个程序至少有一个进程，一个进程至少有一个线程。</p>
 </li>
 <li><p>进程在执行过程中拥有独立的内存单元，而多个线程共享内存资源，减少切换次数，从而效率更高。</p>
@@ -4549,14 +4511,14 @@ ArrayList(int initialCapacity)
 <li><p>同一进程中的多个线程之间可以并发执行。</p>
 </li>
 </ul>
-<h4 id="18-7-3-守护线程是什么"><a href="#18-7-3-守护线程是什么" class="headerlink" title="18.7.3 守护线程是什么"></a>18.7.3 守护线程是什么</h4><ul>
+<h4 id="18-6-3-守护线程是什么"><a href="#18-6-3-守护线程是什么" class="headerlink" title="18.6.3 守护线程是什么"></a>18.6.3 守护线程是什么</h4><ul>
 <li>守护线程（即daemon thread），是个服务线程，准确地来说就是服务其他的线程。</li>
 </ul>
-<h4 id="18-7-4-定时器和死锁是什么"><a href="#18-7-4-定时器和死锁是什么" class="headerlink" title="18.7.4 定时器和死锁是什么"></a>18.7.4 定时器和死锁是什么</h4><ul>
+<h4 id="18-6-4-定时器和死锁是什么"><a href="#18-6-4-定时器和死锁是什么" class="headerlink" title="18.6.4 定时器和死锁是什么"></a>18.6.4 定时器和死锁是什么</h4><ul>
 <li>定时器就是每隔一段时间，执行某一任务</li>
 <li>死锁就是一个线程或多个线程被无限期的阻塞，都在互相等待其他线程释放某资源，导致程序不能正常停止</li>
 </ul>
-<h4 id="18-7-5-创建线程有哪几种方式"><a href="#18-7-5-创建线程有哪几种方式" class="headerlink" title="18.7.5 创建线程有哪几种方式"></a>18.7.5 创建线程有哪几种方式</h4><ol>
+<h4 id="18-6-5-创建线程有哪几种方式"><a href="#18-6-5-创建线程有哪几种方式" class="headerlink" title="18.6.5 创建线程有哪几种方式"></a>18.6.5 创建线程有哪几种方式</h4><ol>
 <li>继承Thread类<ul>
 <li>定义Thread类的子类，并重写该类的run方法，该run方法的方法体就代表了线程要完成的任务</li>
 </ul>
@@ -4574,31 +4536,31 @@ ArrayList(int initialCapacity)
 </ul>
 </li>
 </ol>
-<h4 id="18-7-6-runnable-和-callable-有什么区别"><a href="#18-7-6-runnable-和-callable-有什么区别" class="headerlink" title="18.7.6  runnable 和 callable 有什么区别"></a>18.7.6  runnable 和 callable 有什么区别</h4><ul>
+<h4 id="18-6-6-runnable-和-callable-有什么区别"><a href="#18-6-6-runnable-和-callable-有什么区别" class="headerlink" title="18.6.6  runnable 和 callable 有什么区别"></a>18.6.6  runnable 和 callable 有什么区别</h4><ul>
 <li>Runnable接口中的run()方法的返回值是void，它做的事情只是纯粹地去执行run()方法中的代码而已；</li>
 <li>Callable接口中的call()方法是有返回值的，是一个泛型，和Future、FutureTask配合可以用来获取异步执行的结果。</li>
 </ul>
-<h4 id="18-7-7-线程有哪些状态-x2F-线程的声明周期"><a href="#18-7-7-线程有哪些状态-x2F-线程的声明周期" class="headerlink" title="18.7.7 线程有哪些状态/线程的声明周期"></a>18.7.7 线程有哪些状态/线程的声明周期</h4><pre class=" language-xml"><code class="language-xml">线程通常都有五种状态，创建、就绪、运行、阻塞和死亡。
+<h4 id="18-6-7-线程有哪些状态-x2F-线程的声明周期"><a href="#18-6-7-线程有哪些状态-x2F-线程的声明周期" class="headerlink" title="18.6.7 线程有哪些状态/线程的声明周期"></a>18.6.7 线程有哪些状态/线程的声明周期</h4><pre class=" language-xml"><code class="language-xml">线程通常都有五种状态，创建、就绪、运行、阻塞和死亡。
     创建状态。在生成线程对象，并没有调用该对象的start方法，这是线程处于创建状态。
     就绪状态。当调用了线程对象的start方法之后，该线程就进入了就绪状态，但是此时线程调度程序还没有把该线程设置为当前线程，此时处于就绪状态。在线程运行之后，从等待或者睡眠中回来之后，也会处于就绪状态。
     运行状态。线程调度程序将处于就绪状态的线程设置为当前线程，此时线程就进入了运行状态，开始运行run函数当中的代码。
     阻塞状态。线程正在运行的时候，被暂停，通常是为了等待某个时间的发生(比如说某项资源就绪)之后再继续运行。sleep,suspend，wait等方法都可以导致线程阻塞。
     死亡状态。如果一个线程的run方法执行结束或者调用stop方法后，该线程就会死亡。对于已经死亡的线程，无法再使用start方法令其进入就绪 　　
 </code></pre>
-<h4 id="18-7-8-notify-和-notifyAll-有什么区别"><a href="#18-7-8-notify-和-notifyAll-有什么区别" class="headerlink" title="18.7.8 notify()和 notifyAll()有什么区别"></a>18.7.8 notify()和 notifyAll()有什么区别</h4><pre class=" language-xml"><code class="language-xml">如果线程调用了对象的 wait()方法，那么线程便会处于该对象的等待池中，等待池中的线程不会去竞争该对象的锁。
+<h4 id="18-6-8-notify-和-notifyAll-有什么区别"><a href="#18-6-8-notify-和-notifyAll-有什么区别" class="headerlink" title="18.6.8 notify()和 notifyAll()有什么区别"></a>18.6.8 notify()和 notifyAll()有什么区别</h4><pre class=" language-xml"><code class="language-xml">如果线程调用了对象的 wait()方法，那么线程便会处于该对象的等待池中，等待池中的线程不会去竞争该对象的锁。
     当有线程调用了对象的 notifyAll()方法（唤醒所有 wait 线程）或 notify()方法（只随机唤醒一个 wait 线程），被唤醒的的线程便会进入该对象的锁池中，锁池中的线程会去竞争该对象锁。也就是说，调用了notify后只有一个线程会由等待池进入锁池，而notifyAll会将该对象等待池内的所有线程移动到锁池中，等待锁竞争。
     优先级高的线程竞争到对象锁的概率大，假若某线程没有竞争到该对象锁，它还会留在锁池中，唯有线程再次调用 wait()方法，它才会重新回到等待池中。而竞争到对象锁的线程则继续往下执行，直到执行完了 synchronized 代码块，它会释放掉该对象锁，这时锁池中的线程会继续竞争该对象锁。
 </code></pre>
-<h4 id="18-7-9-run-和-start-有什么区别"><a href="#18-7-9-run-和-start-有什么区别" class="headerlink" title="18.7.9 run()和 start()有什么区别"></a>18.7.9 run()和 start()有什么区别</h4><pre class=" language-xml"><code class="language-xml">每个线程都是通过某个特定Thread对象所对应的方法run()来完成其操作的，方法run()称为线程体。通过调用Thread类的start()方法来启动一个线程。
+<h4 id="18-6-9-run-和-start-有什么区别"><a href="#18-6-9-run-和-start-有什么区别" class="headerlink" title="18.6.9 run()和 start()有什么区别"></a>18.6.9 run()和 start()有什么区别</h4><pre class=" language-xml"><code class="language-xml">每个线程都是通过某个特定Thread对象所对应的方法run()来完成其操作的，方法run()称为线程体。通过调用Thread类的start()方法来启动一个线程。
     start()方法来启动一个线程，真正实现了多线程运行。这时无需等待run方法体代码执行完毕，可以直接继续执行下面的代码； 这时此线程是处于就绪状态， 并没有运行。 然后通过此Thread类调用方法run()来完成其运行状态， 这里方法run()称为线程体，它包含了要执行的这个线程的内容， Run方法运行结束， 此线程终止。然后CPU再调度其它线程。
     run()方法是在本线程里的，只是线程里的一个函数,而不是多线程的。<span class="token entity" title="&nbsp;">&amp;nbsp;</span>如果直接调用run(),其实就相当于是调用了一个普通函数而已，直接调用run()方法必须等待run()方法执行完毕才能执行下面的代码，所以执行路径还是只有一条，根本就没有线程的特征，所以在多线程执行时要使用start()方法而不是run()方法。
 </code></pre>
-<h4 id="18-7-10-sleep-和wait-有什么不同"><a href="#18-7-10-sleep-和wait-有什么不同" class="headerlink" title="18.7.10 sleep ()和wait ()有什么不同"></a>18.7.10 sleep ()和wait ()有什么不同</h4><ul>
+<h4 id="18-6-10-sleep-和wait-有什么不同"><a href="#18-6-10-sleep-和wait-有什么不同" class="headerlink" title="18.6.10 sleep ()和wait ()有什么不同"></a>18.6.10 sleep ()和wait ()有什么不同</h4><ul>
 <li>sleep()不会释放锁，wait()会释放锁</li>
 <li>sleep()可以使用在任何地方，wait()必须用在同步代码块/同步方法中</li>
 <li>sleep()是属于Thread类中的方法，Wait()是属于Object中的方法</li>
 </ul>
-<h4 id="18-7-11-线程安全问题出现的原因和解决方式"><a href="#18-7-11-线程安全问题出现的原因和解决方式" class="headerlink" title="18.7.11 线程安全问题出现的原因和解决方式"></a>18.7.11 线程安全问题出现的原因和解决方式</h4><ul>
+<h4 id="18-6-11-线程安全问题出现的原因和解决方式"><a href="#18-6-11-线程安全问题出现的原因和解决方式" class="headerlink" title="18.6.11 线程安全问题出现的原因和解决方式"></a>18.6.11 线程安全问题出现的原因和解决方式</h4><ul>
 <li>出现原因<ul>
 <li>多个线程</li>
 <li>有共享的数据</li>
@@ -4612,14 +4574,14 @@ ArrayList(int initialCapacity)
 </ul>
 </li>
 </ul>
-<h4 id="18-7-12-Synchronized与Lock的区别"><a href="#18-7-12-Synchronized与Lock的区别" class="headerlink" title="18.7.12 Synchronized与Lock的区别"></a>18.7.12 Synchronized与Lock的区别</h4><ul>
+<h4 id="18-6-12-Synchronized与Lock的区别"><a href="#18-6-12-Synchronized与Lock的区别" class="headerlink" title="18.6.12 Synchronized与Lock的区别"></a>18.6.12 Synchronized与Lock的区别</h4><ul>
 <li>synchronized是关键字，是托管给jvm的，无法自主地释放锁，是<strong>非公平锁</strong></li>
 <li>Lock是java写的类，我们可以用unlock方法自主解锁，它可以通过设置非公平锁或者是公平锁。</li>
 </ul>
-<h4 id="18-7-13-两个线程怎么实现线程同步-合作-，说一下消费者和生产者-x2F-等待唤醒机制"><a href="#18-7-13-两个线程怎么实现线程同步-合作-，说一下消费者和生产者-x2F-等待唤醒机制" class="headerlink" title="18.7.13 两个线程怎么实现线程同步(合作)，说一下消费者和生产者/等待唤醒机制"></a>18.7.13 两个线程怎么实现线程同步(合作)，说一下消费者和生产者/等待唤醒机制</h4><ul>
+<h4 id="18-6-13-两个线程怎么实现线程同步-合作-，说一下消费者和生产者-x2F-等待唤醒机制"><a href="#18-6-13-两个线程怎么实现线程同步-合作-，说一下消费者和生产者-x2F-等待唤醒机制" class="headerlink" title="18.6.13 两个线程怎么实现线程同步(合作)，说一下消费者和生产者/等待唤醒机制"></a>18.6.13 两个线程怎么实现线程同步(合作)，说一下消费者和生产者/等待唤醒机制</h4><ul>
 <li>通过对象锁的wait()方法和notify()方法实现的</li>
 </ul>
-<h4 id="18-7-14-线程池底层原理了解过没"><a href="#18-7-14-线程池底层原理了解过没" class="headerlink" title="18.7.14 线程池底层原理了解过没"></a>18.7.14 线程池底层原理了解过没</h4><pre class=" language-xml"><code class="language-xml">如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。 
+<h4 id="18-6-14-线程池底层原理了解过没"><a href="#18-6-14-线程池底层原理了解过没" class="headerlink" title="18.6.14 线程池底层原理了解过没"></a>18.6.14 线程池底层原理了解过没</h4><pre class=" language-xml"><code class="language-xml">如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。 
     那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？ 
 使用线程池的好处： 
     1、降低资源消耗。重复利用已创建线程，降低线程创建与销毁的资源消耗。 
@@ -4627,7 +4589,7 @@ ArrayList(int initialCapacity)
     3、提高线程可管理性。 
     4、防止服务器过载。内存溢出、CPU耗尽 
 </code></pre>
-<h4 id="18-7-15-创建线程池有哪几种方式"><a href="#18-7-15-创建线程池有哪几种方式" class="headerlink" title="18.7.15 创建线程池有哪几种方式"></a>18.7.15 创建线程池有哪几种方式</h4><pre class=" language-xml"><code class="language-xml">①. newFixedThreadPool(int nThreads)
+<h4 id="18-6-15-创建线程池有哪几种方式"><a href="#18-6-15-创建线程池有哪几种方式" class="headerlink" title="18.6.15 创建线程池有哪几种方式"></a>18.6.15 创建线程池有哪几种方式</h4><pre class=" language-xml"><code class="language-xml">①. newFixedThreadPool(int nThreads)
 创建一个固定长度的线程池，每当提交一个任务就创建一个线程，直到达到线程池的最大数量，这时线程池规模将不再变化，当线程发生未预期的错误而结束时，线程池会补充一个新的线程。
 ②. newCachedThreadPool()
 创建一个可缓存的线程池，如果线程池的规模超过了处理需求，将自动回收空闲线程，而当需求增加时，则可以自动添加新线程，线程池的规模不存在任何限制。
@@ -4636,6 +4598,187 @@ ArrayList(int initialCapacity)
 ④. newScheduledThreadPool(int corePoolSize)
 创建了一个固定长度的线程池，而且以延迟或定时的方式来执行任务，类似于Timer。
 </code></pre>
+<h2 id="day19"><a href="#day19" class="headerlink" title="day19"></a>day19</h2><h3 id="19-1-Lambda表达式"><a href="#19-1-Lambda表达式" class="headerlink" title="19.1 Lambda表达式"></a>19.1 Lambda表达式</h3><h4 id="19-1-1-函数式编程思想概述"><a href="#19-1-1-函数式编程思想概述" class="headerlink" title="19.1.1 函数式编程思想概述"></a>19.1.1 函数式编程思想概述</h4><ul>
+<li>只要能获取到结果,谁去做的,怎么做的都不重要,重视的是结果,不重视过程</li>
+</ul>
+<h4 id="19-1-2-Lambda标准格式"><a href="#19-1-2-Lambda标准格式" class="headerlink" title="19.1.2 Lambda标准格式"></a>19.1.2 Lambda标准格式</h4><ul>
+<li>一个括号(一些参数)</li>
+<li>一个箭头</li>
+<li>一段代码</li>
+<li>Lambda标准格式</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token punctuation">(</span>参数类型 参数名称<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span> 代码语句 <span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>格式说明<ul>
+<li>小括号内的语法与传统方法参数列表一致：无参数则留空；多个参数则用逗号分隔。</li>
+<li><code>-&gt;</code>是新引入的语法格式，代表指向动作,把前面的参数传递给后面大括号的代码中。</li>
+<li>大括号内的语法与传统方法体要求基本一致。</li>
+</ul>
+</li>
+</ul>
+<h4 id="19-1-3-Lambda省略格式"><a href="#19-1-3-Lambda省略格式" class="headerlink" title="19.1.3 Lambda省略格式"></a>19.1.3 Lambda省略格式</h4><ul>
+<li><p>可推导即可省略</p>
+<ul>
+<li>Lambda强调的是”做什么”而不是”怎么做”，所以<strong>凡是可以根据上下文推导得知的信息，都可以省略</strong></li>
+</ul>
+</li>
+<li><p>省略规则</p>
+<p>在Lambda标准格式的基础上，使用省略写法的规则为：</p>
+<ul>
+<li>小括号内参数的类型可以省略；</li>
+<li>如果小括号内<strong>有且仅有一个参</strong>，则小括号可以省略；</li>
+<li>如果大括号内<strong>有且仅有一个语句</strong>，则无论是否有返回值，都可以省略<strong>大括号</strong>、<strong>return关键字</strong>及语句<strong>分号</strong>。</li>
+</ul>
+</li>
+</ul>
+<h4 id="19-1-4-Lambda的使用前提"><a href="#19-1-4-Lambda的使用前提" class="headerlink" title="19.1.4 Lambda的使用前提"></a>19.1.4 Lambda的使用前提</h4><ol>
+<li>使用Lambda必须具有接口，且要求<strong>接口中有且仅有一个抽象方法(函数式接口)<strong>。无论是JDK内置的<code>Runnable</code>、<code>Comparator</code>接口还是自定义的接口，只有当接口中的抽象方法</strong>存在且唯一</strong>时，才可以使用Lambda。</li>
+<li>使用Lambda必须具有<strong>上下文推断</strong>。也就是方法的参数或局部变量类型必须为Lambda对应的接口类型，才能使用Lambda作为该接口的实例。</li>
+</ol>
+<h4 id="19-1-5-方法引用与构造器引用"><a href="#19-1-5-方法引用与构造器引用" class="headerlink" title="19.1.5 方法引用与构造器引用"></a>19.1.5 方法引用与构造器引用</h4><h5 id="19-1-5-1-方法引用"><a href="#19-1-5-1-方法引用" class="headerlink" title="19.1.5.1 方法引用"></a>19.1.5.1 方法引用</h5><ul>
+<li>当要传递给Lambda体的操作，已经有实现的方法了，可以使用方法引用</li>
+<li>方法引用可以看做是Lambda表达式深层次的表达。换句话说，方法引用就是Lambda表达式，也就是函数式接口的一个实例，通过方法的名字来指向一个方法</li>
+<li><font color="red">要求：实现接口的抽象方法的参数列表和返回值类型，必须与方法引用的方法的参数列表和返回值类型保持一致</font></li>
+<li>格式：使用操作符 “<strong>::</strong>“ 将类(或对象) 与方法名分隔开来。  </li>
+<li>三种主要使用情况：<ul>
+<li><strong>对象::实例方法名</strong> </li>
+<li><strong>类名::静态方法名</strong> </li>
+<li><strong>类名::实例方法名</strong><ul>
+<li><font color="red">当函数式接口方法的第一个参数是需要引用方法的调用者，并且第二个参数是需要引用方法的参数(或无参数)时</font></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="19-1-5-2-构造器引用"><a href="#19-1-5-2-构造器引用" class="headerlink" title="19.1.5.2 构造器引用"></a>19.1.5.2 构造器引用</h5><h3 id="19-2-常用函数式接口"><a href="#19-2-常用函数式接口" class="headerlink" title="19.2 常用函数式接口"></a>19.2 常用函数式接口</h3><h4 id="19-2-1-Supplier"><a href="#19-2-1-Supplier" class="headerlink" title="19.2.1 Supplier"></a>19.2.1 Supplier</h4><p>生产接口包含一个无参有返回值的方法：T get(); 获取指定泛型类型的数据</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SupplierDemo</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">getString</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token string">"JAVA"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">getString</span><span class="token punctuation">(</span>Supplier<span class="token operator">&lt;</span>String<span class="token operator">></span> s<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        String string <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="19-2-2-Consumer"><a href="#19-2-2-Consumer" class="headerlink" title="19.2.2 Consumer"></a>19.2.2 Consumer</h4><p>消费接口，包含一个有参没有返回值的方法：void accept(T t);</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ConsumerDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setString</span><span class="token punctuation">(</span><span class="token string">"JAVA"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            String s <span class="token operator">=</span> <span class="token string">"HELLO,"</span><span class="token operator">+</span>str<span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">setString</span><span class="token punctuation">(</span>String str<span class="token punctuation">,</span> Consumer<span class="token operator">&lt;</span>String<span class="token operator">></span> c<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        c<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="19-2-3-Predicate"><a href="#19-2-3-Predicate" class="headerlink" title="19.2.3 Predicate"></a>19.2.3 Predicate</h4><p>判断/测试接口，包含一个有参有返回值的方法：boolean test(T t)</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">boolean</span> flag <span class="token operator">=</span> <span class="token function">testStr</span><span class="token punctuation">(</span><span class="token string">"HELLO,JAVA"</span><span class="token punctuation">,</span> str <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"JVA"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">testStr</span><span class="token punctuation">(</span>String str<span class="token punctuation">,</span>Predicate<span class="token operator">&lt;</span>String<span class="token operator">></span> p<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">boolean</span> flag <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> flag<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="19-2-4-Function"><a href="#19-2-4-Function" class="headerlink" title="19.2.4 Function"></a>19.2.4 Function</h4><p>转换功能接口，包含一个有参有返回值的方法：R apply(T t)</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">converse</span><span class="token punctuation">(</span><span class="token string">"1234"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">converse</span><span class="token punctuation">(</span>String str<span class="token punctuation">,</span>Function<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">></span> f<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Integer num <span class="token operator">=</span> f<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="19-3-Stream流"><a href="#19-3-Stream流" class="headerlink" title="19.3 Stream流"></a>19.3 Stream流</h3><h4 id="19-3-1-Stream流概述"><a href="#19-3-1-Stream流概述" class="headerlink" title="19.3.1 Stream流概述"></a>19.3.1 Stream流概述</h4><ul>
+<li><p><strong>什么是 Stream：</strong></p>
+<p>是数据渠道，用于操作数据源（集合、数组等）所生成的元素序列</p>
+<p><strong><font color="red">“集合讲的是数据，Stream讲的是计算！”</font></strong></p>
+</li>
+<li><p><strong>注意：</strong> </p>
+<p>①<strong>Stream 自己不会存储元素。</strong> </p>
+<p>②<strong>Stream 不会改变源对象</strong>。相反，他们会返回一个持有结果的新Stream。 </p>
+<p>③<strong>Stream 操作是延迟执行的</strong>。这意味着他们会等到需要结果的时候才执行。</p>
+</li>
+<li><p><strong>Stream的操作三个步骤：</strong></p>
+<p><strong>①创建Stream</strong> </p>
+<p>​	一个数据源（如：集合、数组），获取一个流 </p>
+<p><strong>②中间操作</strong> </p>
+<p>​	一个中间操作链，对数据源的数据进行处理 </p>
+<p><strong>③终止操作(终端操作)</strong> </p>
+<p>   一旦执行终止操作，就执行中间操作链，并产生结果。之后，流会关闭，不会再被使用</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303091626593.png" alt="image-20230309162539962"></p>
+</li>
+</ul>
+<h4 id="19-3-2-如何获取Stream流"><a href="#19-3-2-如何获取Stream流" class="headerlink" title="19.3.2 如何获取Stream流"></a>19.3.2 如何获取Stream流</h4><p><strong>1）创建Stream方式一：通过集合</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//Java8 中的 Collection 接口被扩展，提供了两个获取流的方法：</span>
+    
+<span class="token keyword">default</span> Stream<span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> 返回一个顺序流
+<span class="token keyword">default</span> Stream<span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token function">parallelStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> 返回一个并行流
+</code></pre>
+<p><strong>2）创建Stream方式二：通过数组</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//Java8 中的 Arrays 的静态方法 stream() 可以获取数组流：</span>
+
+<span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Stream<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">stream</span><span class="token punctuation">(</span>T<span class="token punctuation">[</span><span class="token punctuation">]</span> array<span class="token punctuation">)</span><span class="token operator">:</span> 返回一个流
+<span class="token comment" spellcheck="true">//重载形式，能够处理对应基本类型的数组：</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> IntStream <span class="token function">stream</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> LongStream <span class="token function">stream</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> DoubleStream <span class="token function">stream</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array<span class="token punctuation">)</span>
+</code></pre>
+<p><strong>3）创建 Stream方式三：通过Stream的of()</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//可以调用Stream类静态方法 of(), 通过显示值创建一个流。它可以接收任意数量的参数。</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span><span class="token operator">&lt;</span>T<span class="token operator">></span> Stream<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">of</span><span class="token punctuation">(</span>T<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> values<span class="token punctuation">)</span> <span class="token operator">:</span> 返回一个流
+</code></pre>
+<p><strong>4）创建Stream方式四：创建无限流</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span><span class="token operator">&lt;</span>T<span class="token operator">></span> Stream<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">generate</span><span class="token punctuation">(</span>Supplier<span class="token operator">&lt;</span>T<span class="token operator">></span> s<span class="token punctuation">)</span>
+    
+<span class="token keyword">public</span> <span class="token keyword">static</span><span class="token operator">&lt;</span>T<span class="token operator">></span> Stream<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">iterate</span><span class="token punctuation">(</span><span class="token keyword">final</span> T seed<span class="token punctuation">,</span> <span class="token keyword">final</span> UnaryOperator<span class="token operator">&lt;</span>T<span class="token operator">></span> f<span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//生成</span>
+Stream<span class="token operator">&lt;</span>Double<span class="token operator">></span> stream <span class="token operator">=</span> Stream<span class="token punctuation">.</span><span class="token function">generate</span><span class="token punctuation">(</span>Math<span class="token operator">:</span><span class="token operator">:</span>random<span class="token punctuation">)</span><span class="token punctuation">;</span>
+stream<span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>num <span class="token operator">-</span><span class="token operator">></span> System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//迭代</span>
+Stream<span class="token operator">&lt;</span>Integer<span class="token operator">></span> stream <span class="token operator">=</span> Stream<span class="token punctuation">.</span><span class="token function">iterate</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> x <span class="token operator">-</span><span class="token operator">></span> x <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+stream<span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="19-3-3-Stream常用方法"><a href="#19-3-3-Stream常用方法" class="headerlink" title="19.3.3 Stream常用方法"></a>19.3.3 Stream常用方法</h4><h5 id="19-3-3-1-中间操作"><a href="#19-3-3-1-中间操作" class="headerlink" title="19.3.3.1 中间操作"></a>19.3.3.1 中间操作</h5><p><font color="red">多个<strong>中间操作</strong>可以连接起来形成一个<strong>流水线</strong>，除非流水线上触发终止操作，否则<strong>中间操作不会执行任何的处理</strong>！而在<strong>终止操作时一次性全</strong>部处理，称为“惰性求值”。</font></p>
+<p><strong>筛选与切片</strong></p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303091645645.png" alt="image-20230309164522575"></p>
+<p><strong>映 射</strong></p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303091650450.png" alt="image-20230309165045371"></p>
+<p><strong>排序</strong></p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303091651737.png" alt="image-20230309165133650"></p>
+<h5 id="19-3-3-2-终止-端-操作"><a href="#19-3-3-2-终止-端-操作" class="headerlink" title="19.3.3.2 终止(端)操作"></a>19.3.3.2 终止(端)操作</h5><ul>
+<li>终端操作会从流的流水线生成结果。其结果可以是任何不是流的值，例如：List、Integer，甚至是 void 。 </li>
+<li>流进行了终止操作后，不能再次使用。</li>
+</ul>
+<p><strong>匹配与查找</strong></p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303091654217.png" alt="image-20230309165408145"></p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303091654699.png" alt="image-20230309165417625"></p>
+<p><strong>归约</strong></p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303091654878.png" alt="image-20230309165434808"></p>
+<pre><code>                 备注：map 和 reduce 的连接通常称为 map-reduce 模式，因 Google  用它来进行网络搜索而出名。 
+</code></pre>
+<p><strong>收集</strong></p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303091655162.png" alt="image-20230309165523093"></p>
+<p>​			  Collector 接口中方法的实现决定了如何对流执行收集的操作(如收集到 List、Set、 Map)。</p>
+<p>​	     	<strong>另外， Collectors 实用类提供了很多静态方法，可以方便地创建常见收集器实例</strong></p>
+<p>​		 	<strong>具体方法与实例如下表：</strong></p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303091656831.png" alt="image-20230309165634744"></p>
 
                 
             </div>
@@ -4979,7 +5122,7 @@ ArrayList(int initialCapacity)
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">41.1k</span>&nbsp;字
+                class="white-color">42.4k</span>&nbsp;字
             
             
             
