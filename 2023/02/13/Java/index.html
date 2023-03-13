@@ -358,14 +358,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    39.2k
+                    41.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    156 分
+                    166 分
                 </div>
                 
 
@@ -3910,7 +3910,7 @@ ArrayList(int initialCapacity)
 <li>public final String getName()返回此线程的名称。</li>
 <li>public Thread(Runnable target,String name)构造方法，给线程取名字</li>
 </ul>
-<h4 id="17-1-2-线程优先级"><a href="#17-1-2-线程优先级" class="headerlink" title="17.1.2 线程优先级"></a>17.1.2 线程优先级</h4><p><strong>最高级为10，最低级为5，默认优先级为5</strong></p>
+<h4 id="17-1-2-线程优先级"><a href="#17-1-2-线程优先级" class="headerlink" title="17.1.2 线程优先级"></a>17.1.2 线程优先级</h4><p><strong>最高级为10，最低级为0，默认优先级为5</strong></p>
 <p><strong>优先让优先级高的线程抢占CPU时间片的时间相对多一些，并不是一定就能抢到</strong></p>
 <ul>
 <li>public static final int MAX_PRIORITY 线程可以拥有的最大优先级。</li>
@@ -4889,7 +4889,7 @@ optional<span class="token punctuation">.</span><span class="token function">ifP
 <p>​	 <font color="red"> <strong>T orElseThrow(Supplier&lt;? extends X&gt; exceptionSupplier)</strong> <strong>：</strong>如果有值则将其返 回，否则抛出由Supplier接口实现提供的异常。</font></p>
 </li>
 </ul>
-<h2 id="day-20"><a href="#day-20" class="headerlink" title="day 20"></a>day 20</h2><h3 id="20-1-IO流"><a href="#20-1-IO流" class="headerlink" title="20.1 IO流"></a>20.1 IO流</h3><h4 id="20-1-1-什么是IO"><a href="#20-1-1-什么是IO" class="headerlink" title="20.1.1 什么是IO"></a>20.1.1 什么是IO</h4><ul>
+<h2 id="day20"><a href="#day20" class="headerlink" title="day20"></a>day20</h2><h3 id="20-1-IO流"><a href="#20-1-IO流" class="headerlink" title="20.1 IO流"></a>20.1 IO流</h3><h4 id="20-1-1-什么是IO"><a href="#20-1-1-什么是IO" class="headerlink" title="20.1.1 什么是IO"></a>20.1.1 什么是IO</h4><ul>
 <li><p>我们把这种数据的传输，可以看做是一种数据的流动，按照流动的方向，<strong>以内存为基准</strong>，分为<code>输入input</code> 和<code>输出output</code> ，即流向内存是输入流，流出内存的输出流。</p>
 </li>
 <li><p>Java中I/O操作主要是指使用<code>java.io</code>包下的内容，进行输入、输出操作。<strong>输入</strong>也叫做<strong>读取</strong>数据，<strong>输出</strong>也叫做作<strong>写出</strong>数据。</p>
@@ -4914,18 +4914,18 @@ optional<span class="token punctuation">.</span><span class="token function">ifP
 <h4 id="20-1-4-顶级父类"><a href="#20-1-4-顶级父类" class="headerlink" title="20.1.4 顶级父类"></a>20.1.4 顶级父类</h4><table>
 <thead>
 <tr>
-<th align="center"></th>
+<th></th>
 <th align="center"><strong>输入流</strong></th>
 <th align="center"><strong>输出流</strong></th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><strong>字节流</strong></td>
+<td><strong>字节流</strong></td>
 <td align="center">InputStream</td>
 <td align="center">OutputStream</td>
 </tr>
 <tr>
-<td align="center"><strong>字符流</strong></td>
+<td><strong>字符流</strong></td>
 <td align="center">Reader</td>
 <td align="center">Writer</td>
 </tr>
@@ -5087,6 +5087,12 @@ optional<span class="token punctuation">.</span><span class="token function">ifP
 </code></pre>
 </li>
 </ul>
+<h5 id="20-2-2-4-缓冲字节输出流BufferedOutputStream"><a href="#20-2-2-4-缓冲字节输出流BufferedOutputStream" class="headerlink" title="20.2.2.4 缓冲字节输出流BufferedOutputStream"></a>20.2.2.4 缓冲字节输出流BufferedOutputStream</h5><ul>
+<li><strong>构造方法：</strong><ul>
+<li><code>public BufferedOutputStream(OutputStream out)</code>： 创建一个新的缓冲输出流。</li>
+</ul>
+</li>
+</ul>
 <h4 id="20-2-3-字节输入流【InputStream】"><a href="#20-2-3-字节输入流【InputStream】" class="headerlink" title="20.2.3 字节输入流【InputStream】"></a>20.2.3 字节输入流【InputStream】</h4><p><code>java.io.InputStream </code><strong>抽象类</strong>是表示字节输入流的所有类的超类，可以读取字节信息到内存中。它定义了字节输入流的基本共性功能方法。</p>
 <ul>
 <li><code>public void close()</code> ：关闭此输入流并释放与此流相关联的任何系统资源。    </li>
@@ -5192,6 +5198,11 @@ optional<span class="token punctuation">.</span><span class="token function">ifP
 </blockquote>
 </li>
 </ol>
+</li>
+</ul>
+<h5 id="20-2-3-2-缓冲字节输入流BufferedInputStream"><a href="#20-2-3-2-缓冲字节输入流BufferedInputStream" class="headerlink" title="20.2.3.2 缓冲字节输入流BufferedInputStream"></a>20.2.3.2 缓冲字节输入流BufferedInputStream</h5><ul>
+<li><p><strong>构造方法：</strong></p>
+<p><code>public BufferedInputStream(InputStream in)</code> ：创建一个 新的缓冲输入流。</p>
 </li>
 </ul>
 <h3 id="20-3-字符流"><a href="#20-3-字符流" class="headerlink" title="20.3 字符流"></a>20.3 字符流</h3><ul>
@@ -5418,7 +5429,7 @@ optional<span class="token punctuation">.</span><span class="token function">ifP
 </li>
 <li><strong>成员方法：</strong><ul>
 <li>从父类Writer继承的方法</li>
-<li>public void newLine() throws IOException 写一行行分隔符</li>
+<li><strong>public void newLine() throws IOException 写一行行分隔符</strong></li>
 </ul>
 </li>
 </ul>
@@ -5581,7 +5592,315 @@ optional<span class="token punctuation">.</span><span class="token function">ifP
 NIO：New IO 同步非阻塞 IO，是传统 IO 的升级，客户端和服务器端通过 Channel（通道）通讯，实现了多路复用。
 AIO：Asynchronous IO 是 NIO 的升级，也叫 NIO2，实现了异步非堵塞 IO ，异步 IO 的操作基于事件和回调机制。
 </code></pre>
+<h2 id="day21"><a href="#day21" class="headerlink" title="day21"></a>day21</h2><h3 id="21-1-转换流"><a href="#21-1-转换流" class="headerlink" title="21.1 转换流"></a>21.1 转换流</h3><h4 id="21-1-1-字符编码和字符集"><a href="#21-1-1-字符编码和字符集" class="headerlink" title="21.1.1 字符编码和字符集"></a>21.1.1 字符编码和字符集</h4><h5 id="21-1-1-1-字符编码"><a href="#21-1-1-1-字符编码" class="headerlink" title="21.1.1.1 字符编码"></a>21.1.1.1 <strong>字符编码</strong></h5><ul>
+<li><p><strong>计算机中储存的信息都是用二进制数表示的</strong>，而我们在屏幕上看到的数字、英文、标点符号、汉字等字符是二进制数转换之后的结果。按照某种规则，<strong>将字符存储到计算机中</strong>，称为<strong>编码</strong> 。反之，<strong>将存储在计算机中的二进制数按照某种规则解析显示出来</strong>，称为<strong>解码</strong> 比如说，按照A规则存储，同样按照A规则解析，那么就能显示正确的文本符号。反之，按照A规则存储，再按照B规则解析，就会导致乱码现象。</p>
+</li>
+<li><p>编码:字符(能看懂的)–字节(看不懂的)</p>
+</li>
+<li><p>解码:字节(看不懂的)–&gt;字符(能看懂的)</p>
+</li>
+<li><p><strong>字符编码<code>Character Encoding</code></strong> : 就是一套自然语言的字符与二进制数之间的对应规则。</p>
+</li>
+</ul>
+<h5 id="21-1-1-2-字符集"><a href="#21-1-1-2-字符集" class="headerlink" title="21.1.1.2 字符集"></a>21.1.1.2 字符集</h5><ul>
+<li><strong>字符集 <code>Charset</code><strong>：也叫编码表。</strong>是一个系统支持的所有字符的集合</strong>，包括各国家文字、标点符号、图形符号、数字等。</li>
+</ul>
+<p>计算机要准确的存储和识别各种字符集符号，需要进行字符编码，<strong>一套字符集必然至少有一套字符编码</strong>。常见字符集有<strong>ASCII字符集</strong>、<strong>GBK字符集</strong>、<strong>Unicode字符集</strong>等。</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303131753000.png" alt="image-20230313175329870"></p>
+<h4 id="21-1-2-InputStreamReader类-重要"><a href="#21-1-2-InputStreamReader类-重要" class="headerlink" title="21.1.2 InputStreamReader类(重要)"></a>21.1.2 InputStreamReader类(重要)</h4><ul>
+<li><p>转换流<code>java.io.InputStreamReader</code>，<strong>是Reader的子类</strong>，<strong>是从字节流到字符流的桥梁</strong>。它读取字节，并使用指定的字符集<strong>将其解码为字符</strong>。它的字符集可以由名称指定，也可以接受平台的默认字符集。 </p>
+</li>
+<li><p><strong>构造方法：</strong></p>
+<ul>
+<li><p><code>InputStreamReader(InputStream in)</code>: 创建一个使用默认字符集的字符流。 </p>
+</li>
+<li><p>InputStreamReader(InputStream in, String charsetName)`: 创建一个指定字符集的字符流。</p>
+<pre class=" language-java"><code class="language-java">InputStreamReader isr1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"in.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+InputStreamReader isr2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"in.txt"</span><span class="token punctuation">)</span> <span class="token punctuation">,</span> <span class="token string">"GBK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="21-1-3-OutputStreamWriter类-重要"><a href="#21-1-3-OutputStreamWriter类-重要" class="headerlink" title="21.1.3 OutputStreamWriter类(重要)"></a>21.1.3 OutputStreamWriter类(重要)</h4><ul>
+<li><p>转换流<code>java.io.OutputStreamWriter</code> ，<strong>是Writer的子类</strong>，<strong>是从字符流到字节流的桥梁</strong>。使用指定的字符集<strong>将字符编码为字节</strong>。它的字符集可以由名称指定，也可以接受平台的默认字符集。</p>
+</li>
+<li><p><strong>构造方法：</strong></p>
+<ul>
+<li><p><code>OutputStreamWriter(OutputStream in)</code>: 创建一个使用默认字符集的字符流。 </p>
+</li>
+<li><p><code>OutputStreamWriter(OutputStream in, String charsetName)</code>: 创建一个指定字符集的字符流。</p>
+<pre class=" language-java"><code class="language-java">OutputStreamWriter isr1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">OutputStreamWriter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">"out.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+OutputStreamWriter isr2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">OutputStreamWriter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">"out.txt"</span><span class="token punctuation">)</span> <span class="token punctuation">,</span> <span class="token string">"GBK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="21-1-4-转换流理解图解"><a href="#21-1-4-转换流理解图解" class="headerlink" title="21.1.4 转换流理解图解"></a>21.1.4 转换流理解图解</h4><p><strong>转换流是字节与字符间的桥梁！</strong></p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303131809405.png" alt="image-20230313180946292"></p>
+<h3 id="21-2-对象流-序列化流"><a href="#21-2-对象流-序列化流" class="headerlink" title="21.2 对象流(序列化流)"></a>21.2 对象流(序列化流)</h3><h4 id="21-2-1-序列化概念"><a href="#21-2-1-序列化概念" class="headerlink" title="21.2.1 序列化概念"></a>21.2.1 序列化概念</h4><ul>
+<li><p>Java 提供了一种对象<strong>序列化</strong>的机制。<strong>用一个字节序列可以表示一个对象</strong>，该字节序列包含该<code>对象的数据</code>、<code>对象的类型</code>和<code>对象中存储的属性</code>等信息。<strong>字节序列写出到文件之后，相当于文件中持久保存了一个对象的信息</strong>。 </p>
+</li>
+<li><p>反之，该字节序列还可以从文件中读取回来，重构对象，对它进行<strong>反序列化</strong>。<code>对象的数据</code>、<code>对象的类型</code>和<code>对象中存储的数据</code>信息，都可以用来在内存中创建对象。</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303131814172.png" alt="image-20230313181446064"></p>
+</li>
+<li><p><strong>属性不被序列化：</strong></p>
+<ul>
+<li>static关键字：静态修饰符</li>
+</ul>
+<ul>
+<li>transient关键字：瞬态修饰符</li>
+</ul>
+</li>
+</ul>
+<h4 id="21-2-2-ObjectOutputStream类"><a href="#21-2-2-ObjectOutputStream类" class="headerlink" title="21.2.2 ObjectOutputStream类"></a>21.2.2 ObjectOutputStream类</h4><p> <code>java.io.ObjectOutputStream </code> 类，将Java对象的原始数据类型写出到文件,实现对象的<strong>持久存储</strong>。</p>
+<ul>
+<li><p><strong>构造方法：</strong></p>
+<ul>
+<li><code>public ObjectOutputStream(OutputStream out) </code>： 创建一个指定OutputStream的ObjectOutputStream。</li>
+</ul>
+</li>
+<li><p><strong>序列化操作：</strong></p>
+<ol>
+<li><p>一个对象要想序列化，必须满足两个条件:</p>
+<ul>
+<li><strong>该类必须实现<code>java.io.Serializable </code> 接口</strong>，<code>Serializable</code> 是一个标记接口，不实现此接口的类将不会使任何状态序列化或反序列化，会抛出<code>NotSerializableException</code> 。</li>
+<li>该类的所有属性必须是可序列化的。<strong>如果有一个属性不需要可序列化的，则该属性必须注明是瞬态的，使用<code>transient</code> 关键字修饰。</strong></li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> String name<span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> String address<span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">transient</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// transient瞬态修饰成员,不会被序列化</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addressCheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Address  check : "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">" -- "</span> <span class="token operator">+</span> address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>写出对象方法</p>
+<p><code>public final void writeObject (Object obj)</code> : 将指定的对象写出。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SerializeDemo</span><span class="token punctuation">{</span>
+       <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String <span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>   <span class="token punctuation">{</span>
+        Employee e <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        e<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"zhangsan"</span><span class="token punctuation">;</span>
+        e<span class="token punctuation">.</span>address <span class="token operator">=</span> <span class="token string">"beiqinglu"</span><span class="token punctuation">;</span>
+        e<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span> 
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+              <span class="token comment" spellcheck="true">// 创建序列化流对象</span>
+          ObjectOutputStream out <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">"employee.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 写出对象</span>
+            out<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 释放资源</span>
+            out<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Serialized data is saved"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 姓名，地址被序列化，年龄没有被序列化。</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>IOException i<span class="token punctuation">)</span>   <span class="token punctuation">{</span>
+            i<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+       <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//输出结果：</span>
+<span class="token comment" spellcheck="true">//Serialized data is saved</span>
+</code></pre>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="21-2-3-ObjectInputStream类"><a href="#21-2-3-ObjectInputStream类" class="headerlink" title="21.2.3 ObjectInputStream类"></a>21.2.3 ObjectInputStream类</h4><p><code>java.io.ObjectInputStream</code>反序列化流，将之前使用ObjectOutputStream序列化的原始数据<strong>恢复为对象</strong>。</p>
+<ul>
+<li><strong>构造方法：</strong></li>
+</ul>
+<p>  <code>public ObjectInputStream(InputStream in) </code>： 创建一个指定InputStream的ObjectInputStream</p>
+<ul>
+<li><p><strong>反序列化操作1：</strong></p>
+<p>如果能找到一个对象的class文件，我们可以进行反序列化操作，调用<code>ObjectInputStream</code>读取对象的方法：</p>
+<ul>
+<li><p><code>public final Object readObject ()</code> : 读取一个对象。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DeserializeDemo</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String <span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>   <span class="token punctuation">{</span>
+        Employee e <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>		
+             <span class="token comment" spellcheck="true">// 创建反序列化流</span>
+             FileInputStream fileIn <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"employee.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             ObjectInputStream in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span>fileIn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+             <span class="token comment" spellcheck="true">// 读取一个对象</span>
+             e <span class="token operator">=</span> <span class="token punctuation">(</span>Employee<span class="token punctuation">)</span> in<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             <span class="token comment" spellcheck="true">// 释放资源</span>
+             in<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             fileIn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>IOException i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token comment" spellcheck="true">// 捕获其他异常</span>
+             i<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>ClassNotFoundException c<span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 捕获类找不到异常</span>
+             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Employee class not found"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             c<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 无异常,直接打印输出</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Name: "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment" spellcheck="true">// zhangsan</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Address: "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// beiqinglu</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"age: "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 0</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>对于JVM可以反序列化对象，它必须是能够找到class文件的类。如果找不到该类的class文件，则抛出一个 <code>ClassNotFoundException</code> 异常。</strong></p>
+</li>
+</ul>
+</li>
+<li><p><strong>反序列化操作2：</strong></p>
+<ul>
+<li><p><strong>另外，当JVM反序列化对象时，能找到class文件，但是class文件在序列化对象之后发生了修改，那么反序列化操作也会失败，抛出一个<code>InvalidClassException</code>异常。</strong>发生这个异常的原因如下：</p>
+<ul>
+<li>该类的序列版本号与从流中读取的类描述符的版本号不匹配 </li>
+<li>该类包含未知数据类型 </li>
+<li>该类没有可访问的无参数构造方法</li>
+</ul>
+</li>
+<li><p><code>Serializable</code> 接口给需要序列化的类，提供了一个<strong>序列版本号</strong>。<code>serialVersionUID</code> 该版本号的目的在于验证序列化的对象和对应类是否版本匹配。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token keyword">implements</span> <span class="token class-name">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable</span> <span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">// 加入序列版本号</span>
+     <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> 1L<span class="token punctuation">;</span>
+    
+     <span class="token keyword">public</span> String name<span class="token punctuation">;</span>
+    
+     <span class="token keyword">public</span> String address<span class="token punctuation">;</span>
+    
+     <span class="token comment" spellcheck="true">// 添加新的属性 ,重新编译, 可以反序列化,该属性赋为默认值.</span>
+     <span class="token keyword">public</span> <span class="token keyword">int</span> eid<span class="token punctuation">;</span> 
 
+     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addressCheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Address  check : "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">" -- "</span> <span class="token operator">+</span> address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="21-3-打印流"><a href="#21-3-打印流" class="headerlink" title="21.3 打印流"></a>21.3 打印流</h3><h4 id="21-3-1-概述"><a href="#21-3-1-概述" class="headerlink" title="21.3.1 概述"></a>21.3.1 概述</h4><p>平时我们在控制台打印输出，是调用<code>print</code>方法和<code>println</code>方法完成的，这两个方法都来自于<code>java.io.PrintStream</code>类，该类能够方便地打印各种数据类型的值，是一种便捷的输出方式。</p>
+<h4 id="21-3-2-PrintStream类"><a href="#21-3-2-PrintStream类" class="headerlink" title="21.3.2 PrintStream类"></a>21.3.2 PrintStream类</h4><ul>
+<li><strong>构造方法：</strong><ul>
+<li><code>public PrintStream(File file)</code>  使用指定的文件创建一个新的打印流。</li>
+<li><code>public PrintStream(String fileName)</code>  使用指定的文件名创建一个新的打印流。</li>
+</ul>
+</li>
+<li>成员方法：<ul>
+<li>从父类OutputStream继承的write方法</li>
+<li>自身的print方法和println方法<ul>
+<li>将参数转为String类型后再打印</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="21-3-3-输出重定向"><a href="#21-3-3-输出重定向" class="headerlink" title="21.3.3 输出重定向"></a>21.3.3 输出重定向</h4><p><code>System.out</code>就是<code>PrintStream</code>类型的，只不过它的流向是系统规定的，打印在控制台上。不过，既然是流对象，我们就可以改变它的流向。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PrintDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 调用系统的打印流,控制台直接输出97</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token number">97</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+        <span class="token comment" spellcheck="true">// 创建打印流,指定文件的名称</span>
+        PrintStream ps <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PrintStream</span><span class="token punctuation">(</span><span class="token string">"ps.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          
+          <span class="token comment" spellcheck="true">// 设置系统的打印流流向,输出到ps.txt,默认是控制台</span>
+        System<span class="token punctuation">.</span><span class="token function">setOut</span><span class="token punctuation">(</span>ps<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">// 调用系统的打印流,ps.txt中输出97</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token number">97</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="21-4-数据流"><a href="#21-4-数据流" class="headerlink" title="21.4 数据流"></a>21.4 数据流</h3><h4 id="21-4-1-DataOutputStream类"><a href="#21-4-1-DataOutputStream类" class="headerlink" title="21.4.1 DataOutputStream类"></a>21.4.1 DataOutputStream类</h4><p>数据输出流使应用程序以便携式方式<strong>将原始Java数据类型写入输出流</strong>。  然后应用程序可以使用数据输入流来读取数据。 </p>
+<ul>
+<li><p><strong>构造方法：</strong></p>
+<ul>
+<li><code>public DataOutputStream(OutputStream out)</code></li>
+</ul>
+</li>
+<li><p>成员方法：</p>
+<ul>
+<li><p>继承父类OutputStream的方法</p>
+</li>
+<li><p>自己特有方法</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303131904056.png" alt="image-20230313190414819"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="21-4-2-DataInputStream类"><a href="#21-4-2-DataInputStream类" class="headerlink" title="21.4.2 DataInputStream类"></a>21.4.2 DataInputStream类</h4><p>数据输入流允许应用程序以独立于机器的方式从底层输入流<strong>读取原始Java数据类型</strong></p>
+<ul>
+<li><p><strong>构造方法：</strong></p>
+<p><code>public DataInputStream(InputStream in)</code></p>
+</li>
+<li><p>成员方法：</p>
+<ul>
+<li><p>继承父类InputStream的方法</p>
+</li>
+<li><p>自身特有方法</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303131908066.png" alt="image-20230313190802959"></p>
+</li>
+</ul>
+</li>
+<li><p><strong>注意：</strong></p>
+<ol>
+<li>使用DataOutputStream写入的数据，必须通过DataInputStream来读数据</li>
+<li><strong>读数据和写数据的顺序要一致</strong></li>
+</ol>
+</li>
+</ul>
+<h3 id="21-5-字节数组流"><a href="#21-5-字节数组流" class="headerlink" title="21.5 字节数组流"></a>21.5 字节数组流</h3><p><strong>调用close()方法没有效果</strong></p>
+<h4 id="21-5-1-ByteArrayOutputStream类"><a href="#21-5-1-ByteArrayOutputStream类" class="headerlink" title="21.5.1 ByteArrayOutputStream类"></a>21.5.1 ByteArrayOutputStream类</h4><p>该类实现了将数据写入字节数组的输出流</p>
+<ul>
+<li><p><strong>构造方法：</strong></p>
+<p><code>public ByteArrayOutputStream()</code>  创建一个新的字节数组输出流，<strong>默认缓冲区容量为32字节</strong></p>
+<p><code>public ByteArrayOutputStream(int size)</code>  创建一个新的字节数组输出流，具有指定大小的缓冲区容量（以字节为单位)</p>
+</li>
+<li><p>成员方法：</p>
+<p><strong><code>public byte[] toByteArray()</code>  创建一个新分配的字节数组。  其大小是此输出流的当前大小，缓冲区的有效内容已被复制到其中。 也就是说得到了此字节数组输出流的缓冲数据</strong></p>
+</li>
+</ul>
+<h4 id="21-5-2-ByteArrayInputStream类"><a href="#21-5-2-ByteArrayInputStream类" class="headerlink" title="21.5.2 ByteArrayInputStream类"></a>21.5.2 ByteArrayInputStream类</h4><ul>
+<li><p><strong>构造方法：</strong></p>
+<p><code>public ByteArrayInputStream(byte[] buf)</code> 使用<code>buf</code>作为其缓冲区数组</p>
+<p><code>public ByteArrayInputStream(byte[] buf，int offset，int length)</code></p>
+</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException<span class="token punctuation">,</span> ClassNotFoundException <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//写</span>
+    ByteArrayOutputStream baos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    BufferedOutputStream bos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedOutputStream</span><span class="token punctuation">(</span>baos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ObjectOutputStream oos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span>bos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    oos<span class="token punctuation">.</span><span class="token function">writeInt</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    oos<span class="token punctuation">.</span><span class="token function">writeDouble</span><span class="token punctuation">(</span><span class="token number">3.14</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    oos<span class="token punctuation">.</span><span class="token function">writeChar</span><span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    oos<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//刷新流：写入数据后记得刷新！！！</span>
+    oos<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//获取数据</span>
+    <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bs <span class="token operator">=</span> baos<span class="token punctuation">.</span><span class="token function">toByteArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//读</span>
+    ByteArrayInputStream bais <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayInputStream</span><span class="token punctuation">(</span>bs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    BufferedInputStream bis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedInputStream</span><span class="token punctuation">(</span>bais<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ObjectInputStream ois <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span>bis<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//读取数据</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> ois<span class="token punctuation">.</span><span class="token function">readInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> d <span class="token operator">=</span> ois<span class="token punctuation">.</span><span class="token function">readDouble</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> ch <span class="token operator">=</span> ois<span class="token punctuation">.</span><span class="token function">readChar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Object obj <span class="token operator">=</span> ois<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>d<span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>obj<span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>ch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//释放流</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="day22"><a href="#day22" class="headerlink" title="day22"></a>day22</h2><h3 id="22-1-网络编程"><a href="#22-1-网络编程" class="headerlink" title="22.1 网络编程"></a>22.1 网络编程</h3>
                 
             </div>
             <hr/>
@@ -5924,7 +6243,7 @@ AIO：Asynchronous IO 是 NIO 的升级，也叫 NIO2，实现了异步非堵塞
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.4k</span>&nbsp;字
+                class="white-color">51.9k</span>&nbsp;字
             
             
             
