@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Nginx</title>
+      <link href="/2023/03/13/Nginx/"/>
+      <url>/2023/03/13/Nginx/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303132236173.png" alt="image-20230313223638600"></p><h2 id="2-1-介绍"><a href="#2-1-介绍" class="headerlink" title="2.1 介绍"></a>2.1 介绍</h2><h2 id="2-2-下载和安装"><a href="#2-2-下载和安装" class="headerlink" title="2.2 下载和安装"></a>2.2 下载和安装</h2><h2 id="2-3-目录结构"><a href="#2-3-目录结构" class="headerlink" title="2.3 目录结构"></a>2.3 目录结构</h2><h1 id="二、命令"><a href="#二、命令" class="headerlink" title="二、命令"></a>二、命令</h1><h1 id="三、配置文件结构"><a href="#三、配置文件结构" class="headerlink" title="三、配置文件结构"></a>三、配置文件结构</h1><h1 id="四、具体应用"><a href="#四、具体应用" class="headerlink" title="四、具体应用"></a>四、具体应用</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 服务器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nginx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySQL主从复制与读写分离</title>
       <link href="/2023/03/11/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E4%B8%8E%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/"/>
       <url>/2023/03/11/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E4%B8%8E%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/</url>
