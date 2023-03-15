@@ -351,21 +351,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-14
+                    2023-03-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    46.5k
+                    48.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    184 分
+                    192 分
                 </div>
                 
 
@@ -6238,7 +6238,377 @@ ping 220.181.57.216
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
+<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="一、MySQL简介"><a href="#一、MySQL简介" class="headerlink" title="一、MySQL简介"></a>一、MySQL简介</h2><p>数据库：database（DB），是一种存储数据的仓库 ，存储数据就不会消失，持久化存储</p>
+<p>数据库特点：</p>
+<ul>
+<li>数据库是根据数据结构组织、存储和管理数据 </li>
+<li>数据库能够长期、高效的管理和存储数据 </li>
+<li>数据库的目的就是能够存储（写）和提供（读）数据</li>
+</ul>
+<p>数据库分类：</p>
+<ul>
+<li>关系型数据库：基于关系模型的数据结构（<strong>二维表</strong>）通常存储在<strong>磁盘</strong> </li>
+<li>非关系型数据库：没有具体模型的数据结构（<strong>键值对</strong>）通常存储在<strong>内存</strong></li>
+</ul>
+<p> 数据库系统（DBS）模型有四层结构 ：建立库 使用库 在库中建表  在表中定义字段</p>
+<ul>
+<li>数据库管理系统（DBMS）：管理系统运行（DataBase Management System） </li>
+<li>数据库（DB）：数据存储的管理者（小管理，受DBMS管理） </li>
+<li>数据表（Table）：数据关系管理者 </li>
+<li>数据字段（Field）：依赖于数据表，实际数据存储者</li>
+</ul>
+<p>常见关系数据库产品：</p>
+<ul>
+<li>大型：Oracle、DB2 …</li>
+<li>中型：MySQL、SqlServer …</li>
+<li>小型：Sybase、Access …</li>
+</ul>
+<p>非关系型数据库 : MongoDB 、 Redis</p>
+<p>非关系型数据库：NoSQL（Not only SQL），不仅仅是关系型数据库 </p>
+<ul>
+<li>所有不是关系型数据库的统称 </li>
+<li>数据存储模型不是二维表，而是键值对（key-&gt;value） </li>
+<li>存储的位置通常是内存（效率高） </li>
+<li>不能永久性存储（需要定时存到关系型数据库中） </li>
+<li>常见的非关系型数据库产品 ( MongoDB 、 Redis 、 Memcached )</li>
+</ul>
+<h2 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h2><h3 id="2-1-MySQL服务启动"><a href="#2-1-MySQL服务启动" class="headerlink" title="2.1 MySQL服务启动"></a>2.1 MySQL服务启动</h3><ul>
+<li><p>使用管理员方式打开DOS命令窗口</p>
+<blockquote>
+<p>net start mysql服务名 : 启动mysq服务</p>
+<p>net stop mysql服务名 : 关闭mysq服务</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-2-MySQL登录"><a href="#2-2-MySQL登录" class="headerlink" title="2.2 MySQL登录"></a>2.2 MySQL登录</h3><ol>
+<li>在MYSQL Client客户端窗口：输入密码</li>
+</ol>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303151823192.png" alt="image-20230315182350935"></p>
+<ol start="2">
+<li><p>打开Dos命令窗口：</p>
+<blockquote>
+<p> mysql -h localhost -P 3306 -u root -p密码</p>
+<p>-h  IP地址</p>
+<p>-P  端口号</p>
+<p>-u  用户名 root</p>
+<p>-p密码</p>
+</blockquote>
+</li>
+<li><p>配置环境变量C:\Program Files\MySQL\MySQL Server 5.7\bin</p>
+<blockquote>
+<p>mysql -uroot -p密码</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="2-3-MySQL退出"><a href="#2-3-MySQL退出" class="headerlink" title="2.3 MySQL退出"></a>2.3 MySQL退出</h3><blockquote>
+<p>在DOS命令窗口：</p>
+<p>exit</p>
+<p>quit</p>
+</blockquote>
+<h3 id="2-4-MYSQL目录结构"><a href="#2-4-MYSQL目录结构" class="headerlink" title="2.4 MYSQL目录结构"></a>2.4 MYSQL目录结构</h3><ol>
+<li><p>MYSQL数据目录：C:\ProgramData\MySQL\MySQL Server 5.7\Data</p>
+</li>
+<li><p>MYSQL安装目录：C:\Program Files\MySQL\MySQL Server 5.7</p>
+</li>
+</ol>
+<h2 id="三、SQL语句"><a href="#三、SQL语句" class="headerlink" title="三、SQL语句"></a>三、SQL语句</h2><p><strong>1. 什么是SQL？</strong></p>
+<p>Structured Query Language结构化查询语言</p>
+<p>其实就是定义了操作所有<strong>关系型数据库</strong>的规则。每一种数据库操作的方式存在不一样的地方，称为”方言”</p>
+<p><strong>2. SQL通用的语法：</strong></p>
+<p>1.SQL语句可以单行书写也可以多行书写，但<strong>必须以分号结尾</strong>，SQL语句必须在 mysql&gt; 目录下书写</p>
+<p>2.可使用空格或者缩进增强语句的可读性</p>
+<p>3.MYSQL数据库的SQL语句<strong>不区分大小写</strong>，关键字建议使用大写</p>
+<p>4.注释：</p>
+<blockquote>
+<p>单行 – 注释内容	或	#注释内容<br>多行 /<em>注释内容</em>/</p>
+</blockquote>
+<p><strong>3. SQL划分：</strong></p>
+<ul>
+<li>Data Definition Language (DDL 数据定义语言) 如：建库，建表…</li>
+<li>Data Manipulation Language(DML 数据操纵语言)，如：对表中的记录操作增删改(insert /update/delete)  (数据库修改行数)</li>
+<li>Data Query Language(DQL 数据查询语言)，如：对表中的查询操作 (返回结果是一张虚拟表)</li>
+<li>Data Control Language(DCL 数据控制语言)，如：对用户权限的设置</li>
+</ul>
+<h2 id="四、MySQL数据类型"><a href="#四、MySQL数据类型" class="headerlink" title="四、MySQL数据类型"></a>四、MySQL数据类型</h2><p>mysql常用的数据类型和Java中数据类型</p>
+<table>
+<thead>
+<tr>
+<th>Java中数据类型</th>
+<th>MySQL中数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte、short、int、long</td>
+<td>TINYINT、SMALLINT、MEDIUMINT、INT或INTEGER、BIGINT</td>
+</tr>
+<tr>
+<td>float、double、BigDecimal</td>
+<td>FLOAT、DOUBLE(m,d)、DECIMAL      注：小数类型 3.14 m:3 d:2</td>
+</tr>
+<tr>
+<td>char</td>
+<td>CHAR、VARCHAR(m)</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>String</td>
+<td>CHAR、VARCHAR(m)、TINYTEXT、TEXT、MEDIUMTEXT、LONGTEXT</td>
+</tr>
+<tr>
+<td>二进制(图片、视频、音频)</td>
+<td>TINYBLOB、BLOB、MEDIUMBLOB、LONGBLOB</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>DATE     只包含年月日，yyyy-MM–dd</td>
+</tr>
+<tr>
+<td></td>
+<td>DATETIME    包含年月日时分秒，yyyy-MM-dd HH:mm:ss</td>
+</tr>
+<tr>
+<td></td>
+<td>TIMESTAMP 时间戳类型 ，包含年月日时分秒，yyyy-MM-dd HH:mm:ss    注意：如果将来不给这个字段赋值，或赋值null，则默认使用当前系统时间，自动赋值</td>
+</tr>
+</tbody></table>
+<p>详细的数据类型如下:</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>分类</strong>	<strong>类型名称</strong>	<strong>类型说明</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>整数</strong></td>
+<td>tinyInt</td>
+<td>微整型：很小的整数(占 8 位二进制)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>smallint</td>
+<td>小整型：小的整数(占 16 位二进制)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>mediumint</td>
+<td>中整型：中等长度的整数(占 24 位二进制)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>int(integer)</td>
+<td>整型：整数类型(占 32 位二进制)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left"><strong>小数</strong></td>
+<td>float</td>
+<td>单精度浮点数，占 4 个字节</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>double(m,d)</td>
+<td>双精度浮点数，占 8 个字节</td>
+</tr>
+<tr>
+<td align="left"><strong>日期</strong></td>
+<td>time</td>
+<td>表示时间类型</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>date</td>
+<td>表示日期类型</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>datetime</td>
+<td>同时可以表示日期和时间类型</td>
+</tr>
+<tr>
+<td align="left"><strong>字符串</strong></td>
+<td>char(m)</td>
+<td>固定长度的字符串，无论使用几个字符都占满全部，M 为 0~255 之间的整数</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>varchar(m)</td>
+<td>可变长度的字符串，使用几个字符就占用几个，M 为 0~65535 之间的整数</td>
+</tr>
+<tr>
+<td align="left"><strong>大二进制</strong></td>
+<td>tinyblob</td>
+<td>允许长度 0~255 字节</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>blob</td>
+<td>允许长度 0~65535 字节</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>mediumblob</td>
+<td>允许长度 0~167772150 字节</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>longblob</td>
+<td>允许长度 0~4294967295 字节</td>
+</tr>
+<tr>
+<td align="left"><strong>大文本</strong></td>
+<td>tinytext</td>
+<td>允许长度 0~255 字节</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>text</td>
+<td>允许长度 0~65535 字节</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>mediumtext</td>
+<td>允许长度 0~167772150 字节</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td>longtext</td>
+<td>允许长度 0~4294967295 字节</td>
+</tr>
+</tbody></table>
+<h2 id="五、DDL-非重点"><a href="#五、DDL-非重点" class="headerlink" title="五、DDL(非重点)"></a>五、DDL(非重点)</h2><h3 id="5-1-DDL操作数据库"><a href="#5-1-DDL操作数据库" class="headerlink" title="5.1 DDL操作数据库"></a>5.1 DDL操作数据库</h3><ul>
+<li><p>查看mysql中有哪些数据库？</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">show</span>  <span class="token keyword">databases</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>创建数据库：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span>  <span class="token keyword">database</span> 【<span class="token keyword">if</span> <span class="token operator">not</span> <span class="token keyword">exists</span>】 dbname<span class="token punctuation">(</span>数据库名称<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>删除数据库：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">database</span> 【<span class="token keyword">if</span> <span class="token keyword">exists</span>】 dbname<span class="token punctuation">(</span>数据库名称<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>查看数据库创建的语句</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">database</span> dbname<span class="token punctuation">(</span>数据库名称<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>修改数据库字符集编码：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">database</span>  dbname <span class="token keyword">character set</span>  编码；
+<span class="token keyword">alter</span> <span class="token keyword">database</span> mydb <span class="token keyword">character set</span> gbk<span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>使用数据库</p>
+<pre class=" language-java"><code class="language-java">use <span class="token function">dbname</span><span class="token punctuation">(</span>数据库名称<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>查看数据库中有哪些表:</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">tables</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>查看你正在使用哪一个数据库：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>查看数据库版本：</p>
+<p>```sql<br>select version()</p>
+</li>
+</ul>
+<p>注意：</p>
+<blockquote>
+<ol>
+<li><p>修改字符集编码：一定是utf8，而不是utf-8</p>
+</li>
+<li><p>utf8 和 utf8mb4区别？</p>
+<p>UTF8字符集一个汉字占据3个字符</p>
+<p>UTF8MB4字符集一个汉字占据4个字符，一些特殊字符和emoji表情需要</p>
+</li>
+<li><p>创建数据库指定字符集编码必须和MYSQL数据库里面的配置文件my.ini的字符集编码保持一致</p>
+<p>my.ini配置文件里面66行和99行：</p>
+<p>character-set-server=utf8</p>
+<p>default-character-set=utf8</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="5-2-DDL操作数据库表"><a href="#5-2-DDL操作数据库表" class="headerlink" title="5.2 DDL操作数据库表"></a>5.2 DDL操作数据库表</h3><pre class=" language-sql"><code class="language-sql">创建雇员表<span class="token punctuation">(</span>工号<span class="token punctuation">(</span>整型<span class="token punctuation">)</span>、姓名<span class="token punctuation">(</span>字符串<span class="token punctuation">)</span>、部门<span class="token punctuation">(</span>字符串<span class="token punctuation">)</span>、年龄<span class="token punctuation">(</span>整型<span class="token punctuation">)</span>、入职日期<span class="token punctuation">(</span>日期<span class="token punctuation">)</span>、工资<span class="token punctuation">(</span>小数<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
+
+<span class="token keyword">create</span>  <span class="token keyword">table</span>  employee<span class="token punctuation">(</span>
+    empId <span class="token keyword">int</span><span class="token punctuation">,</span>
+    empName <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    deptName <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    empAge <span class="token keyword">int</span><span class="token punctuation">,</span>
+    empJoinTime <span class="token keyword">date</span><span class="token punctuation">,</span>
+    empSalary <span class="token keyword">double</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+或者
+<span class="token keyword">create</span>  <span class="token keyword">table</span>  employee<span class="token punctuation">(</span>
+    empId <span class="token keyword">int</span><span class="token punctuation">,</span>
+    empName <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    deptName <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    empAge <span class="token keyword">int</span><span class="token punctuation">,</span>
+    empJoinTime <span class="token keyword">date</span><span class="token punctuation">,</span>
+    empSalary <span class="token keyword">double</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token keyword">default</span> <span class="token keyword">charset</span><span class="token operator">=</span>UTF8<span class="token punctuation">,</span><span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">INNODB</span><span class="token punctuation">;</span>
+
+注意：
+<span class="token number">1</span><span class="token punctuation">.</span><span class="token keyword">default</span> <span class="token keyword">charset</span><span class="token operator">=</span>UTF8<span class="token punctuation">,</span><span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">INNODB</span>指定字符集和默认存储引擎
+
+<span class="token number">2</span><span class="token punctuation">.</span>我们在数据库中创建了表，现在重启电脑，这个还在不在呢？在
+
+存在位置：C:\ProgramData\MySQL\MySQL Server <span class="token number">5.7</span>\<span class="token keyword">Data</span>\数据库名\表
+
+<span class="token punctuation">.</span>frm文件：保存表中的数据，包括表结构的定义等
+<span class="token number">3</span><span class="token punctuation">.</span>创建表语句的最后一列，不需要加逗号
+</code></pre>
+<p><strong>1. 查看表结构：</strong></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">desc</span> employee<span class="token punctuation">(</span>表名称<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>2. 查看创建表语句</strong></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> employee<span class="token punctuation">(</span>表名称<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>3. 快速复制表</strong></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> new_tablename<span class="token punctuation">(</span>新表名称<span class="token punctuation">)</span> <span class="token operator">like</span> old_tablename<span class="token punctuation">(</span>旧表名称<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>4. 删除表</strong></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">table</span> <span class="token keyword">if</span> <span class="token keyword">exists</span> tablename<span class="token punctuation">(</span>表名<span class="token punctuation">)</span>
+</code></pre>
+<p><strong>5. 修改表结构：</strong></p>
+<ul>
+<li><p>添加列：alter table 表名称 add 列名称 列类型</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">table</span> employee <span class="token keyword">add</span> salary <span class="token keyword">double</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
+</code></pre>
+</li>
+<li><p>修改列类型：alert table 表名称 modify  列名称  列类型;</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">table</span> employee <span class="token keyword">modify</span> salary <span class="token keyword">int</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>修改列名称类型：alter table 表名称 change 旧列名称  新列名称 新列类型; </p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">table</span> employee change salary asalary <span class="token keyword">float</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>删除列：alter  table 表名称 drop 列名称</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">table</span> employee <span class="token keyword">drop</span> asalary<span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>修改表名称：rename table 表名称   to  新表名称</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">rename</span> <span class="token keyword">table</span> employee <span class="token keyword">to</span> emp<span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>修改表的字符集：alter  table 表名称  character set  字符集</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">table</span> emp <span class="token keyword">character set</span> gbk<span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="六、DML-重点"><a href="#六、DML-重点" class="headerlink" title="六、DML(重点)"></a>六、DML(重点)</h2>
                 
             </div>
             <hr/>
@@ -6581,7 +6951,7 @@ ping 220.181.57.216
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.8k</span>&nbsp;字
+                class="white-color">58.8k</span>&nbsp;字
             
             
             
