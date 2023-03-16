@@ -351,21 +351,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-15
+                    2023-03-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    48.4k
+                    50.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    192 分
+                    201 分
                 </div>
                 
 
@@ -6608,7 +6608,267 @@ ping 220.181.57.216
 </code></pre>
 </li>
 </ul>
-<h2 id="六、DML-重点"><a href="#六、DML-重点" class="headerlink" title="六、DML(重点)"></a>六、DML(重点)</h2>
+<h2 id="六、DML-重点"><a href="#六、DML-重点" class="headerlink" title="六、DML(重点)"></a>六、DML(重点)</h2><h3 id="6-1-INSERT"><a href="#6-1-INSERT" class="headerlink" title="6.1 INSERT"></a>6.1 INSERT</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> 表名称<span class="token punctuation">(</span>列名称<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token keyword">values</span><span class="token punctuation">(</span>值<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 指定列插入数据：(可以插入所有列、也可以是部分列)</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> emp<span class="token punctuation">(</span>empId<span class="token punctuation">,</span>empName<span class="token punctuation">,</span>deptName<span class="token punctuation">,</span>empAge<span class="token punctuation">,</span>empJoinTime<span class="token punctuation">,</span>empSalary<span class="token punctuation">)</span>
+            <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'张全蛋'</span><span class="token punctuation">,</span><span class="token string">'财务部'</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token string">'2020-06-08'</span><span class="token punctuation">,</span><span class="token number">6500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+<span class="token keyword">insert</span> <span class="token keyword">into</span> emp<span class="token punctuation">(</span>empId<span class="token punctuation">,</span>empName<span class="token punctuation">,</span>deptName<span class="token punctuation">)</span>
+            <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'典韦'</span><span class="token punctuation">,</span><span class="token string">'设计部'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+<span class="token comment" spellcheck="true">-- 不指明列名称插入(插入所有记录,且值的顺序需要跟表中列的类型的顺序一致)</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> emp
+            <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'王二狗'</span><span class="token punctuation">,</span><span class="token string">'财务部'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'2020/6/8'</span><span class="token punctuation">,</span><span class="token number">6600</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+<span class="token comment" spellcheck="true">-- 一次性插入多条数据</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> emp
+            <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'张全蛋'</span><span class="token punctuation">,</span><span class="token string">'财务部'</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token string">'2020-06-08'</span><span class="token punctuation">,</span><span class="token number">6500</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'王二狗'</span><span class="token punctuation">,</span><span class="token string">'财务部'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'2020/6/8'</span><span class="token punctuation">,</span><span class="token number">6600</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p><strong>除了数字类型，其他类型都要使用引号（单双引号）引起来</strong></p>
+</blockquote>
+<h3 id="6-2-UPDATE"><a href="#6-2-UPDATE" class="headerlink" title="6.2 UPDATE"></a>6.2 UPDATE</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">update</span> 表名称 <span class="token keyword">set</span> 列名称 <span class="token operator">=</span> 值<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token punctuation">(</span><span class="token keyword">where</span> 列名称 <span class="token operator">=</span> 值<span class="token punctuation">)</span> 
+</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">update</span>  emp  <span class="token keyword">set</span> empName <span class="token operator">=</span> <span class="token string">'赵云'</span><span class="token punctuation">,</span>deptName<span class="token operator">=</span><span class="token string">'后勤部'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 修改表的所有行中指定列的值</span>
+
+<span class="token comment" spellcheck="true">-- 注意：如果不加where条件，则修改表中所有的记录</span>
+</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">update</span>  emp <span class="token keyword">set</span> empName <span class="token operator">=</span> <span class="token string">'貂蝉'</span><span class="token punctuation">,</span>deptName<span class="token operator">=</span><span class="token string">'销售部'</span> <span class="token keyword">where</span> empId<span class="token operator">=</span><span class="token number">1002</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//根据行限定修改指定行中指定列的值</span>
+</code></pre>
+<h3 id="6-3-DELETE"><a href="#6-3-DELETE" class="headerlink" title="6.3 DELETE"></a>6.3 DELETE</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">delete</span> <span class="token keyword">from</span> 表名称 <span class="token punctuation">(</span><span class="token keyword">where</span> 列名称<span class="token operator">=</span> 值<span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">delete</span>  <span class="token keyword">from</span>  emp  <span class="token keyword">where</span> empId<span class="token operator">=</span><span class="token number">1003</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//  根据行限定删除指定行</span>
+<span class="token keyword">delete</span>  <span class="token keyword">from</span>  emp<span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 删除表的所有数据</span>
+
+<span class="token comment" spellcheck="true">--注意：</span>
+<span class="token comment" spellcheck="true">--如果不加where条件，则删除表中所有的记录</span>
+</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--如何删除所有的记录：</span>
+
+<span class="token keyword">TRUNCATE</span> <span class="token keyword">TABLE</span>  表名；——推荐使用，效率高，先删除表，再创建一张空表
+
+<span class="token keyword">delete</span> <span class="token keyword">from</span> 表名；——不推荐使用，效率低，有多少记录执行多少次删除，逐条记录删除
+</code></pre>
+<h2 id="七、DQL-重点，难点"><a href="#七、DQL-重点，难点" class="headerlink" title="七、DQL(重点，难点)"></a>七、DQL(重点，难点)</h2><ul>
+<li><strong>不会改变原表中的数据</strong></li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 1、书写顺序：（顺序是固定的—考点！！！）</span>
+
+<span class="token keyword">select</span>
+
+   字段列表
+
+<span class="token keyword">from</span>
+
+  表名列表
+
+<span class="token keyword">where</span>
+
+  分组之前的条件列表
+
+<span class="token keyword">group</span> <span class="token keyword">by</span>
+
+  分组字段
+
+<span class="token keyword">having</span>
+
+   分组之后的条件
+
+<span class="token keyword">order</span> <span class="token keyword">by</span>
+
+  排序
+
+<span class="token keyword">limit</span>
+
+  分页限定
+
+<span class="token comment" spellcheck="true">-- 2、执行顺序：</span>
+
+<span class="token comment" spellcheck="true">-- mysql执行顺序如下：</span>
+
+<span class="token keyword">from</span> 阶段
+
+<span class="token keyword">where</span> 阶段
+
+<span class="token keyword">group</span> <span class="token keyword">by</span> 阶段
+
+<span class="token keyword">having</span> 阶段
+
+<span class="token keyword">select</span> 阶段
+
+<span class="token keyword">order</span> <span class="token keyword">by</span> 阶段
+
+<span class="token keyword">limit</span> 阶段
+</code></pre>
+<h3 id="7-1-单表查询："><a href="#7-1-单表查询：" class="headerlink" title="7.1 单表查询："></a>7.1 <strong>单表查询：</strong></h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 列名称<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        <span class="token keyword">from</span>  表名称
+        <span class="token punctuation">[</span><span class="token keyword">where</span> 限定条件<span class="token punctuation">]</span>
+</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 查看表中所有行指定列的值</span>
+<span class="token keyword">select</span>  empName<span class="token punctuation">,</span>deptName<span class="token punctuation">,</span>empJoinTime <span class="token keyword">from</span> emp<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 查看表中指定行指定列的值</span>
+<span class="token keyword">select</span>  empName<span class="token punctuation">,</span>deptName<span class="token punctuation">,</span>empJoinTime <span class="token keyword">from</span> emp <span class="token keyword">where</span> empid<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--查看表中所有行的所有列的值</span>
+<span class="token keyword">select</span>  <span class="token operator">*</span>  <span class="token keyword">from</span>  emp<span class="token punctuation">;</span>
+<span class="token keyword">select</span>  <span class="token operator">*</span>  <span class="token keyword">from</span>  emp <span class="token keyword">where</span> empId <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">or</span> empId <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 给指定列取别名</span>
+<span class="token keyword">select</span>  empName <span class="token keyword">as</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span>deptName <span class="token keyword">as</span> <span class="token string">'部门'</span><span class="token punctuation">,</span>empJoinTime  <span class="token keyword">from</span> emp <span class="token keyword">where</span> empid<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">select</span>  empName <span class="token string">'姓名'</span><span class="token punctuation">,</span>deptName <span class="token string">'部门'</span><span class="token punctuation">,</span>empJoinTime  <span class="token keyword">from</span> emp <span class="token keyword">where</span> empid<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="7-2-distinct-去重"><a href="#7-2-distinct-去重" class="headerlink" title="7.2 distinct:去重"></a>7.2 <strong>distinct:去重</strong></h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token keyword">distinct</span> deptName <span class="token keyword">from</span> emp<span class="token punctuation">;</span>
+</code></pre>
+<h3 id="7-3-列运算：-x2F"><a href="#7-3-列运算：-x2F" class="headerlink" title="7.3 列运算： +  -  *  /"></a>7.3 <strong>列运算： +  -  *  /</strong></h3><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 获取员工表中所有人的年薪：</span>
+<span class="token keyword">select</span> empName<span class="token punctuation">,</span> empSalary<span class="token operator">*</span><span class="token number">12</span> <span class="token string">'年薪'</span>  <span class="token keyword">from</span> emp<span class="token punctuation">;</span>
+</code></pre>
+<p>**注意： **</p>
+<p><strong>1. 如果列值为null 去跟其他的列做运算，其结果为null。</strong></p>
+<p><strong>2. IFNULL(列名称，’值’)  ：该列如果为null，则使用后面的值去运算</strong></p>
+<h3 id="7-4-起别名：-字段和表"><a href="#7-4-起别名：-字段和表" class="headerlink" title="7.4 起别名：(字段和表)"></a>7.4 起别名：(字段和表)</h3><p><strong>as: as也可以省略</strong></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> student s <span class="token keyword">where</span> s<span class="token punctuation">.</span>age<span class="token operator">></span><span class="token number">20</span><span class="token punctuation">;</span>
+
+<span class="token keyword">select</span> age <span class="token string">'年龄'</span> <span class="token keyword">from</span> student<span class="token punctuation">;</span>
+</code></pre>
+<h3 id="7-5-条件查询"><a href="#7-5-条件查询" class="headerlink" title="7.5 条件查询"></a>7.5 条件查询</h3><pre class=" language-xml"><code class="language-xml">> 	 &lt;    >=   &lt;=	= 	 &lt;>、!=
+
+BETWEEN....AND
+
+IN(10,20,30)和 NOT IN(集合) 不在/在集合中取数据
+
+LIKE：模糊查询
+
+ 占位符：_  单个任意字符
+
+        %  多个任意字符
+
+IS NULL和IS NOT NULL  empSalary is NULL 
+
+AND 或 &amp;&amp;
+
+OR 或 ||
+
+NOT 或  !
+</code></pre>
+<h3 id="7-6-排序"><a href="#7-6-排序" class="headerlink" title="7.6 排序"></a>7.6 排序</h3><ul>
+<li><strong>对获取到的结果进行排序</strong></li>
+<li>desc   降序  </li>
+<li>asc     升序</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 对雇员表中获取到结果按照工资进行降序排列</span>
+<span class="token keyword">select</span>  <span class="token operator">*</span>  <span class="token keyword">from</span>  emp  <span class="token keyword">order</span>  <span class="token keyword">by</span> empSalary <span class="token keyword">desc</span><span class="token punctuation">;</span>
+
+
+<span class="token comment" spellcheck="true">--对雇员表中的年龄、工资进行排序(先按照年龄进行升序排列，年龄相同按照工资进行降序排列)</span>
+<span class="token keyword">select</span>  empName<span class="token punctuation">,</span>empSalary<span class="token punctuation">,</span>empAge  <span class="token keyword">from</span>  emp <span class="token keyword">order</span> <span class="token keyword">by</span> empAge <span class="token keyword">asc</span><span class="token punctuation">,</span> empSalary <span class="token keyword">desc</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>注意：</strong>如果有多个排序条件，则当前边的条件值一样时，才会判断第二个条件</p>
+<h3 id="7-7-聚合函数"><a href="#7-7-聚合函数" class="headerlink" title="7.7 聚合函数"></a>7.7 聚合函数</h3><ul>
+<li><p><strong>将多条记录合并为一条记录进行显示，忽略null值</strong></p>
+</li>
+<li><p>将一列数据作为一个整体，进行纵向的计算</p>
+</li>
+<li><p>函数只是将取出的数据进行处理，不会改变数据库中的值。</p>
+</li>
+</ul>
+<h4 id="7-7-1-单行函数"><a href="#7-7-1-单行函数" class="headerlink" title="7.7.1 单行函数"></a>7.7.1 单行函数</h4><h5 id="7-7-1-1-数学函数"><a href="#7-7-1-1-数学函数" class="headerlink" title="7.7.1.1 数学函数"></a>7.7.1.1 数学函数</h5><ul>
+<li>ABS(x) 返回x的绝对值</li>
+<li>PI()  返回圆周率π，默认显示6位小数</li>
+<li>SQRT(x)  返回非负数的x的二次方根</li>
+<li>MOD(x,y)  返回x被y除后的余数</li>
+<li>CEIL(x)、CEILING(x)  返回不小于x的最小整数</li>
+<li>FLOOR(x)  返回不大于x的最大整数</li>
+<li>ROUND(x)、ROUND(x,y)  前者返回最接近于x的整数，即对x进行四舍五入；后者返回最接近x的数，其值保留到小数点后面y位，若y为负值，则将保留到x到小数点左边y位</li>
+<li>POW(x,y)和、POWER(x,y)  返回x的y次乘方的值</li>
+<li>RAND()   返回0-1之间的随机小数</li>
+</ul>
+<h5 id="7-7-1-2-字符串函数"><a href="#7-7-1-2-字符串函数" class="headerlink" title="7.7.1.2 字符串函数"></a>7.7.1.2 字符串函数</h5><ul>
+<li>CHAR_LENGTH(str)  计算字符串字符个数</li>
+<li>CONCAT(s1,s2，…)  返回连接参数产生的字符串，一个或多个待拼接的内容，<strong>任意一个为NULL则返回值为NULL</strong></li>
+<li>CONCAT_WS(x,s1,s2,…) 返回多个字符串拼接之后的字符串，每个字符串之间有一个x</li>
+<li>LOWER(str)和LCASE(str)、UPPER(str)和UCASE(str)前两者将str中的字母全部转换成小写，后两者将字符串中的字母全部转换成大写</li>
+<li>REPLACE(s,s1,s2)  返回一个字符串，用字符串s2替代字符串s中所有的字符串s1</li>
+<li>SUBSTRING(s,n,len)、MID(s,n,len)两个函数作用相同，从字符串s中返回一个第n个字符开始、长度为len的字符串</li>
+<li>REVERSE(s)  将字符串s反转</li>
+</ul>
+<h5 id="7-7-1-3-日期和时间函数"><a href="#7-7-1-3-日期和时间函数" class="headerlink" title="7.7.1.3 日期和时间函数"></a>7.7.1.3 日期和时间函数</h5><ul>
+<li>CURDATE()、CURRENT_DATE()将当前日期按照”YYYY-MM-DD”或者”YYYYMMDD”格式的值返回，具体格式根据函数用在字符串或是数字语境中而定</li>
+<li>CURRENT_TIMESTAMP()、LOCALTIME()、**NOW()**、SYSDATE()这四个函数作用相同，返回当前日期和时间值，格式为”YYYY_MM-DD HH:MM:SS”或”YYYYMMDDHHMMSS”，具体格式根据函数用在字符串或数字语境中而定</li>
+<li>MONTH(date)和MONTHNAME(date)前者返回指定日期中的月份，后者返回指定日期中的月份的名称(英文)</li>
+<li>WEEK(d)计算日期d是一年中的第几周</li>
+<li>DAYOFYEAR(d)、DAYOFMONTH(d)前者返回d是一年中的第几天，后者返回d是一月中的第几天</li>
+<li>EXTRACT(type FROM date)从日期中提取一部分，type可以是YEAR、YEAR_MONTH、DAY_HOUR、DAY_MICROSECOND、DAY_MINUTE、DAY_SECOND</li>
+<li>TimeStampDiff(间隔类型，前一个日期，后一个日期)</li>
+<li>DATE_ADD(date,INTERVAL val type)、ADD_DATE(date,INTERVAL expr type)返回将起始时间加上val  type之后的时间</li>
+</ul>
+<h5 id="7-7-1-4-条件判断函数"><a href="#7-7-1-4-条件判断函数" class="headerlink" title="7.7.1.4 条件判断函数"></a>7.7.1.4 条件判断函数</h5><ul>
+<li><p>IF(expr,v1,v2)如果expr是TRUE则返回v1，否则返回v2</p>
+</li>
+<li><p>IFNULL(v1,v2)函数  如果v1的值不为NULL，则返回v1，否则返回v2</p>
+</li>
+<li><p>CASE expr WHEN v1 THEN r1 [WHEN v2 THEN v2] [ELSE rn] END 如果expr等于某个vn，则返回对应位置THEN后面的结果，如果与所有值都不想等，则返回ELSE后面的rn</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">CASE</span> <span class="token number">4</span> <span class="token keyword">WHEN</span> <span class="token number">1</span> <span class="token keyword">THEN</span> <span class="token string">'第一'</span> <span class="token keyword">WHEN</span> <span class="token number">2</span> <span class="token keyword">THEN</span> <span class="token string">'第二'</span> <span class="token keyword">ELSE</span> <span class="token string">'奋斗吧，少年'</span> <span class="token keyword">END</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h5 id="7-7-1-5-加密函数"><a href="#7-7-1-5-加密函数" class="headerlink" title="7.7.1.5 加密函数"></a>7.7.1.5 加密函数</h5><ul>
+<li>PASSWORD(str)从原明文密码str计算并返回加密后的字符串密码，注意这个函数的加密是单向的（不可逆）</li>
+<li>MD5(str)为字符串算出一个MD5 128比特校验和，该值以32位十六进制数字的二进制字符串形式返回</li>
+</ul>
+<h4 id="7-7-2-多行函数"><a href="#7-7-2-多行函数" class="headerlink" title="7.7.2 多行函数"></a>7.7.2 多行函数</h4><ul>
+<li>count():计算个数</li>
+<li>sum() 求和 </li>
+<li>avg() 求平均值</li>
+<li>max() 求最大值</li>
+<li>min() 求最小值</li>
+</ul>
+<h3 id="7-8-分组"><a href="#7-8-分组" class="headerlink" title="7.8 分组"></a>7.8 分组</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">group</span>  <span class="token keyword">by</span>
+</code></pre>
+<p>作用：将查询中相同的记录分为一组 ，**<font color="red">显示一条记录。</font>**</p>
+<h3 id="7-9-having"><a href="#7-9-having" class="headerlink" title="7.9 having"></a>7.9 having</h3><p><strong>对分组后的结果进行筛选</strong></p>
+<p>分组之后查询的字段：分组字段，聚合函数</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--  获取哪些部门的员工总数等于 2？</span>
+<span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">,</span>deptName
+<span class="token keyword">from</span> emp
+<span class="token keyword">group</span> <span class="token keyword">by</span>  deptName
+<span class="token keyword">having</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">-- 按照性别分组，分别查询男女同学的数学成绩平均分以及人数，要求：分数低于70分的人，不参与分组，分组之后，人数要大于两个人</span>
+<span class="token keyword">SELECT</span> sex<span class="token punctuation">,</span><span class="token function">AVG</span><span class="token punctuation">(</span>IFNULL<span class="token punctuation">(</span>math<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">COUNT</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> 人数 <span class="token keyword">FROM</span> student <span class="token keyword">WHERE</span> math<span class="token operator">></span><span class="token number">70</span> <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> sex <span class="token keyword">HAVING</span> 人数<span class="token operator">></span><span class="token number">2</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="7-10-limit"><a href="#7-10-limit" class="headerlink" title="7.10 limit"></a>7.10 limit</h3><p><strong>limit是一个MYSQL的方言</strong></p>
+<ul>
+<li><p>语法：</p>
+<pre class=" language-xml"><code class="language-xml">limit 开始的索引，每页查询的条数;
+
+limit （pageNo-1）*pageSize，pageSize;
+</code></pre>
+</li>
+<li><p>公式：</p>
+<p>开始的索引  = （当前的页码-1）* 每页显示的条数</p>
+</li>
+</ul>
+<h3 id="7-11-面试题"><a href="#7-11-面试题" class="headerlink" title="7.11 面试题"></a>7.11 面试题</h3><h4 id="7-11-1-truncate、delete区别"><a href="#7-11-1-truncate、delete区别" class="headerlink" title="7.11.1 truncate、delete区别"></a>7.11.1 truncate、delete区别</h4><pre class=" language-xml"><code class="language-xml">都是删除数据操作：
+    delete ： 删除表中数据、支持事务操作(可以回滚)
+    truncate ： 删除表结构，再重新建一个表(不可以回滚)
+</code></pre>
+<h4 id="7-11-2-where-、having区别"><a href="#7-11-2-where-、having区别" class="headerlink" title="7.11.2 where 、having区别"></a>7.11.2 where 、having区别</h4><pre class=" language-xml"><code class="language-xml">1.where在分组之前的限定。如果不满足条件，则不参与分组。
+
+2.having在分组之后进行限定，如果不满足条件，不会被查询出来
+
+3.where后不能放聚合函数，having可以进行聚合函数的判断
+</code></pre>
+<h4 id="7-11-3-单表查询sql语句的顺序"><a href="#7-11-3-单表查询sql语句的顺序" class="headerlink" title="7.11.3 单表查询sql语句的顺序"></a>7.11.3 单表查询sql语句的顺序</h4><pre class=" language-xml"><code class="language-xml">select ...
+     from  表名称
+    【where 限定】
+       【group by 列名称】
+       【having 】
+       【order by】
+       【limit】
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -6951,7 +7211,7 @@ ping 220.181.57.216
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.8k</span>&nbsp;字
+                class="white-color">61k</span>&nbsp;字
             
             
             
