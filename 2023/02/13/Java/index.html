@@ -351,21 +351,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-16
+                    2023-03-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    50.7k
+                    53.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    201 分
+                    214 分
                 </div>
                 
 
@@ -6868,7 +6868,333 @@ limit （pageNo-1）*pageSize，pageSize;
        【order by】
        【limit】
 </code></pre>
+<h2 id="八、约束-了解"><a href="#八、约束-了解" class="headerlink" title="八、约束(了解)"></a>八、约束(了解)</h2><p>概念：<strong>对表中的数据进行限定</strong>，保证数据正确性，完整性，有效性</p>
+<h3 id="8-1-非空约束"><a href="#8-1-非空约束" class="headerlink" title="8.1 非空约束"></a>8.1 非空约束</h3><p>not null,值不能为空null</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 1.创建表时添加非空约束</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> stu<span class="token punctuation">(</span>
+id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+NAME <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token comment" spellcheck="true">-- name非空</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 2.创建表完后，添加非空约束</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> stu <span class="token keyword">MODIFY</span> NAME <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 3.删除name的非空约束</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> stu <span class="token keyword">MODIFY</span> NAME <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="8-2-唯一约束"><a href="#8-2-唯一约束" class="headerlink" title="8.2 唯一约束"></a>8.2 唯一约束</h3><p>unique，值不能重复</p>
+<p><strong>注意：</strong>mysql中，唯一约束限定的列可以有多个null</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 1.创建表时添加唯一约束</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> stu<span class="token punctuation">(</span>
+   id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+   phone_number <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">UNIQUE</span> <span class="token comment" spellcheck="true">-- 添加唯一约束</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
+<span class="token comment" spellcheck="true">-- 2.创建表完后，添加唯一约束</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> stu <span class="token keyword">MODIFY</span> phone_number <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">UNIQUE</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 3.删除唯一约束--索引</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> stu <span class="token keyword">DROP</span> <span class="token keyword">INDEX</span> phone_number<span class="token punctuation">;</span>
+</code></pre>
+<h3 id="8-3-主键约束"><a href="#8-3-主键约束" class="headerlink" title="8.3 主键约束"></a>8.3 主键约束</h3><p>primary key   非空且唯一</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 1.创建表时添加主键约束</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> stu<span class="token punctuation">(</span>
+  id <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">-- 给id添加主键约束</span>
+  NAME <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">create</span> <span class="token keyword">table</span> tb_class<span class="token punctuation">(</span>
+ id <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">-- id是主键列</span>
+ NAME <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+ <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">-- 为stu表的id列设置主键约束</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">-- 2.创建表完后，添加主键约束</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> stu <span class="token keyword">MODIFY</span> id <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 3.只能删除主键（不能删除非空）</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> stu <span class="token keyword">DROP</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="8-4-联合主键"><a href="#8-4-联合主键" class="headerlink" title="8.4 联合主键"></a>8.4 联合主键</h3><p>指的是把多个列看成一个整体，这个整体不为空，唯一，且不重复</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 1.创建表时添加联合主键</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> stu<span class="token punctuation">(</span>
+ sid <span class="token keyword">INT</span><span class="token punctuation">,</span>
+ cid <span class="token keyword">INT</span><span class="token punctuation">,</span>
+ <span class="token keyword">CONSTRAINT</span> s_pk <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>sid<span class="token punctuation">,</span>cid<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">-- 或</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> stu<span class="token punctuation">(</span>
+ sid <span class="token keyword">INT</span><span class="token punctuation">,</span>
+ cid <span class="token keyword">INT</span><span class="token punctuation">,</span>
+ <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>sid<span class="token punctuation">,</span>cid<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">-- 2.创建表完后，添加联合主键</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> stu <span class="token keyword">add</span> <span class="token keyword">CONSTRAINT</span> s_pk <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">(</span>sid<span class="token punctuation">,</span>cid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 或</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> stu <span class="token keyword">add</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">(</span>sid<span class="token punctuation">,</span>cid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 3.删除联合主键</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> stu <span class="token keyword">drop</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="8-5-自动增长"><a href="#8-5-自动增长" class="headerlink" title="8.5 自动增长"></a>8.5 自动增长</h3><p>auto_increment 一个字段的值自增增长1，2，3，4，5</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 1.创建表时添加主键约束，并且完成自动增长</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> stu<span class="token punctuation">(</span>
+  id <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">-- 给id添加主键约束并自动增长</span>
+  NAME <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> stu <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token boolean">NULL</span><span class="token punctuation">,</span><span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 2.创建表完后，添加自动增长</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> stu <span class="token keyword">MODIFY</span> id <span class="token keyword">INT</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 3.删除自动增长</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> stu <span class="token keyword">MODIFY</span> id <span class="token keyword">INT</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 4.插入值</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> stu<span class="token punctuation">(</span>NAME<span class="token punctuation">)</span> <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'张三'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> stu<span class="token punctuation">(</span>NAME<span class="token punctuation">)</span> <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'李四'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 或</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> stu <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token boolean">NULL</span><span class="token punctuation">,</span><span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token boolean">NULL</span><span class="token punctuation">,</span><span class="token string">'2'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token boolean">NULL</span><span class="token punctuation">,</span><span class="token string">'3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="8-6-默认约束"><a href="#8-6-默认约束" class="headerlink" title="8.6 默认约束"></a>8.6 默认约束</h3><p>default  为某一列指定一个默认的值</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 1.创建表时添加默认约束</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> stu<span class="token punctuation">(</span>
+  id <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+  NAME <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">UNIQUE</span><span class="token punctuation">,</span>
+  hobby <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  sex CHAR<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
+  age <span class="token keyword">INT</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 2.创建表完后，添加默认约束</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> stu <span class="token keyword">MODIFY</span> <span class="token punctuation">[</span><span class="token keyword">COLUMN</span><span class="token punctuation">]</span> sex CHAR<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token string">'1'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 3.删除sex的默认约束</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> stu <span class="token keyword">MODIFY</span> sex CHAR<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="8-7-外键约束"><a href="#8-7-外键约束" class="headerlink" title="8.7 外键约束"></a>8.7 外键约束</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> emp <span class="token punctuation">(</span>
+id <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+NAME <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+age <span class="token keyword">INT</span><span class="token punctuation">,</span>
+dep_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+dep_location <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">-- 添加数据</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> emp <span class="token punctuation">(</span>NAME<span class="token punctuation">,</span> age<span class="token punctuation">,</span> dep_name<span class="token punctuation">,</span> dep_location<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'研发部'</span><span class="token punctuation">,</span> <span class="token string">'广州'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> emp <span class="token punctuation">(</span>NAME<span class="token punctuation">,</span> age<span class="token punctuation">,</span> dep_name<span class="token punctuation">,</span> dep_location<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token string">'研发部'</span><span class="token punctuation">,</span> <span class="token string">'广州'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> emp <span class="token punctuation">(</span>NAME<span class="token punctuation">,</span> age<span class="token punctuation">,</span> dep_name<span class="token punctuation">,</span> dep_location<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">'王五'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'研发部'</span><span class="token punctuation">,</span> <span class="token string">'广州'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> emp <span class="token punctuation">(</span>NAME<span class="token punctuation">,</span> age<span class="token punctuation">,</span> dep_name<span class="token punctuation">,</span> dep_location<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">'老王'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'销售部'</span><span class="token punctuation">,</span> <span class="token string">'深圳'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> emp <span class="token punctuation">(</span>NAME<span class="token punctuation">,</span> age<span class="token punctuation">,</span> dep_name<span class="token punctuation">,</span> dep_location<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">'大王'</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token string">'销售部'</span><span class="token punctuation">,</span> <span class="token string">'深圳'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> emp <span class="token punctuation">(</span>NAME<span class="token punctuation">,</span> age<span class="token punctuation">,</span> dep_name<span class="token punctuation">,</span> dep_location<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">'小王'</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token string">'销售部'</span><span class="token punctuation">,</span> <span class="token string">'深圳'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">--以上数据表的缺点:</span>
+    <span class="token comment" spellcheck="true">--1)数据冗余</span>
+    <span class="token comment" spellcheck="true">--2)后期还会出现增删改的问题</span>
+</code></pre>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202303171430021.png" alt="image-20230317143030733"></p>
+<p> 解决方案：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> department<span class="token punctuation">(</span>
+    id <span class="token keyword">int</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span> 
+    dep_name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    dep_location <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> department <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'研发部'</span><span class="token punctuation">,</span><span class="token string">'广州'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'销售部'</span><span class="token punctuation">,</span> <span class="token string">'深圳'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">create</span> <span class="token keyword">table</span> employee<span class="token punctuation">(</span>
+    id <span class="token keyword">int</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span> name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    age <span class="token keyword">int</span><span class="token punctuation">,</span>
+    dep_id <span class="token keyword">int</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment" spellcheck="true">-- 外键对应主表的主键</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> employee <span class="token punctuation">(</span>NAME<span class="token punctuation">,</span> age<span class="token punctuation">,</span> dep_id<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span>	employee <span class="token punctuation">(</span>NAME<span class="token punctuation">,</span>	age<span class="token punctuation">,</span> dep_id<span class="token punctuation">)</span> <span class="token keyword">VALUES</span>	<span class="token punctuation">(</span><span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span>	employee <span class="token punctuation">(</span>NAME<span class="token punctuation">,</span>	age<span class="token punctuation">,</span> dep_id<span class="token punctuation">)</span> <span class="token keyword">VALUES</span>	<span class="token punctuation">(</span><span class="token string">'王五'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> employee <span class="token punctuation">(</span>NAME<span class="token punctuation">,</span>	age<span class="token punctuation">,</span> dep_id<span class="token punctuation">)</span> <span class="token keyword">VALUES</span>	<span class="token punctuation">(</span><span class="token string">'老王'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span>	employee <span class="token punctuation">(</span>NAME<span class="token punctuation">,</span>	age<span class="token punctuation">,</span> dep_id<span class="token punctuation">)</span> <span class="token keyword">VALUES</span>	<span class="token punctuation">(</span><span class="token string">'大王'</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span>	employee <span class="token punctuation">(</span>NAME<span class="token punctuation">,</span>	age<span class="token punctuation">,</span> dep_id<span class="token punctuation">)</span> <span class="token keyword">VALUES</span>	<span class="token punctuation">(</span><span class="token string">'小王'</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/*问题：当我们在 employee 的 dep_id 里面输入不存在的部门,数据依然可以添加.但是并没有对应的部门， 实际应用中不能出现这种情况。employee 的 dep_id 中的数据只能是 department 表中存在的 id*/</span>
+</code></pre>
+<p>解决：需要约束 dep_id 只能是 department 表中已经存在 id</p>
+<p>foreign key 让表和表产生关系，从而保证数据正确性</p>
+<p>语法：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token punctuation">[</span><span class="token keyword">CONSTRAINT</span><span class="token punctuation">]</span><span class="token punctuation">[</span>外键约束名称<span class="token punctuation">]</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token keyword">FOREIGN</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token keyword">KEY</span><span class="token punctuation">(</span>外键字段名<span class="token punctuation">)</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token keyword">REFERENCES</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>主表名<span class="token punctuation">(</span>主键字段名<span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 1.创建表时添加外键约束：</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> employee<span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span> 
+    NAME <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    age <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    dep_id <span class="token keyword">INT</span><span class="token punctuation">,</span>	<span class="token comment" spellcheck="true">-- 外键对应主表的主键</span>
+    <span class="token keyword">CONSTRAINT</span> emp_depid_fk <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>dep_id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> department<span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 2.创建表完后，添加外键约束</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> employee <span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> emp_depid_fk <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>dep_id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> department<span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 3.删除外键</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> employee <span class="token keyword">DROP</span> <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> emp_depid_fk<span class="token punctuation">;</span>
+</code></pre>
+<p>级联操作：主表有所改动，从表就跟着改动</p>
+<ul>
+<li><p>在修改和删除主表的主键时，同时更新或删除副表的外键值，称为级联操作</p>
+<ul>
+<li><p>添加级联操作-语法：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> employee <span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> emp_depid_fk <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>dep_id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> department<span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">CASCADE</span> <span class="token keyword">ON</span> <span class="token keyword">DELETE</span> <span class="token keyword">CASCADE</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>分类</p>
+<ul>
+<li>级联更新	ON UPDATE CASCADE</li>
+<li>级联删除	ON DELETE CASCADE</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="九、多表连接查询-重点-难点"><a href="#九、多表连接查询-重点-难点" class="headerlink" title="九、多表连接查询(重点,难点)"></a>九、多表连接查询(重点,难点)</h2><p>准备数据：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true"># 创建部门表</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> dept<span class="token punctuation">(</span>
+id <span class="token keyword">int</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span>
+name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> dept <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'开发部'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">'市场部'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">'财务部'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true"># 创建员工表</span>
+
+<span class="token keyword">create</span> <span class="token keyword">table</span> emp <span class="token punctuation">(</span>
+id <span class="token keyword">int</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span> 
+name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+gender char<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>		<span class="token comment" spellcheck="true">-- 性别</span>
+salary <span class="token keyword">double</span><span class="token punctuation">,</span>	<span class="token comment" spellcheck="true">-- 工资</span>
+join_date <span class="token keyword">date</span><span class="token punctuation">,</span>	<span class="token comment" spellcheck="true">-- 入职日期</span>
+dept_id <span class="token keyword">int</span><span class="token punctuation">,</span>
+<span class="token keyword">foreign</span> <span class="token keyword">key</span> <span class="token punctuation">(</span>dept_id<span class="token punctuation">)</span> <span class="token keyword">references</span> dept<span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">-- 外键，关联部门表(部门表的主键)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> emp<span class="token punctuation">(</span>name<span class="token punctuation">,</span>gender<span class="token punctuation">,</span>salary<span class="token punctuation">,</span>join_date<span class="token punctuation">,</span>dept_id<span class="token punctuation">)</span> <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token string">'四阿哥'</span><span class="token punctuation">,</span><span class="token string">'男'</span><span class="token punctuation">,</span><span class="token number">7200</span><span class="token punctuation">,</span><span class="token string">'2013-02-24'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> emp<span class="token punctuation">(</span>name<span class="token punctuation">,</span>gender<span class="token punctuation">,</span>salary<span class="token punctuation">,</span>join_date<span class="token punctuation">,</span>dept_id<span class="token punctuation">)</span> <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token string">'苏公公'</span><span class="token punctuation">,</span><span class="token string">'男'</span><span class="token punctuation">,</span><span class="token number">3600</span><span class="token punctuation">,</span><span class="token string">'2010-12-02'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> emp<span class="token punctuation">(</span>name<span class="token punctuation">,</span>gender<span class="token punctuation">,</span>salary<span class="token punctuation">,</span>join_date<span class="token punctuation">,</span>dept_id<span class="token punctuation">)</span> <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token string">'嬛嬛'</span><span class="token punctuation">,</span><span class="token string">'女'</span><span class="token punctuation">,</span><span class="token number">9000</span><span class="token punctuation">,</span><span class="token string">'2008-08-08'</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> emp<span class="token punctuation">(</span>name<span class="token punctuation">,</span>gender<span class="token punctuation">,</span>salary<span class="token punctuation">,</span>join_date<span class="token punctuation">,</span>dept_id<span class="token punctuation">)</span> <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token string">'皇后'</span><span class="token punctuation">,</span><span class="token string">'女'</span><span class="token punctuation">,</span><span class="token number">5000</span><span class="token punctuation">,</span><span class="token string">'2015-10-07'</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> emp<span class="token punctuation">(</span>name<span class="token punctuation">,</span>gender<span class="token punctuation">,</span>salary<span class="token punctuation">,</span>join_date<span class="token punctuation">,</span>dept_id<span class="token punctuation">)</span> <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token string">'眉姐姐'</span><span class="token punctuation">,</span><span class="token string">'女'</span><span class="token punctuation">,</span><span class="token number">4500</span><span class="token punctuation">,</span><span class="token string">'2011-03-14'</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="9-1-内连接查询"><a href="#9-1-内连接查询" class="headerlink" title="9.1 内连接查询"></a>9.1 内连接查询</h3><p>注意：1.从哪些表中查询数据  2.条件是什么  3.查询哪些字段</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 1.隐式内连接：使用where条件消除无用数据</span>
+<span class="token comment" spellcheck="true">-- 查询所有的员工和所有部门</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> emp<span class="token punctuation">,</span>dept <span class="token keyword">WHERE</span> emp<span class="token punctuation">.</span>dept_id<span class="token operator">=</span>dept<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 查询所有的员工的姓名，性别和部门名称</span>
+<span class="token keyword">SELECT</span> emp<span class="token punctuation">.</span>name<span class="token punctuation">,</span>emp<span class="token punctuation">.</span>gender<span class="token punctuation">,</span>dept<span class="token punctuation">.</span>name <span class="token keyword">FROM</span> emp<span class="token punctuation">,</span>dept <span class="token keyword">WHERE</span> emp<span class="token punctuation">.</span>dept_id<span class="token operator">=</span>dept<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 简化：为表起别名</span>
+<span class="token keyword">SELECT</span> <span class="token number">e</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span><span class="token number">e</span><span class="token punctuation">.</span>gender<span class="token punctuation">,</span><span class="token number">d</span><span class="token punctuation">.</span>name <span class="token keyword">FROM</span> emp <span class="token number">e</span><span class="token punctuation">,</span>dept <span class="token number">d</span> <span class="token keyword">WHERE</span> <span class="token number">e</span><span class="token punctuation">.</span>dept_id<span class="token operator">=</span><span class="token number">d</span><span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 2.显示内连接：</span>
+<span class="token comment" spellcheck="true">-- 语法： select 字段列表 from 表名1 【inner】 join 表名2 on 条件</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> emp <span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> dept <span class="token keyword">ON</span> emp<span class="token punctuation">.</span>dept_id<span class="token operator">=</span>dept<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> emp <span class="token keyword">JOIN</span> dept <span class="token keyword">ON</span> emp<span class="token punctuation">.</span>dept_id<span class="token operator">=</span>dept<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+</code></pre>
+<h3 id="9-2-外连接查询-重点"><a href="#9-2-外连接查询-重点" class="headerlink" title="9.2 外连接查询(重点)"></a>9.2 外连接查询(重点)</h3><p>注意：在左边是左表，在右边是右表</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 1.左外连接：</span>
+<span class="token comment" spellcheck="true">/*
+语法：select 字段列表 from 表名1 left【outer】 join 表名2 on 条件
+查询的是左表所有数据以及两表交集的部分
+用左边表的记录去匹配右边表的记录，如果符合条件的则显示；否则，显示 NULL
+可以理解为：在内连接的基础上保证左表的数据全部显示
+例子：
+*/</span>
+<span class="token comment" spellcheck="true">--  查询所有员工信息，如果员工有部门，则查询部门名称；如果没有部门，则不显示部门名称</span>
+<span class="token keyword">SELECT</span> t1<span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">,</span>t2<span class="token punctuation">.</span>name <span class="token keyword">FROM</span> emp t1 <span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> dept t2 <span class="token keyword">ON</span> t1<span class="token punctuation">.</span>dept_id<span class="token operator">=</span>t2<span class="token punctuation">.</span>id                        <span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 2.右外连接：</span>
+<span class="token comment" spellcheck="true">/*
+语法：select 字段列表 from 表名1 right【outer】 join 表名2 on 条件
+查询的是右表所有数据以及两表交集的部分
+用右边表的记录去匹配左边表的记录，如果符合条件的则显示；否则，显示 NULL
+可以理解为：在内连接的基础上保证右表的数据全部显示
+*/</span>
+<span class="token comment" spellcheck="true">-- 例子：</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> dept t2 <span class="token keyword">RIGHT</span> <span class="token keyword">JOIN</span> emp t1 <span class="token keyword">ON</span> t1<span class="token punctuation">.</span>dept_id<span class="token operator">=</span>t2<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+</code></pre>
+<h3 id="9-3-子查询"><a href="#9-3-子查询" class="headerlink" title="9.3 子查询"></a>9.3 子查询</h3><p>概念：查询中嵌套查询，称嵌套查询为子查询</p>
+<p>多表连接查询步骤：</p>
+<ol>
+<li>知道查询的是哪些表，表最好起别名</li>
+<li>知道表和表关系</li>
+<li>找出字段分别在哪些表中</li>
+</ol>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 查询工资最高的员工信息</span>
+<span class="token comment" spellcheck="true">-- 查询最高工资是多少？</span>
+<span class="token keyword">SELECT</span> <span class="token function">MAX</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">FROM</span> emp<span class="token punctuation">;</span><span class="token comment" spellcheck="true">-- 9000</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> emp <span class="token keyword">WHERE</span> emp<span class="token punctuation">.</span>salary<span class="token operator">=</span><span class="token number">9000</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 一条sql语句完成。子查询</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> emp <span class="token keyword">WHERE</span> emp<span class="token punctuation">.</span>salary<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token function">MAX</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">FROM</span> emp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>子查询不同情况</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 1.子查询结果是单行单列的：</span>
+<span class="token comment" spellcheck="true">-- 子查询可以作为条件，使用运算符去判断。运算符：> >= &lt; &lt;= = &lt;></span>
+<span class="token comment" spellcheck="true">-- 查询员工工资小于平均工资的人</span>
+<span class="token keyword">SELECT</span> <span class="token function">AVG</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">FROM</span> emp<span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> emp <span class="token keyword">WHERE</span> emp<span class="token punctuation">.</span>salary<span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token function">AVG</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">FROM</span> emp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 2.子查询结果是多行单列的：</span>
+<span class="token comment" spellcheck="true">-- 子查询可以作为条件，使用运算符去判断。运算符：in(集合)</span>
+<span class="token comment" spellcheck="true">-- 查询财务部和市场部所有的员工信息</span>
+<span class="token keyword">SELECT</span> id <span class="token keyword">FROM</span> dept <span class="token keyword">WHERE</span> NAME<span class="token operator">=</span><span class="token string">'财务部'</span> <span class="token operator">OR</span> NAME <span class="token operator">=</span><span class="token string">'市场部'</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">-- 2 3</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> emp <span class="token keyword">WHERE</span> dept_id <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">OR</span> dept_id <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> emp <span class="token keyword">WHERE</span> dept_id <span class="token operator">IN</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> id <span class="token keyword">FROM</span> dept <span class="token keyword">WHERE</span> NAME<span class="token operator">=</span><span class="token string">'财务部'</span> <span class="token operator">OR</span> NAME <span class="token operator">=</span><span class="token string">'市场部'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 3.子查询结果是多行多列的：</span>
+<span class="token comment" spellcheck="true">-- 子查询可以作为一张虚拟的表参与查询</span>
+<span class="token comment" spellcheck="true">-- 查询员工入职日期2011-11-11日之后的员工信息和部门信息</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> emp <span class="token keyword">WHERE</span> emp<span class="token punctuation">.</span>join_date<span class="token operator">></span><span class="token string">'2011-11-11'</span><span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> dept t1<span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> emp <span class="token keyword">WHERE</span> emp<span class="token punctuation">.</span>join_date<span class="token operator">></span><span class="token string">'2011-11-11'</span><span class="token punctuation">)</span> t2
+<span class="token keyword">WHERE</span> t1<span class="token punctuation">.</span>id<span class="token operator">=</span>t2<span class="token punctuation">.</span>dept_id<span class="token punctuation">;</span>
+</code></pre>
+<h2 id="十、事务-面试"><a href="#十、事务-面试" class="headerlink" title="十、事务(面试)"></a>十、事务(面试)</h2><h2 id="十一、DCL"><a href="#十一、DCL" class="headerlink" title="十一、DCL"></a>十一、DCL</h2><h2 id="十二、数据库设计-了解"><a href="#十二、数据库设计-了解" class="headerlink" title="十二、数据库设计(了解)"></a>十二、数据库设计(了解)</h2><h4 id="12-1-多表之间的关系"><a href="#12-1-多表之间的关系" class="headerlink" title="12.1 多表之间的关系"></a>12.1 多表之间的关系</h4><ul>
+<li><p>三种关系</p>
+<ul>
+<li><p>一对一（了解）</p>
+<p>如：人和身份证</p>
+<p>分析：一个人只能有一个身份证，一个身份证只能对应一个人</p>
+</li>
+<li><p>一对多（多对一）</p>
+<p>部门和员工</p>
+<p>分析：一个部门有多个员工，一个员工只能对应一个部门</p>
+</li>
+<li><p>多对多</p>
+<p>学生和课程</p>
+<p>一个学生可以选择很多课程，一个课程可以被很多学生选择</p>
+</li>
+</ul>
+</li>
+<li><p>实现三种关系</p>
+<ul>
+<li><p>一对一（了解）</p>
+<p>如：人和身份证</p>
+<p><strong>实现方式：</strong>可以在任意一方添加外键指向另一方的主键，还可以只建立一张表</p>
+</li>
+<li><p>一对多（多对一）</p>
+<p>部门和员工</p>
+<p><strong>实现方式：</strong>在多的一方建立外键，指向一的一方的主键</p>
+</li>
+<li><p>多对多：</p>
+<p>学生和课程</p>
+<p><strong>实现方式：</strong>借助第三张中间表，中间表至少包含两个字段，这两个字段作为第三张表的主键（也叫做联合主键）</p>
+<p>分别指向另外两张表的主键</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-2-数据库设计的范式"><a href="#12-2-数据库设计的范式" class="headerlink" title="12.2 数据库设计的范式"></a>12.2 数据库设计的范式</h4><ul>
+<li><p>什么是范式：</p>
+<p>好的数据库设计对数据的存储性能和后期的程序开发，都会产生重要的影响。<strong>建立科学的，规范的数据库就需要满足一些规则来优化数据的设计和存储，这些规则就称为范式</strong>。</p>
+</li>
+<li><p>三大范式：</p>
+<p>目前关系数据库有<strong>六种范式</strong>：第一范式（1NF）、第二范式（2NF）、第三范式（3NF）、巴斯-科德范式（BCNF）、第四范式(4NF）和第五范式（5NF，又称完美范式）。</p>
+<p>满足最低要求的范式是第一范式（1NF）。在第一范式的基础上进一步满足更多规范要求的称为第二范式（2NF，）其余范式以次类推。一般说来，数据库只需满足第三范式(3NF）就行了。</p>
+</li>
+<li><p><strong>第一范式每一列不可再拆分，称为原子性。</strong></p>
+<ol>
+<li>每一列属性都是不可再分的属性值，确保每一列的原子性</li>
+<li>两列的属性相近或相似或一样，尽量合并属性一样的列，确保不产生冗余数据。</li>
+</ol>
+</li>
+<li><p><strong>第二范式就是在第一范式的基础上所有列完全依赖于主键列</strong></p>
+<ol>
+<li>每一行的数据只能与其中一列相关，即一行数据只做一件事。只要数据列中出现数据重复，就要把表拆分开来</li>
+</ol>
+</li>
+<li><p><strong>第三范式就是在满足第二范式的前提下，表中的每一列都直接依赖于主键，而不是通过其它的列来间接依赖于主键</strong></p>
+<ol>
+<li>数据不能存在传递关系，即每个属性都跟主键有直接关系而不是间接关系。像：a–&gt;b–&gt;c  属性之间含有这样的关系，是不符合第三范式的。</li>
+</ol>
+</li>
+</ul>
+<p><strong>最后：</strong></p>
+<p>三大范式只是一般设计数据库的基本理念，可以建立冗余较小、结构合理的数据库。如果有特殊情况，当然要特殊对待，<strong>数据库设计最重要的是看需求跟性能，需求&gt;性能&gt;表结构。所以不能一味的去追求范式建立数据库。</strong></p>
+<h2 id="十三、数据库备份与还原-了解"><a href="#十三、数据库备份与还原-了解" class="headerlink" title="十三、数据库备份与还原(了解)"></a>十三、数据库备份与还原(了解)</h2>
                 
             </div>
             <hr/>
@@ -7211,7 +7537,7 @@ limit （pageNo-1）*pageSize，pageSize;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">61k</span>&nbsp;字
+                class="white-color">64.1k</span>&nbsp;字
             
             
             
