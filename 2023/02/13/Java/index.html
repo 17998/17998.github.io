@@ -351,21 +351,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-20
+                    2023-03-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    56.2k
+                    56.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    224 分
+                    226 分
                 </div>
                 
 
@@ -7479,6 +7479,96 @@ serverTimezone=Asia/Shanghai:为了确保日期类型数据能够正确存储，
             1. 可以防止SQL注入
             2. 效率更高
 </code></pre>
+<h3 id="14-4-批处理"><a href="#14-4-批处理" class="headerlink" title="14.4 批处理"></a>14.4 批处理</h3><p>指批量向数据库中插入大量数据：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//通过工具类获取连接</span>
+Connection conn <span class="token operator">=</span> Dbutil<span class="token punctuation">.</span><span class="token function">getConn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//获取Statement对象</span>
+Statement statement <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">createStatement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">1000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    String  sql  <span class="token operator">=</span><span class="token string">"insert into dept values("</span><span class="token operator">+</span>i<span class="token operator">+</span><span class="token string">",'Hello')"</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//将SQL语句添加到批处理</span>
+    statement<span class="token punctuation">.</span><span class="token function">addBatch</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+statement<span class="token punctuation">.</span><span class="token function">executeBatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//调用工具类释放资源</span>
+Dbutil<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> statement<span class="token punctuation">,</span> conn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="14-5-事务控制"><a href="#14-5-事务控制" class="headerlink" title="14.5 事务控制"></a>14.5 事务控制</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 获取Connection</span>
+Connection conn <span class="token operator">=</span> Dbutil<span class="token punctuation">.</span><span class="token function">getConn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+PreparedStatement preparedStatement  <span class="token operator">=</span> null<span class="token punctuation">;</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//关闭数据库的自动提交</span>
+    conn<span class="token punctuation">.</span><span class="token function">setAutoCommit</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    String sql  <span class="token operator">=</span> <span class="token string">"update account  set  money = money - ?  where aid=?"</span><span class="token punctuation">;</span>
+    preparedStatement<span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    preparedStatement<span class="token punctuation">.</span><span class="token function">setObject</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    preparedStatement<span class="token punctuation">.</span><span class="token function">setObject</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'001'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    preparedStatement<span class="token punctuation">.</span><span class="token function">executeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">0</span><span class="token punctuation">;</span>
+    sql <span class="token operator">=</span> <span class="token string">"update account  set  money = money + ?  where aid=?"</span><span class="token punctuation">;</span>
+    preparedStatement <span class="token operator">=</span>  conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    preparedStatement<span class="token punctuation">.</span><span class="token function">setObject</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    preparedStatement<span class="token punctuation">.</span><span class="token function">setObject</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'002'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    preparedStatement<span class="token punctuation">.</span><span class="token function">executeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//没有发生异常，进行事务提交</span>
+    conn<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//发生异常，要进行事务回滚</span>
+    conn<span class="token punctuation">.</span><span class="token function">rollback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    Dbutil<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> preparedStatement<span class="token punctuation">,</span> conn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>这里的核心点。我们需要保证多次数据库的操作必须使用的是<font color="red">同一个数据库连接</font>。如果整个程序执行没有问题，则提交事务，只要有一部分有异常，则回滚事务。</strong></p>
+<h2 id="十五、数据库连接池"><a href="#十五、数据库连接池" class="headerlink" title="十五、数据库连接池"></a>十五、数据库连接池</h2><ol>
+<li><p>概念：其实就是一个容器，<strong>存放数据库连接的容器</strong>。</p>
+<p>当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问完之后，会将连接对象归还给容器。</p>
+</li>
+<li><p>好处：</p>
+<ul>
+<li>节约资源</li>
+<li>用户访问高效</li>
+</ul>
+</li>
+<li><p>实现：</p>
+<ol>
+<li><p>标准接口：DataSource   javax.sql包下的</p>
+</li>
+<li><p>方法：</p>
+<ul>
+<li>获取连接：getConnection()</li>
+<li>归还连接：Connection.close()。如果连接对象Connection是从连接池中获取的，那么调用Connection.close()方法，则不会再关闭连接了，而是归还连接</li>
+</ul>
+</li>
+<li><p>一般我们不去实现它，有数据库厂商来实现</p>
+<ul>
+<li>C3P0：数据库连接池技术</li>
+<li>Druid：数据库连接池实现技术，由阿里巴巴提供的</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<pre class=" language-xml"><code class="language-xml">Druid：数据库连接池实现技术，由阿里巴巴提供的
+    * 步骤：
+        1. 导入jar包 druid-1.0.9.jar
+        2. 定义配置文件（注意：MYSQL8的配置文件改为driverClassName=com.mysql.cj.jdbc.Driver）
+            * 是properties形式的
+            * 可以叫任意名称，可以放在任意目录下
+        3. 加载配置文件。Properties(不可以直接找到，需要自己手动获取)
+        4. 获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory
+        5. 获取连接：getConnection
+    * 代码：
+        //3.加载配置文件
+        Properties pro = new Properties();
+        InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream("druid.properties");
+        pro.load(is);
+        //4.获取连接池对象
+        DataSource ds = DruidDataSourceFactory.createDataSource(pro);
+        //5.获取连接
+        Connection conn = ds.getConnection();
+</code></pre>
 
                 
             </div>
@@ -7822,7 +7912,7 @@ serverTimezone=Asia/Shanghai:为了确保日期类型数据能够正确存储，
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">66.6k</span>&nbsp;字
+                class="white-color">67.3k</span>&nbsp;字
             
             
             
