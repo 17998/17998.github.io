@@ -273,31 +273,6 @@
     
     
     <entry>
-      <title>Vue</title>
-      <link href="/2022/11/02/Vue/"/>
-      <url>/2022/11/02/Vue/</url>
-      
-        <content type="html"><![CDATA[<h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><ul><li>Vue 是一款用于构建用户界面的 JavaScript 框架</li><li>它基于标准HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端 框架 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Vue </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>SSM</title>
       <link href="/2022/09/10/SSM/"/>
       <url>/2022/09/10/SSM/</url>
