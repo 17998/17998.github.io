@@ -276,7 +276,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-04-27
+                    2023-05-08
                 </div>
                 
 
@@ -676,6 +676,24 @@
 </code></pre>
 </li>
 </ul>
+<ol start="6">
+<li><p>复制表</p>
+<ul>
+<li><p>复制结构</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> newTableName <span class="token keyword">as</span> <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tableName <span class="token keyword">where</span> <span class="token number">1</span><span class="token operator">=</span><span class="token number">2</span>
+</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> newTableName <span class="token operator">like</span> tableName
+</code></pre>
+</li>
+<li><p>复制结构和数据</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> test <span class="token keyword">as</span> <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tb_user
+</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> newTableName<span class="token punctuation">(</span>field1<span class="token punctuation">,</span>field2<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token keyword">select</span> field1<span class="token punctuation">,</span>field2<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token keyword">from</span> tableName
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
 <h2 id="六、DML-重点"><a href="#六、DML-重点" class="headerlink" title="六、DML(重点)"></a>六、DML(重点)</h2><h3 id="6-1-INSERT"><a href="#6-1-INSERT" class="headerlink" title="6.1 INSERT"></a>6.1 INSERT</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> 表名称<span class="token punctuation">(</span>列名称<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token keyword">values</span><span class="token punctuation">(</span>值<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 指定列插入数据：(可以插入所有列、也可以是部分列)</span>
@@ -870,6 +888,7 @@ NOT 或  !
 <li>EXTRACT(type FROM date)从日期中提取一部分，type可以是YEAR、YEAR_MONTH、DAY_HOUR、DAY_MICROSECOND、DAY_MINUTE、DAY_SECOND</li>
 <li>TimeStampDiff(间隔类型，前一个日期，后一个日期)</li>
 <li>DATE_ADD(date,INTERVAL val type)、ADD_DATE(date,INTERVAL expr type)返回将起始时间加上val  type之后的时间</li>
+<li>DATEDIFF(startDate,endDate) 返回两个时间之间的天数差值(如果startDate与endDate为日期时间型，将截取其中的日期，不会计算时间)</li>
 </ul>
 <h5 id="7-7-1-4-条件判断函数"><a href="#7-7-1-4-条件判断函数" class="headerlink" title="7.7.1.4 条件判断函数"></a>7.7.1.4 条件判断函数</h5><ul>
 <li><p>IF(expr,v1,v2)如果expr是TRUE则返回v1，否则返回v2</p>
@@ -1974,7 +1993,7 @@ PreparedStatement preparedStatement  <span class="token operator">=</span> null<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">72k</span>&nbsp;字
+                class="white-color">72.1k</span>&nbsp;字
             
             
             
