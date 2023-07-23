@@ -175,6 +175,25 @@
     
     
     <entry>
+      <title>JWT</title>
+      <link href="/2022/09/26/JWT/"/>
+      <url>/2022/09/26/JWT/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h1><ul><li>JSON Web Token（JWT）是一个非常轻巧的规范，这个规范允许我们使用JWT在用户和服务器之间传递安全可靠的信息，经常用在跨域身份验证</li><li>客户端身份经过服务器验证通过后，会生成带有签名的 JSON 对象并将它返回给客户端。客户端在收到这个 JSON 对象后存储起来，在以后的请求中客户端将 JSON 对象连同请求内容一起发送给服务器，服务器收到请求后通过 JSON 对象标识用户，如果验证不通过则不返回请求的数据</li></ul><h1 id="二、请求流程"><a href="#二、请求流程" class="headerlink" title="二、请求流程"></a>二、请求流程</h1><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202306162202485.png" alt="image-20230616220211352"></p><ol><li><p>用户使用账号和密码发出post请求；</p></li><li><p>服务器使用私钥创建一个jwt；(公钥和私钥)</p></li><li><p>服务器返回这个jwt给浏览器；</p></li><li><p>浏览器将该jwt串在请求头中像服务器发送请求；</p></li><li><p>服务器验证该jwt；</p></li><li><p>返回响应的资源给浏览器。</p></li></ol><h1 id="三、JWT组成结构"><a href="#三、JWT组成结构" class="headerlink" title="三、JWT组成结构"></a>三、JWT组成结构</h1><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202306162204799.png" alt="image-20230616220448680"></p><ul><li><p>JWT 是由三段字符串和两个”.”组成，每个字符串和字符串之间没有换行（类似于这样：xxxxxx.yyyyyy.zzzzzz），每个字符串代表了不同的功能</p><ul><li><p>JWT头(Header)</p><p>JWT 头描述了 JWT 元数据，是一个 JSON 对象，它的格式如：{“alg”:”HS256”,”typ”:”JWT”}，这里的 alg 属性表示签名所使用的算法，JWT 签名默认的算法为 HMAC SHA256 ， alg 属性值 HS256 就是 HMAC SHA256 算法。typ 属性表示令牌类型，这里就是 JWT</p></li><li><p>有效载荷(payload)</p><p>有效载荷是 JWT 的主体，同样也是个 JSON 对象。有效载荷包含三个部分</p><ul><li>标准注册声明，它一般包括以下内容<ol><li>iss (issuer)：签发人/发行人</li><li>sub (subject)：主题</li><li>aud (audience)：用户</li><li>exp (expiration time)：过期时间</li><li>nbf (Not Before)：生效时间，在此之前是无效的</li><li>iat (Issued At)：签发时间</li><li>jti (JWT ID)：用于标识该 JWT</li></ol></li><li>公共声明：可以在公共声明添加任何信息，我们一般会在里面添加用户信息和业务信息，但是不建议添加敏感信息，因为公共声明部分可以在客户端解密</li><li>私有声明：私有声明是服务器和客户端共同定义的声明，同样这里不建议添加敏感信息。</li></ul><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202306162212349.png" alt="image-20230616221252311"></p></li><li><p>哈希签名(singature)</p><p><strong>对前两部分的内容进行算法签名，防止数据篡改</strong></p><p>哈希签名的过程如下:</p><ol><li><p>指定秘钥，秘钥保存在服务器中，不能向客户端公开</p></li><li><p>使用JWT头指定的算法进行签名，进行签名前需要对 JWT 头和有效载荷进行Base64URL 编码，JWT 头和有效载荷编码后的结果之间需要用”.”来连接。示例如：HMACSHA256(base64UrlEncode(JWT头) + “.” + base64UrlEncode(有效载荷)，秘钥)</p><p>最终结果如下：</p><p>base64UrlEncode(JWT头)+”.”+base64UrlEncode(有效载荷)+”.”+HMACSHA256(base64UrlEncode(JWT头)+”.”+ base64UrlEncode(有效载荷)，秘钥)</p></li></ol></li></ul></li></ul><h1 id="四、JWT优点"><a href="#四、JWT优点" class="headerlink" title="四、JWT优点"></a>四、JWT优点</h1><ul><li>json格式的通用性，所以JWT可以跨语言支持，比如Java、JavaScript、PHP、Node等等。</li><li>可以利用Payload存储一些非敏感的信息。</li><li>便于传输，JWT结构简单，字节占用小。</li><li>不需要在服务端保存会话信息，易于应用的扩展</li></ul><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> JWT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Swagger</title>
       <link href="/2022/09/16/Swagger/"/>
       <url>/2022/09/16/Swagger/</url>
@@ -452,25 +471,6 @@
         <tags>
             
             <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>JWT</title>
-      <link href="/0202/09/26/JWT/"/>
-      <url>/0202/09/26/JWT/</url>
-      
-        <content type="html"><![CDATA[<h1 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h1><ul><li>JSON Web Token（JWT）是一个非常轻巧的规范，这个规范允许我们使用JWT在用户和服务器之间传递安全可靠的信息，经常用在跨域身份验证</li><li>客户端身份经过服务器验证通过后，会生成带有签名的 JSON 对象并将它返回给客户端。客户端在收到这个 JSON 对象后存储起来，在以后的请求中客户端将 JSON 对象连同请求内容一起发送给服务器，服务器收到请求后通过 JSON 对象标识用户，如果验证不通过则不返回请求的数据</li></ul><h1 id="二、请求流程"><a href="#二、请求流程" class="headerlink" title="二、请求流程"></a>二、请求流程</h1><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202306162202485.png" alt="image-20230616220211352"></p><ol><li><p>用户使用账号和密码发出post请求；</p></li><li><p>服务器使用私钥创建一个jwt；(公钥和私钥)</p></li><li><p>服务器返回这个jwt给浏览器；</p></li><li><p>浏览器将该jwt串在请求头中像服务器发送请求；</p></li><li><p>服务器验证该jwt；</p></li><li><p>返回响应的资源给浏览器。</p></li></ol><h1 id="三、JWT组成结构"><a href="#三、JWT组成结构" class="headerlink" title="三、JWT组成结构"></a>三、JWT组成结构</h1><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202306162204799.png" alt="image-20230616220448680"></p><ul><li><p>JWT 是由三段字符串和两个”.”组成，每个字符串和字符串之间没有换行（类似于这样：xxxxxx.yyyyyy.zzzzzz），每个字符串代表了不同的功能</p><ul><li><p>JWT头(Header)</p><p>JWT 头描述了 JWT 元数据，是一个 JSON 对象，它的格式如：{“alg”:”HS256”,”typ”:”JWT”}，这里的 alg 属性表示签名所使用的算法，JWT 签名默认的算法为 HMAC SHA256 ， alg 属性值 HS256 就是 HMAC SHA256 算法。typ 属性表示令牌类型，这里就是 JWT</p></li><li><p>有效载荷(payload)</p><p>有效载荷是 JWT 的主体，同样也是个 JSON 对象。有效载荷包含三个部分</p><ul><li>标准注册声明，它一般包括以下内容<ol><li>iss (issuer)：签发人/发行人</li><li>sub (subject)：主题</li><li>aud (audience)：用户</li><li>exp (expiration time)：过期时间</li><li>nbf (Not Before)：生效时间，在此之前是无效的</li><li>iat (Issued At)：签发时间</li><li>jti (JWT ID)：用于标识该 JWT</li></ol></li><li>公共声明：可以在公共声明添加任何信息，我们一般会在里面添加用户信息和业务信息，但是不建议添加敏感信息，因为公共声明部分可以在客户端解密</li><li>私有声明：私有声明是服务器和客户端共同定义的声明，同样这里不建议添加敏感信息。</li></ul><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202306162212349.png" alt="image-20230616221252311"></p></li><li><p>哈希签名(singature)</p><p><strong>对前两部分的内容进行算法签名，防止数据篡改</strong></p><p>哈希签名的过程如下:</p><ol><li><p>指定秘钥，秘钥保存在服务器中，不能向客户端公开</p></li><li><p>使用JWT头指定的算法进行签名，进行签名前需要对 JWT 头和有效载荷进行Base64URL 编码，JWT 头和有效载荷编码后的结果之间需要用”.”来连接。示例如：HMACSHA256(base64UrlEncode(JWT头) + “.” + base64UrlEncode(有效载荷)，秘钥)</p><p>最终结果如下：</p><p>base64UrlEncode(JWT头)+”.”+base64UrlEncode(有效载荷)+”.”+HMACSHA256(base64UrlEncode(JWT头)+”.”+ base64UrlEncode(有效载荷)，秘钥)</p></li></ol></li></ul></li></ul><h1 id="四、JWT优点"><a href="#四、JWT优点" class="headerlink" title="四、JWT优点"></a>四、JWT优点</h1><ul><li>json格式的通用性，所以JWT可以跨语言支持，比如Java、JavaScript、PHP、Node等等。</li><li>可以利用Payload存储一些非敏感的信息。</li><li>便于传输，JWT结构简单，字节占用小。</li><li>不需要在服务端保存会话信息，易于应用的扩展</li></ul><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> JWT </tag>
             
         </tags>
       
