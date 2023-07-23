@@ -287,6 +287,8 @@
                             <div class="summary block-with-text">
                                 
                                     一、网关的作用
+没有网关，请求直接落在服务上，不安全
+当请求发送到网关时，网关得调用微服务进行操作，所以有服务路由，同时如果有多个实例又得负载均衡
 
 二、搭建网关
 网关本身也是一个微服务，也需要将自己注册到nacos中
@@ -295,17 +297,7 @@
 
 
 
-三、路由断言工厂
-四、路由过滤器
-
-
-针对某个路由进行过滤
-
-
-
-针对全局路由进行过滤
-default-filters后面配的是一系列过滤器
-
+三、路由断
                                 
                             </div>
                             <div class="publish-info">
@@ -365,21 +357,12 @@ default-filters后面配的是一系列过滤器
 
 三、Nacos服务分级存储
 
-四、NacosRule负载均衡策略
-
-
-
-五、根据权重负载均衡
-
-
-六、Nacos环境隔离
-
-
-
-
-
-
-此时，orderservice和userservice不再属
+spring:
+  application:
+    name: order-service  # 服务名
+  cloud:
+    nacos:
+      di
                                 
                             </div>
                             <div class="publish-info">
@@ -490,7 +473,7 @@ default-filters后面配的是一系列过滤器
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81.7k</span>&nbsp;字
+                class="white-color">82.1k</span>&nbsp;字
             
             
             
