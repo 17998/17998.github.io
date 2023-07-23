@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>ElasticSearch</title>
+      <title>ES</title>
       <link href="/2023/06/05/ElasticSearch/"/>
       <url>/2023/06/05/ElasticSearch/</url>
       
@@ -14,7 +14,7 @@
       
         <tags>
             
-            <tag> ElasticSearch </tag>
+            <tag> ES </tag>
             
         </tags>
       
@@ -128,7 +128,7 @@
       
         <tags>
             
-            <tag> 消息队列 </tag>
+            <tag> MQ </tag>
             
         </tags>
       
@@ -137,7 +137,7 @@
     
     
     <entry>
-      <title>SpringCloud</title>
+      <title>springcloud</title>
       <link href="/2023/03/20/SpringCloud/"/>
       <url>/2023/03/20/SpringCloud/</url>
       
@@ -147,7 +147,7 @@
       
         <tags>
             
-            <tag> SpringCloud </tag>
+            <tag> springcloud </tag>
             
         </tags>
       
