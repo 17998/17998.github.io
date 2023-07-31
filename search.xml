@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>sentinel</title>
+      <link href="/2023/07/30/sentinel/"/>
+      <url>/2023/07/30/sentinel/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、初始sentinel"><a href="#一、初始sentinel" class="headerlink" title="一、初始sentinel"></a>一、初始sentinel</h1><h2 id="1-1-服务雪崩及解决方案"><a href="#1-1-服务雪崩及解决方案" class="headerlink" title="1.1 服务雪崩及解决方案"></a>1.1 服务雪崩及解决方案</h2><p><code>服务雪崩</code></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301106250.png" alt="image-20230730110119400"></p><p><code>解决方案</code></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301107199.png" alt="image-20230730110747149"></p><p><code>在1s中进来大量请求，而得不到及时释放，还是可能会造成服务雪崩，超时处理只能起到缓解的作用</code></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301120122.png" alt="image-20230730112037052"></p><p><code>每个业务独立开，设立一个独立的线程池，还是会造成线程资源的浪费，业务2还是会阻塞10个线程</code></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301130427.png" alt="image-20230730113014363"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301132879.png" alt="image-20230730113249804"></p><p><code>第四种是防止服务雪崩，前三种是解决服务雪崩</code></p><h2 id="1-2-服务保护技术对比"><a href="#1-2-服务保护技术对比" class="headerlink" title="1.2 服务保护技术对比"></a>1.2 服务保护技术对比</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301144371.png" alt="image-20230730114439298"></p><h2 id="1-3-微服务整和Sentinel"><a href="#1-3-微服务整和Sentinel" class="headerlink" title="1.3 微服务整和Sentinel"></a>1.3 微服务整和Sentinel</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301237783.png" alt="image-20230730123720701"></p><h1 id="二、限流规则"><a href="#二、限流规则" class="headerlink" title="二、限流规则"></a>二、限流规则</h1><p><strong><code>Sentinel做限流</code></strong></p><h2 id="2-1-快速入门"><a href="#2-1-快速入门" class="headerlink" title="2.1 快速入门"></a>2.1 快速入门</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301245779.png" alt="image-20230730124521692"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301248501.png" alt="image-20230730124818432"></p><h2 id="2-2-流控模式"><a href="#2-2-流控模式" class="headerlink" title="2.2 流控模式"></a>2.2 流控模式</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301346875.png" alt="image-20230730134652675"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301352666.png" alt="image-20230730135259586"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301357396.png" alt="image-20230730135748340"></p><p><code>当优先级高的触发限流时对优先级低的触发限流</code></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301358310.png" alt="image-20230730135833256"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301404494.png" alt="image-20230730140442435"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301408479.png" alt="image-20230730140829428"></p><h2 id="2-3-流控效果"><a href="#2-3-流控效果" class="headerlink" title="2.3 流控效果"></a>2.3 流控效果</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301428781.png" alt="image-20230730142819712"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301414764.png" alt="image-20230730141443685"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301424775.png" alt="image-20230730142447684"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301427696.png" alt="image-20230730142753636"></p><h2 id="2-4-热点参数限流"><a href="#2-4-热点参数限流" class="headerlink" title="2.4 热点参数限流"></a>2.4 热点参数限流</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301507090.png" alt="image-20230730150715018"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301509013.png" alt="image-20230730150917954"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301514368.png" alt="image-20230730151408307"></p><p><code>也就是说热点参数限流对controller中接口是无效的，我们可以在接口上加SentinelResource注解使其生效</code></p><h1 id="三、隔离和降级"><a href="#三、隔离和降级" class="headerlink" title="三、隔离和降级"></a>三、隔离和降级</h1><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301522948.png" alt="image-20230730152209877"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301528316.png" alt="image-20230730152832254"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301530976.png" alt="image-20230730153052905"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301538384.png" alt="image-20230730153820306"></p><h2 id="3-1-线程隔离"><a href="#3-1-线程隔离" class="headerlink" title="3.1 线程隔离"></a>3.1 线程隔离</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301551976.png" alt="image-20230730155154896"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301556955.png" alt="image-20230730155625899"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301559756.png" alt="image-20230730155919703"></p><h2 id="3-2-熔断降级"><a href="#3-2-熔断降级" class="headerlink" title="3.2 熔断降级"></a>3.2 熔断降级</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301633875.png" alt="image-20230730163341794"></p><h2 id="3-3-熔断策略"><a href="#3-3-熔断策略" class="headerlink" title="3.3 熔断策略"></a>3.3 熔断策略</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301641160.png" alt="image-20230730164128082"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301648849.png" alt="image-20230730164849770"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301653542.png" alt="image-20230730165353483"></p><h1 id="四、授权规则"><a href="#四、授权规则" class="headerlink" title="四、授权规则"></a>四、授权规则</h1><h2 id="4-1-授权规则"><a href="#4-1-授权规则" class="headerlink" title="4.1 授权规则"></a>4.1 授权规则</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301706277.png" alt="image-20230730170602210"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301711553.png" alt="image-20230730171124475"></p><p><code>不管请求是来自网关还是浏览器都没有这个请求头</code></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301714865.png" alt="image-20230730171412806"></p><h2 id="4-2-自定义异常结果"><a href="#4-2-自定义异常结果" class="headerlink" title="4.2 自定义异常结果"></a>4.2 自定义异常结果</h2><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301724787.png" alt="image-20230730172443726"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301725817.png" alt="image-20230730172535764"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301733303.png" alt="image-20230730173314214"></p><h1 id="五、规则持久化"><a href="#五、规则持久化" class="headerlink" title="五、规则持久化"></a>五、规则持久化</h1><p><code>默认情况下，配置的规则会被sentinel保存在内存中，当服务重启时，这些规则会被丢失</code></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301739362.png" alt="image-20230730173937323"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301745636.png" alt="image-20230730174541579"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301746220.png" alt="image-20230730174652153"></p><p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301747566.png" alt="image-20230730174737506"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> sentinel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Seata</title>
+      <link href="/2023/06/30/Seata/"/>
+      <url>/2023/06/30/Seata/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301041195.png" alt="image-20230730103731179"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Seata </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ES</title>
       <link href="/2023/06/05/ElasticSearch/"/>
       <url>/2023/06/05/ElasticSearch/</url>
