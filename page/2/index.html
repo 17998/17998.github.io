@@ -493,6 +493,8 @@ Eureka服务端在启动时，也需要将自己注册到Eureka中
 
 3.2  服务拉取
 
+四、Eureka集群
+Eureka注册中心1
 
                             
                         </div>
@@ -587,9 +589,9 @@ openFeign是SpringCloud在Feign的基础上支持了SpringMVC的注解
 
 二、负载均衡策略
 
-第一方式是针对该服务消费者调用的所有服务提供者，第二种方式是针对特定提供服务的微服务
-三、饥饿加载
-
+第一方式是针对该服务消费者调用的所有服务提供者(全局)，第二种方式是针对特定提供服务的微服务(局部)
+另外也可以通过注解的形式来达到局部负载均衡策略的配置
+针对Payment微服务提供者的负载均衡策略
                             
                         </div>
                         <div class="publish-info">
@@ -820,7 +822,7 @@ spring:
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022-2023</span>
+                <span id="year">2022-2024</span>
             
             <span id="year">2022</span>
             <a href="/about" target="_blank">杨奇</a>
@@ -829,7 +831,7 @@ spring:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">82.4k</span>&nbsp;字
+                class="white-color">85.2k</span>&nbsp;字
             
             
             
