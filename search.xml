@@ -4,25 +4,6 @@
   
     
     <entry>
-      <title>Zookeeper</title>
-      <link href="/2023/08/13/Zookeeper/"/>
-      <url>/2023/08/13/Zookeeper/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Zookeeper </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>sentinel</title>
       <link href="/2023/07/30/Sentinel/"/>
       <url>/2023/07/30/Sentinel/</url>
@@ -34,25 +15,6 @@
         <tags>
             
             <tag> sentinel </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Seata</title>
-      <link href="/2023/06/30/Seata/"/>
-      <url>/2023/06/30/Seata/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/17998/BlogImages@master/img/202307301041195.png" alt="image-20230730103731179"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Seata </tag>
             
         </tags>
       
